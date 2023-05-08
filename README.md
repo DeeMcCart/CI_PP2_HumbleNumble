@@ -53,16 +53,20 @@
 ---------
 This website offers the user a fun way to learn about how to problem-solve for a particular context, using a game that many are already familiar with.
 Many people worldwide take part in the 'Wordle' game, which offers a chance to guess a 5-letter english-language word in 6 tries.  The user is presented with a grid and must choose from a panel showing the letters of the alphabet (26 possible characters), to form a dictionary-recognised english word (ie it is logically consistent).  On pressing ENTER, the user's guess is validated, and each letter of their grid entry is colour coded as 
-grey - this guessed letter doesnt exist within the solution; 
-orange - the guessed letter exists in the solution, but not at the guessed position;
-green - the guessed letter exists in the solution, and was guessed at the correct position.
+* grey - this guessed letter doesnt exist within the solution; 
+* orange - the guessed letter exists in the solution, but not at the guessed position;
+* green - the guessed letter exists in the solution, and was guessed at the correct position.
+<br>
 The panel of letters is also updated with the appropriate colour (grey, orange, green) for the chosen letter.
 (Note that sometimes a word will have a double letter in which case a second guess including this letter will result in a further orange/green for the letter - I think in this case, on the panel it shows green).
 
 
 So.... Humble Numble is a version of Wordle applied to numbers.  In this case there is an equation on the left hand side, the user is presented with a six-row grid to take guesses, and the user must choose from numbers 1..20 and simple operators =-*/ to arrive at a given target number.  The 'solution' is a predefined equation, e.g.
 13+5+6=24
-5+3-6=2
+5+3-6=2 
+<br>_
+i.e. the format is <num1> <op1> <num2> <op2> <num3> = target
+    
 
 Any guessed expression must be 'logically consistent' ie it must evaluate to the target number.  (an error message 'incorrect calc' will pop up if an inconsistent equation is entered)
 Evaluation is left-to-right (oh no its not, got to use PEMDAS - well actually MDAS - calculate multiply divide add subtract, therefore 
@@ -341,33 +345,21 @@ ENTER       +  -  *  /   <-BKSP
 Clicking on a selection panel button will place the corresponding character in the next available space within the current grid row.
 Clicking on ENTER will submit the current grid row as an entry.
 
-- __Walks Page__
-This page shows details of each walk, and is structured with hyperlinks so that focus can be moved directly to a walk of interest (for example when taking 'more details' from a flipcard, or from a google map.)
-* Each walk shows a legend with consistent cateogries (distance, features, terrain, average review score)
-* Each walk contains text-paragraphs description explaining some of the features of the walk, how it feels to walk it, what a person might see when they are following the route, any items of historical interest etc
-* A photo carousel is shown per walk, this allows the user to click to start animation display of a number of stored photos.
-* 'Latest review' with star rating is shown.
+- __Settingss Page__
+Ability to choose settings
 
 ![Walks Page](./assets/readme_images/P02-Walk_Details.jpg?raw=true "Page with details for each walk")
 
 
-- __Gallery Page__
-- The gallery displays an attractive set of images taken from various walks - these are not matched against a particular walk, so it acts as a general gallery which showcases the entire locality.   This is valuable to all user personas.
-
-Note that images shown in the gallery don't include people but instead highlight the landscape and walk features. 
-It is intended that this be adopted as a policy, both to avoid any data protection issues and also to promote the walks themselves, rather than the people partaking in them.
+- __About Page__
+- A chance to explain the rules of the game.
 
 ![Gallery Page](./assets/readme_images/P03-Walk_Details.jpg?raw=true "Gallery")
 
-- __Feedback page__ 
-This page gives a first-time or returning-user the opportunity to contribute to the content of this site.  They can do this by uploading images, ratings or comments (or all 3!) for an existing or indeed a proposed new walk.
+- __Contact page__ 
+Signup for daily game playing reminder.
 
-- - This page encourages the user to add their own reviews relating to various walks
-  - and to upload their photos
-  - and to add a star rating
-  - the user must provide a username and email address in order to be permitted to upload photos.  They must also accept the terms and conditions.
-
-![Feedback Page](./assets/readme_images/P04-Feedback.jpg?raw=true "Feedback")
+![Contact Page](./assets/readme_images/P04-Feedback.jpg?raw=true "Feedback")
 
 ### Implementation Decisions
 Pre-defined calculations are stored in a multi-dimensional array as follows:

@@ -93,12 +93,15 @@ b. People who already play Wordle and are familiar with the user interface (e.g.
 c. People who want to have a reliable consistent experience through out the game (in other words, they want an opportunity to finish the game by reaching the end, and they want to be able to trust the process (ie they can understand how they move forward or backwards, and they dont feel it is unfair or impossible to complete).
 d. People who like to practice their mathametical skills
 
-### UX Design Strategy Analysis - Existing Numbles Games
-https://toytheater.com/snakes-and-ladders/ A colourful game of 100 squares where you can play against the computer.  Music background and animation.
-https://www.cbc.ca/kids/games/all/snakes-and-ladders (actually the same game as above, screen is slightly different but music graphics etc the same)
-https://www.crazygames.com/game/snakes-and-ladders same as above, just auto-muted
+### UX Design Strategy Analysis - Existing Numble Games
+https://thenumble.app/ 
+https://numble.wtf 
+https://numble.game 
+https://numble.win
+https://numble.online
+https://numble (wikipedia)
 
-(Comparative analysis (jpg or png) to follow here are other downloadable games which i will investigate a bit later, they seem to be firmly in the kids sphere) 
+(Comparative analysis (jpg or png) to follow here first impressions are that each of these games is a bit more complex and wider ranging than Humble Numble) 
 
 A competitive analysis of these offerings can be seen here https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/Strategy-competitive-analysis.pdf
 <br>
@@ -117,19 +120,16 @@ From this analysis, a set of possible requirements was identified for a new port
 ----------------
 
 ### UX Design Scope User Requirements and Expectations
-The basic requirement for users is to have access to a 'fair' game where they have a possibility of reaching the goal.
+(To be revisited...)
+/The basic requirement for users is to have access to a 'fair' game where they have a possibility of reaching the goal.
 
 * The target audience needs to complete a process/set of tasks
 * They have a checklist which contains many activities, there are many things that can go wrong (or right)
 * The game helps them to complete their real-life tasks by warning them of potential pitfalls and alerting them to opportunities
-* The game is a fun way of embedding real-world knowledge 
+* The game is a fun way of applying simple mathematical principles
 
 ### UX Design Scope - Data
-For this project to deliver both goals:
-* game
-* mapping to real-life problem
-a set of data had to be developed for the real-life problem.  This took the form of scenarios and change events with 3 possible outcomes
-
+A set of calculations needed to be pre-loaded which were consistent with game rules (e.g. operator numbers not > 20)
 
 ## User Goals/ User Stories
 ----------------
@@ -147,7 +147,8 @@ a set of data had to be developed for the real-life problem.  This took the form
 
 ### Returning User Goals
 * RU_01 As a returning user I wish to play the game, just because I enjoy it
-* RU_02 As a returning user I might like to challenge or inform myself on the branded game
+* RU_02 As a returning user I want to 'beat the computer'
+* RU_02 As a returning user I want to maintain/ improve my winning streak
 * RU_03 As a returning user I might wish to suggest questions to add into the databank
 *  
 ### Other stakeholder Goals
@@ -184,37 +185,35 @@ The landing page WF is shown here with 4 sceen resolutions as I found when testi
 
 
 ### Fonts Chosen
-Libre Franklin and Libre Baskerville are chosen because they are readable on large screens or smaller mobile devices.  This font is recommended for sites that may be content-heavy but which are regarded as fun friendly and approachable/inclusive.  These are identified by Google as good pairing.
+The fonts are deliberately selected to reflect the World screen appearance.
+Therefore:
+(More details here....)
+
+(Remove this....)  Libre Franklin and Libre Baskerville are chosen because they are readable on large screens or smaller mobile devices.  This font is recommended for sites that may be content-heavy but which are regarded as fun friendly and approachable/inclusive.  These are identified by Google as good pairing.
 Fallback fronts are used in both cases
 
-### Colour Scheme
+### Colour Scheme 
 The colour combinations will be driven by the Wordle game for consistency and to ease the user learning experience
+Note that world includes 3 colour options (choosable from settings)
+* Normal mode (dark letters on white background)
+* Dark mode (white letters/grid on dark background)
+* High-contrast mode - background colours maintained as above however the selection colours are changed as follows:
+*   Orange replaced by cyan blue
+*   Grey replaced by ??
+*   Green replaced by ??
+   
+The choice of colours for Humble Numble is very much in accordance with user story XX - consistent with World so as to speed the learning process and encourage the focus on the game content, rather than on how to use it.
 
-For this particular site the foreground images tend to have strong and meaningful colours.  For example the central Google map redendering at the initial scale to show the 6 walks, has a lot of strong blue (sea) and strong green (countryside).   Wakls are mapped against the Google map background using strong, vibrant colours which stand out against the map background.  The same colour coding is used for the border of each walk flipchart to act as a visual reminder to users of the link between the map and the Humble Numble website itself.
+![Colours - dark mode normal contrast](./docs/readme_images/ux-design-choices-accessing-style-in-google-maps.jpg?raw=true "Humble Numble dark mode normal contrast")
+![Colours - dark mode high contrast](./docs/readme_images/ux-design-choices-accessing-style-in-google-maps.jpg?raw=true "Humble Numble dark mode high contrast")
 
-Colours used for flipchart boundaries per walks:
-blue-border:    rgb(2, 136, 209)
-fuschia-border: rgb(136, 14, 79)
-orange-border: rgb(230, 81, 0)
-yellow-border: rgb(255, 234, 0)
-sludgegreen-border: rgb(129, 119, 23)
-purple-border: rgb(103, 58, 183);
 
-This corresponds with the colours which are available within Google maps digitising capabilities, so the rbg values of the mapped walk and its flipcard are consistent.
-
-<details><summary>Digitising options in Google Maps</summary>
-![Colour choices when digitising in Google Maps](./assets/readme_images/ux-design-choices-accessing-style-in-google-maps.jpg?raw=true "Google maps colour choices").
-</details>
-
- 
 ### Design Images
-This site is reasonably image-heavy, a lot of the interest for users is in creating, uploading or browsing the walk images.  Because of the nature of the landscape in the location of Arklow (lots of waterbodies - sea, rivers; lots of green - woods), the images are given sufficient size for the user to be able to view and enjoy.  (ref user stories SO_04, FTU_04, RU_03, RU_05)
+This site has very few images as the focus is on the game content.
 
-However a very fundamental aspect of this site is the categorisation of walks, it is not something that shouts out from the site, as the walk gallery photos take a lot of user attention, but in fact the cateogorisation is absolutely key to this site meeting its fundamental user requirement..  (ref user stories SO_02, FTU02, FTU_07) 
+### Design Images - Icons and Symbols
 
-The approach taken is to use standardised categories, with freely downloadable font-awesome icons throughout the site (most particularly on walk summary flipcards, and on the walk details pages).   The range of icons available was not 100% correct, however a reaonsable compromise (e.g. using a 'crow' symbol to represent birdwatching)  was found in most cases.
-
-![walk category symbols](./assets/readme_images/F06-Feature-Walk-Details-use-of-categorisation-icons.jpg?raw=true "Example of Walk Category Symbols used")
+Certain icons and symbols used for quicklinks e.g. ? for About page, graphy symbol for Stats page, cog symbol for settings page. 
 
 
 ## Features 
@@ -361,6 +360,24 @@ This page gives a first-time or returning-user the opportunity to contribute to 
 
 ![Feedback Page](./assets/readme_images/P04-Feedback.jpg?raw=true "Feedback")
 
+### Implementation Decisions
+Pre-defined calculations are stored in a multi-dimensional array as follows:
+Solution [
+[ 3, *,_ 7 * 2, 41_], // ie 3 * 7 * 2 = 41
+[2, + , 5 * 7, 41] //ie 2 + 5 * 7 = (7) * 7 = 41
+]
+Each day's equation can therefore be referenced as Solution[day#]
+Each days' elements can be referenced as solution[day#, element#]
+This is useful when comparing a user entry for a match.
+
+Daily user entries are stored in an array of 7 x 6 rows as follows:
+Attempt [(undef, green, orange), (undef/green/orange), (undef/green/orange), (underf/green/orange), (undef/green/orange), (success)]
+Attempt [attempt#, element#} can be compared to each of the entries in solution [day#, element#y] to search for a match - if found then if attempt.element# matches solution.element# then green, else orange.
+
+Break out of loop when success, or when 6 tries reached.
+
+
+
 ### Features Left to Implement
 Some of the user stories could be addressed more directly in the future: 
 * Include suitability of various walks for dogs? - this has not really been expanded in the current setup, other than mentioning dogs on the walks details text.
@@ -392,25 +409,23 @@ Requirements traceability matrix showing link between user stories and implement
 ### HTML Validation 
 - HTML
   - No errors returned on the four website html pages when checked in the W3C validator:
-  - [W3C validator - index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP1_ArklowTrails%2Findex.html) 
-  - [W3C validator - walks page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP1_ArklowTrails%2Fwalks.html) 
-  - [W3C validator - gallery page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP1_ArklowTrails%2Fgallery.html) 
-  - [W3C validator - feedback page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP1_ArklowTrails%2Ffeedback.html)
+  - [W3C validator - index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Findex.html) 
+  - [W3C validator - walks page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Fsettings.html) 
+  - [W3C validator - gallery page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Fabout.html) 
+  - [W3C validator - feedback page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Fcontact.html)
   
 ### CSS Validation
-  - No errors returned when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https://deemccart.github.io/CI_PP1_ArklowTrails/&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No errors returned when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https://deemccart.github.io/CI_PP2_HumbleNumble/&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 ### Accessibility
 The site was tested using the WAVE WebAIM accessibility evaluation tool.
-All pages pass with 0 errors
-- [Accessability: index page](https://wave.webaim.org/report#/https://8000-deemccart-cipp1arklowtr-sigag7qpuok.ws-eu95.gitpod.io/index.html)
-- [Accessibility: walks page](https://wave.webaim.org/report#/https://8000-deemccart-cipp1arklowtr-sigag7qpuok.ws-eu95.gitpod.io/walks.html)
-- [Accessibility: gallery page](https://wave.webaim.org/report#/https://8000-deemccart-cipp1arklowtr-sigag7qpuok.ws-eu95.gitpod.io/gallery.html)
-- [Accessibility:  feedback page](https://wave.webaim.org/report#/https://8000-deemccart-cipp1arklowtr-sigag7qpuok.ws-eu95.gitpod.io/feedback.html)
+All pages pass with 0 errors (more details...)
+- [Accessability: index page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/index.html)
+- [Accessibility: walks page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/settings.html)
+- [Accessibility: gallery page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/about.html)
+- [Accessibility:  feedback page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/contact.html)
 
-Running the accessibility checks against the index page identified a problem with the flipcards, which showed text and icons in white against a mid-blue background.  This was deemed insufficient contrast so was modified to black text against an aqua background (the same rgb as the header and footer). 
-On the feedback page, there were file upload buttons which had no form label (multiple photo update buttons)
-After making these changes there were no errors.
+Ensure that accessibility is evaluated against both the normal-contrast and high-contrast pages
 
 ### Performance
 Performance for all pages was tested using the Lighthouse tool within Google Chrome.  After adjusting image sizes, performance was at or above 90% for all pages.
@@ -419,13 +434,13 @@ Performance for all pages was tested using the Lighthouse tool within Google Chr
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-index-page.jpg">
 </details>
 <details><summary>Performance: Walks page</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-walks-page.jpg">
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-settings-page.jpg">
 </details>
 <details><summary>Performance: Gallery page</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-gallery-page.jpg">
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-about-page.jpg">
 </details>
 <details><summary>Performance: Feedback page</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images//performance-results-feedback-page.jpg">
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images//performance-results-contact-page.jpg">
 </details>
 
 ### Device Testing

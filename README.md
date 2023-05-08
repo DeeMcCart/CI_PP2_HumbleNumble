@@ -60,14 +60,23 @@ The panel of letters is also updated with the appropriate colour (grey, orange, 
 (Note that sometimes a word will have a double letter in which case a second guess including this letter will result in a further orange/green for the letter - I think in this case, on the panel it shows green).
 
 
-So.... Humble Numble is a versuib of Wordle applied to numbers.  In this case there is an equation on the left hand side, the user is presented with a six-row grid to take guesses, and the user must choose from numbers 1..20 and simple operators =-*/ to arrive at a given target number.  The 'solution' is a predefined equation, e.g.
+So.... Humble Numble is a version of Wordle applied to numbers.  In this case there is an equation on the left hand side, the user is presented with a six-row grid to take guesses, and the user must choose from numbers 1..20 and simple operators =-*/ to arrive at a given target number.  The 'solution' is a predefined equation, e.g.
 13+5+6=24
 5+3-6=2
 
 Any guessed expression must be 'logically consistent' ie it must evaluate to the target number.  (an error message 'incorrect calc' will pop up if an inconsistent equation is entered)
-Evaluation is left-to-right, therefore 
-13+5/3 is evaluated as (13+5)/3, equating to (18)/3, evaluating to 6.
-20+4/6=4
+Evaluation is left-to-right (oh no its not, got to use PEMDAS - well actually MDAS - calculate multiply divide add subtract, therefore 
+13+6/3 is evaluated as (6/3), equating to 13+2 evaluating to 15.
+20+12*6 is evaluated as (12*6)+20=(72+20)=92
+6*12+20 gives the same result
+as, of course, will
+12*6+20
+
+If an equation contained multiply and divide, then multiply evaluated before the divide is calculated:
+6* 10 / 5 = (6 *10) / 5 = 60 / 5 = 12 (actually this results in the same output in either case), because we are limited to only two operators within our equations, so no confusion is caused with subsequent add or subtract.
+
+Rules:  All target results will be integers, ie no decimals or fractions.   This makes it a little easier to guess.
+
 
 
 
@@ -250,8 +259,8 @@ Description
 Description
 ![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-### F09 
-An animated gallery of images is available per walk.
+### F09 Choose difficulty level
+The user can choose difficulty level EASY (all numbers <= 10) or DIFFICULT (numbers <=20 included)
 Description
 ![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 

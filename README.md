@@ -492,19 +492,24 @@ The live link can be found here - https://deemccart.github.io/CI_PP1_ArklowTrail
 ## Credits 
 Multiple sources were used in assembling this site.
 
-### Content 
+
+### Content - Arklow trails
 * Text for the Glenart Woods walk was re-used from https://www.coillte.ie/site/glenart-wood/ some text lifted from here also
 * Text for Arklow Nature Reserve walk was re-used from https://www.visitarklow.ie/post/4-family-friendly-trails-in-arklow-town-great-for-a-walk-cycle-or-scoot
 * Inspiration and content for walks reviews was taken from https://www.alltrails.com/ireland/county-wicklow/arklow 
 * The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
 
-### Media
+### Media - arklow trails
 Images not credited are developer's own.
 * Moneylands Farm walk photos came from https://www.moneylandsfarm.com/
 * Glenart photos from the following site were re-used https://www.coillte.ie/site/glenart-wood/
  
-### Code
+### Code - Humble Numble
+* https://laracasts.com/series/wordle-workshop/episodes/2 for tips on building a wordle-like grid
+
+
+### Code - Arklow Trails
 * Inspiration for the flipcards came from Elaine B Roche's Thrive project at https://elainebroche-dev.github.io/ms1-thrive/
 * How to implement flip card functionality: sourced from W3schools ref https://www.w3schools.com/howto/howto_css_flip_card.asp*/
 * For instructions on how to embed a responsive google map into html https://blog.hubspot.com/website/how-to-embed-google-map-in-html 

@@ -4,11 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Humble Numble</title>
-</head>
+    </head>
 <body>
     <h1>Humble Numble</h1>
-    <div id="Gamepanel"></div>
+    <script>let targetValue=75; </script>
+
+    <div id="gamePanel">
+        <!-- 08/05/23 DMcC: The code below to create grid based on  https://laracasts.com/series/wordle-workshop/episodes/2 -->
+        <!-- create a grid of 6 rows with 7 entries in each: -->
+        <!--   2 rightmost entries will be pre-populated with '=' and targetValue -->
+        <!--   5 leftmost entries on each row represent the user guess fields -->
+        <div class="row">
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">=</div>
+            <div class="tile">targetValue</div>
+        </div>
+        <div class="row">
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">=</div>
+            <div class="tile">targetValue</div>
+        </div>
+        <div class="row">
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">=</div>
+            <div class="tile">targetValue</div>
+        </div>
+        <div class="row">
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">=</div>
+            <div class="tile">targetValue</div>
+        </div>
+        <div class="row">
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">=</div>
+            <div class="tile">targetValue</div>
+        </div>
+        <div class="row">
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">?</div>
+            <div class="tile">=</div>
+            <div class="tile">targetValue</div>
+        </div>
+    </div>
     
 </body>
 </html>

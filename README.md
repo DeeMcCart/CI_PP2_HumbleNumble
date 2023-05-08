@@ -507,7 +507,7 @@ Images not credited are developer's own.
  
 ### Code - Humble Numble
 * https://laracasts.com/series/wordle-workshop/episodes/2 for tips on building a wordle-like grid
-
+* https://www.youtube.com/watch?v=j7OhcuZQ-q8 Build a Wordle clone using HTML, CSS & Javascript!
 
 ### Code - Arklow Trails
 * Inspiration for the flipcards came from Elaine B Roche's Thrive project at https://elainebroche-dev.github.io/ms1-thrive/

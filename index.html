@@ -11,9 +11,12 @@
 </head>
 
 <body>
+    <header>
     <h1>Humble Numble</h1>
+</header>
     <script>let targetValue = 75; </script>
     <div id="container">
+        <div id="game">
         <div id="gamePanel">
             <!-- 08/05/23 DMcC: The code below to create grid based on  https://laracasts.com/series/wordle-workshop/episodes/2 -->
             <!-- create a grid of 6 rows with 7 entries in each: -->
@@ -79,6 +82,7 @@
         <!-- Code below based on Ian Lenehan 'Build a Wordle clone using HTML, CSS & Javascript' -->
         <div id="selectionPanel">
             <div class="selection-row">
+                <div class="spacer-half"></div>
                 <button data-key="1">1</button>
                 <button data-key="2">2</button>
                 <button data-key="3">3</button>
@@ -93,7 +97,6 @@
             </div> <!-- End selection-row -->
 
             <div class="selection-row">
-                <button data-key="ENTER" class="wide-button">Enter</button>
                 <button data-key="11">11</button>
                 <button data-key="12">12</button>
                 <button data-key="13">13</button>
@@ -104,17 +107,20 @@
                 <button data-key="18">18</button>
                 <button data-key="19">19</button>
                 <button data-key="20">20</button>
-                <button data-key="del" class="wide-button">Del</button>
+                
             </div> <!-- End selection-row -->
 
             <div class="selection-row">
+                <button data-key="enter" class="wide-button">Enter</button>
                 <button data-key="+" class="wide-button">+</button>
                 <button data-key="-" class="wide-button">-</button>
                 <button data-key="*" class="wide-button">*</button>
                 <button data-key="/" class="wide-button">/</button>
-            </div> <!-- End selection-row -->
-        </div> <!-- End selectionPanel-->
-    </div> <!-- end div container -->
+                <button data-key="del" class="wide-button">Del</button>
+            </div> <!-- End div selection-row -->
+        </div> <!-- End div selectionPanel-->
+    </div> <!-- End div game -->
+</div> <!-- end div container -->
 </body>
 
 </html>

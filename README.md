@@ -506,7 +506,7 @@ Images not credited are developer's own.
 * Glenart photos from the following site were re-used https://www.coillte.ie/site/glenart-wood/
  
 ### Code - Humble Numble
-* https://laracasts.com/series/wordle-workshop/episodes/2 for tips on building a wordle-like grid
+* https://laracasts.com/series/wordle-workshop/episodes/2 for tips on building a wordle-like grid (using HTML or JS)
 * https://www.youtube.com/watch?v=j7OhcuZQ-q8 Build a Wordle clone using HTML, CSS & Javascript!
 
 ### Code - Arklow Trails

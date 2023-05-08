@@ -219,86 +219,42 @@ The approach taken is to use standardised categories, with freely downloadable f
 
 ## Features 
  
-### F01 Google Maps used as the anchor image on the landing page
-The use of Google Map was a deliberate design decision. Google maps is widely used by people of all demographics, internationally as well as within Ireland, as a navigation tool.  Familiarity reduces the overall learning curve for new users of the Humble Numble website.   Digitising tools available within the Google MyMaps interface, while outside the scope of this document, mean that trails data is presented visually in an attractive, comprehensible way which is meaningful to site users (corresponds to user stories SO_01, SO_03, FTU_01, FTU_07, RU_01 )
+### F01 
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-![Landing Page showing Google Map at centre](./assets/readme_images/230418%20Landing%20Page.jpg?raw=true "Landing Page")
-
-### F02 Color-coded mapped walks
-Six colour-coded mapped trails are shown.  The range of colours means they can be clearly distinguished from one another, and the same colour is used in the flipcard boundary. 
-
-![Six colour-coded walks on Google Maps background](./assets/readme_images/F02-Feature-colour-coded-walks.jpg?raw=true "Mapped Walks")
-
-The main objective of using consistent colour-coding is to make the site learnable, and act as a visual reminder for users when navigating between mapped walks and their corresponding flipcard.   This addresses elements of user stories FTU_01, FTU_07, RU_01
-
-![Colour-coded walks Google Maps large screen](./assets/readme_images/F02-Feature-Google-Map-maximised-to-show-walk-data.jpg?raw=true "Colour-coded walks Google Maps large screen")
-
-### F03 Colour-edged Photo Flipcards
-The landing page map is surrounded by colour-edged flipcards, one per walks.
-The border colour of each flipcard corresponds to the #rgb colour of its associated trail.
-Each flipcard shows an attractive or intruiging photo, encouraging the user to hover over the image trail information.  This cnotributes to user stories SO_04, SO_05, FTU_04, FYU_07, RU_01
-
-![Flipcard attractive photo example](./assets/readme_images/F03_a-Flipcard-images-photos.jpg?raw=true "Flipcard Attractive Photo").
-
-On larger screens the flipcards are positioned to the left and the right of the main map.  On smaller screens, the main map appears first, with the flipcards appearing in either two, or, at smallest, one column below the map.
-
-Hovering over a walk card 'flips' the display to show a walk name and summary detail.
-
-### F04 The colour-edged photos flip to reveal walk summary
-If the user's mouse moves over (desktop) or clicks (mobile) a colour-edged photo, it performs a pleasing shimmy and reveals summary trail data.
-The user can then select a 'More details' link to access a point within the detailed 'Walks' page:
-  - Each card identifies the walk by name and some key features of each walk.
-  - Clicking on a particular card opens a link to the relevant walk detail  
-
-- Icons are used within the category cards to categorise distance, trail type (forest/nature/seaside) etc..... 
-- The consistent and repeated use of certain icons aids user learning 
-- The use of icons improves readability and navigation, particularly for returning users
-
-![Flipcard walks summary card](./assets/readme_images/F04_b-Flipcard-images-walk-summary.jpg?raw=true "Flipcard Attractive Photo")
-
-Standard symbols are used for walk categorisation e.g. birds, sea, swimming, river, forest:
-
-![Flipcard walks summary with category symbols](./assets/readme_images/F04-Feature-Fipcard-use-of-categorisation-icons.jpg?raw=true "Flipcard summary with category symbols")
-
-Each flipcard has a 'More details...' link to encourage the user to access the walk details page:
-
-![Flipcard walks summary more details link](./assets/readme_images/F04Feature-Flipcard-More-Details.jpg?raw=true "Flipcard summary with link to more details")
-
-The flip-card detail is really a navigational aid, to encourage the user to traverse through images on the site, and progressively reveal details of the walks below.   On checking summary information the user might immediately think 'oh that walk is too long/short for me, it's not for me' and can quickly move along to the next image and scan the summary there.  So its a very nice feature because the user hasn't actually left the landing page and is just moving their mouse around to quickly investigate.
-Ref user stories  
+### F02 
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
 
-### F05 More details for each trail
-The user can see more details per trail in one of three ways:
-* By clicking on the 'more details' link from a flipcard (link to more details for a specific trail)
-* By clicking on the URL linked to each trail in Google Maps (link to more details for a specific trail)
-* Using the navbar to go directly to the 'Walks' page and scroll to find a walk of interest
+### F03 
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-Note that there are hyperlinks within page to position at each walk (walk01, walk02, etc )
+### F04 
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-![More details of a walk](./assets/readme_images/F05-Feature-Walk-Details-Page.jpg?raw=true "More details of a walk")
+### F05 
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-### F06 Feature consistent icons and categorisation
-As per the walks summary flipcard the same symbols are used to help with learning the website
-![Consistent Use of icons and categories](./assets/readme_images/F06-Feature-Walk-Details-use-of-categorisation-icons.jpg?raw=true "Icons and categories walks detail")
-- clicking on a walk card brings the user to a separate walk details window which provides more information on each walk.  
-- an explanation of the icons and categories is given on the 'About' page
-![WalkCatCards](image3.png)
-![HelpIconCategories](image4.png)
+### F06 
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-### F07-Average Reviews stars
-Ability to view average ratings on scale 1-5 per walk, where 1 = terrible and 5 = fantastic, represented using star symbols (also echoed in the feedback form where the user can enter their own walk ratings) 
-![Average trail reviews per walk](./assets/readme_images/F07-Feature-Walk-Details-average-trail-reviews.jpg?raw=true "Average trail reviews stars out of 5")
+### F07
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-### F08 Walk Details Descriptive text
-Helpful descriptions to describe the walk and help the reader determine if it is suitable or of interest to them.  This is in accordance with the 'progressive disclosure' principle whereby the user now has chosen to access full details of the walk.
-![Six colour-coded walks on Google Maps background](./assets/readme_images/F08-Feature-Walk-Details-descriptive-text.jpg?raw=true "Mapped Walks")
+### F08 
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-### F09 Image carousel
+### F09 
 An animated gallery of images is available per walk.
-This is a simple html/css animation using a deck of 4 photos per walk with the viewing window transitioning between them.
-(This became more complex to implement when I realised that the animation must be iniated by the user rather than auto-play!!).
-![A clickable image carousel is shown](./assets/readme_images/F09-Feature-album-carousel.jpg?raw=true "Image carousel")
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
 ### F10 Responsive Navbar
 The navigation bar appears on all pages, and is attractively laid out.  Four links are available - Home - Walks - Gallery - Feedback
@@ -307,6 +263,8 @@ It is fully responsive so will change positioning at 320, 400, 800 pixel screen 
 This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button.
 
 ![Responsive navbar](./assets/readme_images/F10-Feature-Navbar.jpg?raw=true "Responsive navbar")
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
 
 ### F11 Partner social media links (footer)
@@ -315,51 +273,65 @@ As this website is structured to operate more like to a peer-to-peer than a hier
   The links will open to a new tab to allow easy navigation for the user. 
   The footer is valuable to the user as it encourages them to keep connected via social media and to engage in a deeper way with the community sponsors of this project
 
-Currently configured to point to:
-* Social media/fabebook - Arklow Trail Trotters walking group, with details of their meeting times.
-* Visit Wicklow website
-* generic youtube
-* generic instagram
 ![Footer partner links](./assets/readme_images/F11-Feature-Footer-bar.jpg?raw=true "Partner links")
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
 
-### F12 Google Maps app functionality preserved on Humble Numble website
-Although this is fundamental to the successful operation of the site, it is not software that was developed within the Humble Numble site, and has therefore been left towards the end of the list of 'Humble Numble' features.  Humble Numble has been designed and implemented so that standard Google maps features (navigation, pan, zoom, choice of mapping background, local points of interest) are still available to the user.
+### F12  User Error Messages
+Incomplete entry!
+Inconsistent calculation!
 
-(This presented an implementation challenge as ideally the flipcards would have slightly overlapped the Google Maps screen, and it was intended to implement using z-positioning to overlay.... however when testing it was found that the Google Maps functionality was disabled as the focus was on the flipcards to the forefront... therefore an implementation decision to separate map and flipcards into different screen areas was taken)
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-![More details of a walk](./assets/readme_images/F12-Feature-Google-Map-integrated-data.jpg?raw=true "More details of a walk")
-![Six colour-coded walks on Google Maps background](./assets/readme_images/F07-Feature-Google-Map-direction-finder1?raw=true "Mapped Walks")
-![More details of a walk](./assets/readme_images/F05-Feature-Walk-Details-Page.jpg?raw=true "More details of a walk")
+### F13 User Stats (needs cookies, and possibly google charts to display)
+Winning streak! (user is notified on startup of how many games they have won)
+STATISTICS:  X Played; y Win %; z Current Streak; w: Max Streak
+GUESS DISTRIBUTION: 1 x; 2 y; 3 z; 4 w; 5 v; 6 u
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-### F13 Google My Maps Data
-As many potential site users are already familiar with Google map usages, the data created for the Humble Numble website allows users to utilise it compatibly in the Google Maps interface.   clicking on either a route or its associated start-point (generally indicated by a colour-coded P on the map) triggers two actions:
-![Google Map at centre](./assets/readme_images/GM-click-on-a-walk.jpg?raw=true "Using the Central Map as a start point")
-![More details of a walk](./assets/readme_images/F13-Feature-Google-Map-direction-finder2.jpg?raw=true "More details of a walk")
+### F14 Signup for daily reminder email
+Ability to signup for daily reminder of the following format
+![How to sign up for reminder](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+![Reminder email content](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
+### F16 ability to choose 'Test' or 'Daily' mode
+One of the beautiful features of wordle is its limited-release mode whereby only one puzzle is released daily ... this creates a sense of anticipation and the user wants more, they don't get the chance to become bored or tired with the game.  Similarly the proposed Humble Numble game is best delivered in Daily mode.  For the purpose of site demonstration, the user is currently permitted to enter Test mode (chosen from the settings page) 
+
+### F17 Settings Page
+Allow the user to choose:
+* Test or Daily modes
+* colour contrast
+
+
+### F18 About page (popup)
+
+### F19 pre-defined data
 Data created for the Humble Numble website with Google MyMaps included:
-* colour-coded walk polylines
-* colour-coded startpoints, indicated by a P on the map which are a navigable element within Google
-* hyperlinks to walk details within Humble Numble website, this opens the 'walks detail' page at the relevant section in a new window.
-(Note that, in implementing, I had intended to use a 3rd party URL shortener however I found that the shortened URL was intermittently disabled/blocked for my test users, so reinstated the longer URL.) 
+* pre-defined equations to be presented (possibly in random order)
 
 ### Features in Scope - refer to excel sheet for details of user stories (requirements) features and RTM.
-This website includes 5 pages and 13 features 
+This website includes X pages and Y features 
 Features are as listed in previous section.
 The pages - which effectively bring these features together - are:
 * Landing Page (image link)
-* Walks detail page (image link)
-* Gallery page (image link)
-* Feedback page (image link)
+* Settings page (image link)
 * About page (image link)
+* Signup page
 
 - __Landing Page__
-The initial website page shows a responsive google map at centre, surrounded by category cards for each of the walks.
-This section introduces the user to the geographic territory of arklow and the map is useful to give an overview of the walk locations e.g.  seaside vs  inland.
-There is very little text (header bar) displayed initially which means that language barriers are reduced and the site becomes very accessible to visually confident users.
-This page has been designed to be responsive and to display correctly on different screen sizes.  
+The initial website page shows a 6 row x 7 column grid, where the user can enter their guesses, one per row, in the 5 left most columns.
+The 6th column always contains the '=' sign
+and the 7th column contains the target figure.
 
-![Landing Page](./assets/readme_images/P01-Landing-Page.jpg?raw=true "Central Google Map with 3 walk flipcards either side")
+Towards the bottom of the screen a selection panel is shown, this shows 3 rows of possible entries with up to 10 characters in each
+1  2  3  4  5  6  7  8  9 10
+11 12 13 14 15 16 17 18 19 20
+ENTER       +  -  *  /   <-BKSP
+
+Clicking on a selection panel button will place the corresponding character in the next available space within the current grid row.
+Clicking on ENTER will submit the current grid row as an entry.
 
 - __Walks Page__
 This page shows details of each walk, and is structured with hyperlinks so that focus can be moved directly to a walk of interest (for example when taking 'more details' from a flipcard, or from a google map.)

@@ -6,121 +6,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="js/main.js"></script>
+
     <title>Humble Numble</title>
 </head>
 
 <body>
     <header>
-    <h1>Humble Numble</h1>
-</header>
-    <script>let targetValue = 75; </script>
+        <h1>Humble Numble</h1>
+    </header>
+    <button onclick="initSolution();">
+        Initialise Solution!
+    </button>
+    <p id="solution">Solution here: </p>
     <div id="container">
         <div id="game">
-        <div id="gamePanel">
-            <!-- 08/05/23 DMcC: The code below to create grid based on  https://laracasts.com/series/wordle-workshop/episodes/2 -->
-            <!-- create a grid of 6 rows with 7 entries in each: -->
-            <!--   2 rightmost entries will be pre-populated with '=' and targetValue -->
-            <!--   5 leftmost entries on each row represent the user guess fields -->
-            <div class="row">
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">=</div>
-                <div class="tile">targetValue</div>
-            </div>
-            <div class="row">
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">=</div>
-                <div class="tile">targetValue</div>
-            </div>
-            <div class="row">
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">=</div>
-                <div class="tile">targetValue</div>
-            </div>
-            <div class="row">
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">=</div>
-                <div class="tile">targetValue</div>
-            </div>
-            <div class="row">
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">=</div>
-                <div class="tile">targetValue</div>
-            </div>
-            <div class="row">
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">?</div>
-                <div class="tile">=</div>
-                <div class="tile">targetValue</div>
-            </div>
-        </div> <!-- end div gamePanel -->
-<br>
-<p></p>
-        <!-- Code below based on Ian Lenehan 'Build a Wordle clone using HTML, CSS & Javascript' -->
-        <div id="selectionPanel">
-            <div class="selection-row">
-                <div class="spacer-half"></div>
-                <button data-key="1">1</button>
-                <button data-key="2">2</button>
-                <button data-key="3">3</button>
-                <button data-key="4">4</button>
-                <button data-key="5">5</button>
-                <button data-key="6">6</button>
-                <button data-key="7">7</button>
-                <button data-key="8">8</button>
-                <button data-key="9">9</button>
-                <button data-key="10">10</button>
-                <div class="spacer-half"></div>
-            </div> <!-- End selection-row -->
+            <div id="gamePanel">
+                <!-- 08/05/23 DMcC: The code below to create grid based on  https://laracasts.com/series/wordle-workshop/episodes/2 -->
+                <!-- create a grid of 6 rows with 7 entries in each: -->
+                <!--   2 rightmost entries will be pre-populated with '=' and targetValue -->
+                <!--   5 leftmost entries on each row represent the user guess fields -->
+                <div class="row">
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">=</div>
+                    <div class="tile targetValue">0</div>
+                </div>
+                <div class="row">
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">=</div>
+                    <div class="tile targetValue">0</div>
+                </div>
+                <div class="row">
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">=</div>
+                    <div class="tile targetValue">0</div>
+                </div>
+                <div class="row">
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">=</div>
+                    <div class="tile targetValue">0</div>
+                </div>
+                <div class="row">
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">=</div>
+                    <div class="tile targetValue">0</div>
+                </div>
+                <div class="row">
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">?</div>
+                    <div class="tile">=</div>
+                    <div class="tile targetValue">0</div>
+                </div>
+            </div> <!-- end div gamePanel -->
+            <br>
+            <p></p>
+            <!-- Code below based on Ian Lenehan 'Build a Wordle clone using HTML, CSS & Javascript' -->
+            <div id="selectionPanel">
+                <div class="selection-row">
+                    <div class="spacer-half"></div>
+                    <button data-key="1">1</button>
+                    <button data-key="2">2</button>
+                    <button data-key="3">3</button>
+                    <button data-key="4">4</button>
+                    <button data-key="5">5</button>
+                    <button data-key="6">6</button>
+                    <button data-key="7">7</button>
+                    <button data-key="8">8</button>
+                    <button data-key="9">9</button>
+                    <button data-key="10">10</button>
+                    <div class="spacer-half"></div>
+                </div> <!-- End selection-row -->
 
-            <div class="selection-row">
-                <button data-key="11">11</button>
-                <button data-key="12">12</button>
-                <button data-key="13">13</button>
-                <button data-key="14">14</button>
-                <button data-key="15">15</button>
-                <button data-key="16">16</button>
-                <button data-key="17">17</button>
-                <button data-key="18">18</button>
-                <button data-key="19">19</button>
-                <button data-key="20">20</button>
-                
-            </div> <!-- End selection-row -->
+                <div class="selection-row">
+                    <button data-key="11">11</button>
+                    <button data-key="12">12</button>
+                    <button data-key="13">13</button>
+                    <button data-key="14">14</button>
+                    <button data-key="15">15</button>
+                    <button data-key="16">16</button>
+                    <button data-key="17">17</button>
+                    <button data-key="18">18</button>
+                    <button data-key="19">19</button>
+                    <button data-key="20">20</button>
 
-            <div class="selection-row">
-                <button data-key="enter" class="wide-button">Enter</button>
-                <button data-key="+" class="wide-button">+</button>
-                <button data-key="-" class="wide-button">-</button>
-                <button data-key="*" class="wide-button">*</button>
-                <button data-key="/" class="wide-button">/</button>
-                <button data-key="del" class="wide-button">Del</button>
-            </div> <!-- End div selection-row -->
-        </div> <!-- End div selectionPanel-->
-    </div> <!-- End div game -->
-</div> <!-- end div container -->
+                </div> <!-- End selection-row -->
+
+                <div class="selection-row">
+                    <button data-key="enter" class="wide-button">Enter</button>
+                    <button data-key="+" class="wide-button">+</button>
+                    <button data-key="-" class="wide-button">-</button>
+                    <button data-key="*" class="wide-button">*</button>
+                    <button data-key="/" class="wide-button">/</button>
+                    <button data-key="del" class="wide-button">Del</button>
+                </div> <!-- End div selection-row -->
+            </div> <!-- End div selectionPanel-->
+        </div> <!-- End div game -->
+    </div> <!-- end div container -->
+
+    <!-- Add js script to run last thing (ie after the DOM is loaded)-->
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

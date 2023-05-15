@@ -511,32 +511,13 @@ Images not credited are developer's own.
 * https://laracasts.com/series/wordle-workshop/episodes/2 for tips on building a wordle-like grid (using HTML or JS)
 * https://www.youtube.com/watch?v=j7OhcuZQ-q8 Build a Wordle clone using HTML, CSS & Javascript!
 
-### Code - Arklow Trails
-* Inspiration for the flipcards came from Elaine B Roche's Thrive project at https://elainebroche-dev.github.io/ms1-thrive/
-* How to implement flip card functionality: sourced from W3schools ref https://www.w3schools.com/howto/howto_css_flip_card.asp*/
-* For instructions on how to embed a responsive google map into html https://blog.hubspot.com/website/how-to-embed-google-map-in-html 
-* Google mymaps for specific code to embed in the website
-* https://www.w3schools.com/css/css_image_gallery.asp How to create an image gallery
-* https://www.w3schools.com/howto/howto_css_flip_card.asp How to create a flip card using CSS
-* https://www.w3schools.com/howto/howto_css_star_rating.asp creating review stars
-* https://css-tricks.com/five-methods-for-five-star-ratings/ Used for representing review stars
-* https://nikitahl.com/star-rating-with-css Simple star rating with pure CSS
-* https://stackoverflow.com/questions/12316501/including-google-fonts-link-or-import
 
 
 ### References
-Building this website involved a lot of learning for the developer, the following sites were used to assist with this:
-* Understanding wireframes:  https://visme.co/blog/what-is-a-wireframe/
-* How to wireframe a website https://www.youtube.com/watch?v=ZAYgDPtohYw Lily Creative
-* What is the end-to-end UX process: https://uxdesign.cc/ui-ux-case-study-a-step-by-step-guide-to-the-process-of-designing-a-pet-diet-app-d635b911b648
-* Embedding a google map: https://stackoverflow.com/questions/29441617/wordpress-google-map-in-background-overlay
-* Understanding flex:  https://flexboxfroggy.com/
-* CSS Grid vs Flexbox Acemind https://www.youtube.com/watch?v=RSIclWvNTdQ 
-* Create a jump-link  https://blog.hubspot.com/marketing/jump-link-same-page 
-* https://www.youtube.com/watch?v=p0bGHP-PXD4 Build a Responsive Website | HTML, CSS Grid, Flexbox & More   
-* https://bulldogjob.com/readme/how-to-write-a-good-readme-for-your-github-project
-* https://chat.openai.com/chat 'What should a readme file for a website include?'
-* https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing Tips to keep your CSS tidy
+The following topics were researched and better understood as a result: 
+* https://stackoverflow.com/questions/13077923/how-can-i-convert-a-string-into-a-math-operator-in-javascript
+* https://www.w3schools.com/jsref/jsref_eval.asp Javascript eval() (Recommendation to not use due to security risk)
+* 
 
 For ideas on hosting a trails website and for certain photos and images:
 * For some ideas on local attractions:  https://www.arklowmaritimeheritage.ie/

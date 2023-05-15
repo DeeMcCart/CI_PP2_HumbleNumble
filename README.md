@@ -61,26 +61,28 @@ The panel of letters is also updated with the appropriate colour (grey, orange, 
 (Note that sometimes a word will have a double letter in which case a second guess including this letter will result in a further orange/green for the letter - I think in this case, on the panel it shows green).
 
 
-So.... Humble Numble is a version of Wordle applied to numbers.  In this case there is an equation on the left hand side, the user is presented with a six-row grid to take guesses, and the user must choose from numbers 1..20 and simple operators =-*/ to arrive at a given target number.  The 'solution' is a predefined equation, e.g.
-13+5+6=24
-5+3-6=2 
+So.... Humble Numble is a version of Wordle applied to numbers.  In this case there is an equation on the left hand side, the user is presented with a six-row grid to take guesses, and the user must choose from numbers 1..20 and simple operators +-*/ to arrive at a given target number.  The 'solution' is a predefined equation, e.g. <br>
+13+5+6=24 <br>
+5+3-6=2 <br>
 <br>_
 i.e. the format is <num1> <op1> <num2> <op2> <num3> = target
     
 
 Any guessed expression must be 'logically consistent' ie it must evaluate to the target number.  (an error message 'incorrect calc' will pop up if an inconsistent equation is entered)
-Evaluation is left-to-right (oh no its not, got to use PEMDAS - well actually MDAS - calculate multiply divide add subtract, therefore 
-13+6/3 is evaluated as (6/3), equating to 13+2 evaluating to 15.
-20+12*6 is evaluated as (12*6)+20=(72+20)=92
-6*12+20 gives the same result
-as, of course, will
-12*6+20
+Evaluation is left-to-right (oh no its not, got to use PEMDAS - well actually MDAS - calculate multiply divide add subtract, therefore <br>
+13+6/3 is evaluated as 13+(6/3), equating to 13+2 evaluating to 15. <br>
+20+12*6 is evaluated as 20+(12*6)=20+ 72=92 <br>
+6*12+20 is evaluated as (6*12)+20 = 72+20 = 92 ie gives the same result <br>
+as, of course, will 12*6+20
 
-If an equation contained multiply and divide, then multiply evaluated before the divide is calculated:
+If an equation contained multiply and divide, the same result is obtained regardless of the sequence of the operations:
 6* 10 / 5 = (6 *10) / 5 = 60 / 5 = 12 (actually this results in the same output in either case), because we are limited to only two operators within our equations, so no confusion is caused with subsequent add or subtract.
 
-Rules:  All target results will be integers, ie no decimals or fractions.   This makes it a little easier to guess.
-
+<ul> Rules:  
+    <li> All target results will be integers, ie no decimals or fractions.   This makes it a little easier to guess. </li>
+    <li> Each equation contains 3 numbers (operands) and 2 operators and must calculate to the target number.  A guess which doesn't calculate correctly will be accepted (or wjhas been developed ill it - lets wait until the final version to discover!!)</li>
+    
+    
 
 
 

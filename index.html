@@ -25,7 +25,7 @@
                 <!-- create a grid of 6 rows with 7 entries in each: -->
                 <!--   2 rightmost entries will be pre-populated with '=' and targetValue -->
                 <!--   5 leftmost entries on each row represent the user guess fields -->
-                <div class="row">
+                <div class="row" id="row1">
                     <div class="tile">?</div>
                     <div class="tile">?</div>
                     <div class="tile">?</div>
@@ -34,7 +34,7 @@
                     <div class="tile">=</div>
                     <div class="tile targetValue">0</div>
                 </div>
-                <div class="row">
+                <div class="row" id="row2">
                     <div class="tile">?</div>
                     <div class="tile">?</div>
                     <div class="tile">?</div>
@@ -43,7 +43,7 @@
                     <div class="tile">=</div>
                     <div class="tile targetValue">0</div>
                 </div>
-                <div class="row">
+                <div class="row" id="row3">
                     <div class="tile">?</div>
                     <div class="tile">?</div>
                     <div class="tile">?</div>
@@ -52,7 +52,7 @@
                     <div class="tile">=</div>
                     <div class="tile targetValue">0</div>
                 </div>
-                <div class="row">
+                <div class="row" id="row4">
                     <div class="tile">?</div>
                     <div class="tile">?</div>
                     <div class="tile">?</div>
@@ -61,7 +61,7 @@
                     <div class="tile">=</div>
                     <div class="tile targetValue">0</div>
                 </div>
-                <div class="row">
+                <div class="row" id="row5">
                     <div class="tile">?</div>
                     <div class="tile">?</div>
                     <div class="tile">?</div>
@@ -70,7 +70,7 @@
                     <div class="tile">=</div>
                     <div class="tile targetValue">0</div>
                 </div>
-                <div class="row">
+                <div class="row" id="row6">
                     <div class="tile">?</div>
                     <div class="tile">?</div>
                     <div class="tile">?</div>
@@ -114,8 +114,9 @@
                 </div> <!-- End selection-row -->
 
                 <div class="selection-row">
-                    <button data-key="enter" class="wide-button">Enter</button>
-                    <button data-key="+" class="wide-button">+</button>
+                    <button data-key="enter" class="wide-button" onclick="checkSolution();">Enter</button>
+          
+                <button data-key="+" class="wide-button">+</button>
                     <button data-key="-" class="wide-button">-</button>
                     <button data-key="*" class="wide-button">*</button>
                     <button data-key="/" class="wide-button">/</button>

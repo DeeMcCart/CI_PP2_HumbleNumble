@@ -5,14 +5,17 @@
 
 html, body {
     height: 100%;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    font-family: "Neue Helvetica", 
+font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; 
+    
+/*     font-family: Arial, sans-serif; */
 }
 
 body {
     display: grid;
     place-items: center; 
-    background-color: rgb(34, 34, 34);
+    /* Change background colour to closer to World standard */
+    display:rgb(34, 34, 34);
+     background-color: rgb(25, 25, 25);
     color: white;
     /* font-family: sans-serif; */
     font-size: 1rem;
@@ -36,7 +39,9 @@ title {
 
 #container {
     display: block;  /* switched from flex to block 08/05/23 DMcC to force selectionPanel below gamePanel */
-    background-color: rgb(34, 34, 34);
+    /* DMcC 17/05/23 Change background colour to closer to Wordle standard: */
+    /*  background-color: rgb(34, 34, 34); */
+    background-color: rgb(25, 25, 25);
     height:600px;
     padding: 0;
     margin: 0; 
@@ -90,12 +95,16 @@ title {
 .selection-row button {
  font-family: inherit;
  font-weight:bold;
+ font-size:1.25rem;
  border: 0;
  padding: 0;
  height: 58px;
  cursor: pointer;
- background-color: rgb(129,131,132);
- color: rgb(215, 218, 220);
+ /* DMcC 17/04/23:  Change background colour to match current published Wordle */
+ /* background-color: rgb(129,131,132); */
+ background-color: #818384;
+ /* color: rgb(215, 218, 220); */
+ color:white;
  flex-grow: 1;
  text-transform:uppercase;
  margin-right:6px;

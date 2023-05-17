@@ -200,9 +200,9 @@ The landing page WF is shown here with 4 sceen resolutions as I found when testi
 
 
 ### Fonts Chosen
-The fonts are deliberately selected to reflect the World screen appearance.
-Therefore:
-(More details here....)
+The fonts are deliberately selected to reflect the Worldle screen appearance.
+In the Worldle application, a proprietary NY Times font is now used for the heading 'Wordle' (NYT Karnak Condensed), with Helventica Sans for the grid and button text. 
+A resonably close match to this font, which is widely available on a range of devices, is the the Google bebas Neue font.
 
 (Remove this....)  Libre Franklin and Libre Baskerville are chosen because they are readable on large screens or smaller mobile devices.  This font is recommended for sites that may be content-heavy but which are regarded as fun friendly and approachable/inclusive.  These are identified by Google as good pairing.
 Fallback fronts are used in both cases
@@ -517,7 +517,8 @@ Images not credited are developer's own.
 The following topics were researched and better understood as a result: 
 * https://stackoverflow.com/questions/13077923/how-can-i-convert-a-string-into-a-math-operator-in-javascript
 * https://www.w3schools.com/jsref/jsref_eval.asp Javascript eval() (Recommendation to not use due to security risk)
-* 
+* https://twitter.com/shannonical/status/1493430545614880771 Wordle Header Font - Shannon Loys, graphic designer
+* https://www.reddit.com/r/identifythisfont/comments/sdkxif/what_font_is_the_game_wordle/
 
 For ideas on hosting a trails website and for certain photos and images:
 * For some ideas on local attractions:  https://www.arklowmaritimeheritage.ie/

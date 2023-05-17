@@ -216,11 +216,13 @@ function checkSolution() {
     console.log('Current value of target for this row is '+fred[5].innerHTML);
         console.log ('More logic needed in checkSolution to double check total and to check each of the items');
         /* first check each element of the array to see if it is found anywhere within the solution array */
-for (i=0; i<guess.length; i++) {
+for (i=0; i<(guess.length-1); i++) {
     console.log('Checking guess ' + guess[i].innerHTML +' for matches');
     for (j=0; j<solution.length; j++) {
         console.log('Checking solution ' + solution[j].innerHTML +' for matches');
         // Do a first check here to find the guess array item within the solution array //
+        // this would be handy becuase it can be greyed out if absent //
+        // if I did a find of 2, would it also find 20? //
         if ((guess[i].innerHTML) === (solution[j].innerHTML))  {
             if (i===j) {
             alert('found an exact!');

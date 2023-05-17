@@ -27,10 +27,12 @@
                 <!-- create a grid of 6 rows with 7 entries in each: -->
                 <!--   2 rightmost entries will be pre-populated with '=' and targetValue -->
                 <!--   5 leftmost entries on each row represent the user guess fields -->
+                <!-- DMcC 17/05/23 Add a class per tile, this can be dynamically altered by js and styled by CSS to change background colour-->
+                <!-- according to match status of the guessed number/operation ie present (orange)/ correct (green)/ absent (dark gray) -->
                 <div class="row" id="row1">
-                    <div class="tile row1">?</div>
-                    <div class="tile row1">+-*/</div>
-                    <div class="tile row1">?</div>
+                    <div class="tile row1 present">?</div>
+                    <div class="tile row1 correct">+-*/</div>
+                    <div class="tile row1 absent">?</div>
                     <div class="tile row1">+-*/</div>
                     <div class="tile row1">?</div>
                     <div class="tile">=</div>
@@ -85,12 +87,15 @@
             <br>
             <p></p>
             <!-- Code below based on Ian Lenehan 'Build a Wordle clone using HTML, CSS & Javascript' -->
+            <!-- DMcC 17/05/23 Extended to include class (letter status) which will become an attribute modifiable by js and colour-styled-->
+            <!-- using CSS ie background colour of numbers/operators present(but in the wrong position) will be styled orange; absent dark-grey; -->
+            <!-- and present in correct position styled green background colour -->
             <div id="selectionPanel">
                 <div class="selection-row">
                     <div class="spacer-half"></div>
-                    <button data-key="1">1</button>
-                    <button data-key="2">2</button>
-                    <button data-key="3">3</button>
+                    <button data-key="1" class="present">1</button>
+                    <button data-key="2" class="absent">2</button>
+                    <button data-key="3" class="correct">3</button>
                     <button data-key="4">4</button>
                     <button data-key="5">5</button>
                     <button data-key="6">6</button>
@@ -116,7 +121,7 @@
                 </div> <!-- End selection-row -->
 
                 <div class="selection-row">
-                    <button data-key="enter" class="wide-button" onclick="checkSolution();">Enter</button>
+                    <button data-key="enter" class="wide-button"  onclick="checkSolution();">Enter</button>
 
                     <button data-key="+" class="wide-button">+</button>
                     <button data-key="-" class="wide-button">-</button>

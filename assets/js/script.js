@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log('Dom Content loaded!'); // Adding a console output for testing purposes //
 
-
     // the below logic umoved to function captureAttempt()
     // Using logic identified by Ian Lenehan 'Build a Wordle clone using HTML, CSS & Javascript' to confirm that each key is populated //
     //for (let i = 0; i < keys.length; i++) {
@@ -12,44 +11,206 @@ document.addEventListener("DOMContentLoaded", () => {
     // console.log(key); // Adding a console output for testing purposes, to show which key has been clicked //
     //};
     // }
+
+    /* DMcC 17/05/23:  the captureAttempt() function was used when javascript was pulling values from the user screen - */
+    /* this approach has now changed so that the user is 'pushing' values to javaScript using the onclick() functions.. therefore may not be needed */
     captureAttempt();
 });
 
 // Define an array to hold solution values.  This is a multi-dimension array which can be added to as new solutions are generated daily 
 // For now it will be used to pick a random entry from the array for that day's guess 
 function initSolution() {
+    /* DMcC 17/05/23:  Note this function also sets attemptum and colNum back to 0 */
+    document.getElementById('attemptNum').innerHTML=1;
+    document.getElementById('colNum').innerHTML=0;
+        /* Below is some logic to select a possible solution.  This logic can be extended to generate random solutions - future fix */
     let possSolution = [
         [1, "+", 2, "*", 5, 11, "Unused"],
         [10, '/', 5, "*", 20, 40, "Unused"],
         [20, '*', 10, '/', 4, 50, "Unused"],
     ];
 
-    console.log(possSolution);
+    /* console.log(possSolution); */
     let solIndex = 1;
     let result = calcArray(possSolution[solIndex]);
-    console.log('Calcuated result from calcArray is ', result);
+    /* console.log('Calcuated result from calcArray is ', result); */
 
     let targetValue = document.getElementsByClassName('targetValue');
     // console.log (targetValue.innerHTML);
     console.log(targetValue.className, targetValue.length, targetValue.attributes);
     for (let i = 0; i < targetValue.length; i++) {
-        targetValue[i].innerHTML = possSolution[solIndex][5];
-        console.log('In loop ' + targetValue[i].innerHTML);
+        targetValue[i].innerHTML=possSolution[solIndex][5];
+        /* console.log('In loop ' + targetValue[i].innerHTML); */
     }
-    console.log('targetValue after initialise');
-    console.log(targetValue.innerHTML);
-
+    console.log('targetValue after initialise '+ targetValue.innerHTML);
+    
     let thisSolution = document.getElementById('solution');
-    console.log(thisSolution);
-    thisSolution.innerHTML = ("");
-    //console.log(thisSolution);
+    thisSolution.innerHTML=("");
     for (let j = 0; j < (possSolution[solIndex].length - 2); j++) {
-        thisSolution.innerHTML = (thisSolution.innerHTML + possSolution[solIndex][j] + " ");
+        thisSolution.innerHTML=(thisSolution.innerHTML + possSolution[solIndex][j] + " ");
     }
-    thisSolution.innerHTML = (thisSolution.innerHTML + " = " + possSolution[solIndex][5]);
+    thisSolution.innerHTML=(thisSolution.innerHTML + " = " + possSolution[solIndex][5]);
     console.log(thisSolution.innerHTML);
     // DMcC 17/05/23 Add code to test the writeGuess function is is intended to populate a row of guess to screen //
-    writeGuess(1, possSolution[solIndex]);
+    // writeGuess(1, possSolution[solIndex]); //
+}
+
+
+// DMcC 15/05/23:  The function below is used to parse out a character-based array and calcualte the result
+// Note that multiply done first, then divide, then add, then subtract 
+// Note:  standard eval() function could have been used but was avoided due to widely published security concerns....
+function calcArray(arrayParam) {
+    console.log('Within function calcArray');
+    let result = 0;
+    console.log('Array passed is ' + arrayParam[0] + ' ' + arrayParam[1] + ' ' + arrayParam[2] + ' ' + arrayParam[3] + ' ' + arrayParam[4]);
+    console.log('ArrayParam[1]is' + arrayParam[1]);
+    switch (arrayParam[1]) {
+        case "*":
+            switch (arrayParam[3]) {
+                case "*":
+                    result = +arrayParam[0] * +arrayParam[2] * +arrayParam[4];
+                    break;
+                case "/":
+                    result = +arrayParam[0] * +arrayParam[2] / +arrayParam[4];
+                    break;
+                case "+":
+                    result = (+arrayParam[0] * +arrayParam[2]) + +arrayParam[4];
+                    break;
+                case "-":
+                    result = (+arrayParam[0] * +arrayParam[2]) - +arrayParam[4];
+                    break;
+                default:
+                    alert('second operator not recognised');
+                    break;
+            }
+            break;
+        case "/":
+            switch (arrayParam[3]) {
+                case "*":
+                    result = +arrayParam[0] / +arrayParam[2] * +arrayParam[4];
+                    break;
+                case "/":
+                    result = +arrayParam[0] / +arrayParam[2] / +arrayParam[4];
+                    break;
+                case "+":
+                    result = (+arrayParam[0] / +arrayParam[2]) + +arrayParam[4];
+                    break;
+                case "-":
+                    result = (+arrayParam[0] / +arrayParam[2]) - +arrayParam[4];
+                    break;
+                default:
+                    alert('second operator not recognised');
+                    break;
+            }
+            break;
+        case "+":
+            switch (arrayParam[3]) {
+                case "*":
+                    result = +arrayParam[0] + (+arrayParam[2] * +arrayParam[4]);
+                    break;
+                case "/":
+                    result = +arrayParam[0] + (+arrayParam[2] / +arrayParam[4]);
+                    break;
+                case "+":
+                    result = +arrayParam[0] + +arrayParam[2] + +arrayParam[4];
+                    break;
+                case "-":
+                    result = +arrayParam[0] + +arrayParam[2] - +arrayParam[4];
+                    break;
+                default:
+                    alert('second operator not recognised');
+                    break;
+            }
+            break;
+        case "-":
+            switch (arrayParam[3]) {
+                case "*":
+                    result = +arrayParam[0] - (+arrayParam[2] * +arrayParam[4]);
+                    break;
+                case "/":
+                    result = +arrayParam[0] - (+arrayParam[2] / +arrayParam[4]);
+                    break;
+                case "+":
+                    result = +arrayParam[0] - +arrayParam[2] + +arrayParam[4];
+                    break;
+                case "-":
+                    result = +arrayParam[0] - +arrayParam[2] - +arrayParam[4];
+                    break;
+                default:
+                    alert('second operator not recognised');
+                    break;
+            }
+            break;
+        default:
+            alert('first operator ' + arrayParam[1] + ' not recognised');
+            break;
+
+    }
+    console.log('result is '+ result + ', exiting function calcArray');
+    return (result);
+}
+
+function captureAttempt() {
+    // DMcC 17/05/23 Start with capturing what attempt number we are on: //
+    let attemptNum = document.getElementById('attemptNum').innerHTML;
+    console.log("Within captureAttempt function, attempt number is " + attemptNum);
+    let userTry = [0, "+", 0, "+", 0, 0];
+}
+
+// The below function keyClick is invoked when the user clicks any of the buttons //
+// This function needs to establish: //
+// - which attempt is this?  
+function keyClick(selectedKey) {
+    // DMcC 17/05/23 Start with capturing what attempt number we are on: //
+   let attemptNum = document.getElementById('attemptNum').innerHTML;
+   // DMcC 17/05/23 also determine what is the next column number to populate: //
+   let colNum = document.getElementById('colNum').innerHTML;
+   console.log("Within keyClick function, attempt number " + attemptNum + "column Number "+colNum + "character "+ selectedKey);
+   writeLetter(attemptNum, colNum,selectedKey);
+   document.getElementById('colNum').innerHTML=(++colNum);
+}
+    
+function checkSolution() {
+    // this function is invoked when the user presses the enter button //
+    // It determines the current guess row //
+    // performs error checking to ensure: //
+    // 1. Proposed solution is in structure num op num op num - error message if not and exit function //
+    // 2. Proposed solution calculates to correct total (this should already be populated as part of the entry process) //
+    // .... any other error checking needed here //
+    // 
+    // and then it must parse each element of the proposed solution and check it against the target solution //
+    // depending on the result for each element, set the class for the identified element (in row grid) and set the class //
+    // for the identified element (in keyboard display) //
+    // setting the class to ...... (one of three values) will invoke the css display to change the item colour //
+    
+    // First - retrieve the current attempt number //
+    console.log("Within function checkSolution");
+    let attemptNum = document.getElementById('attemptNum').innerHTML;
+    let solution = document.getElementById('solution').innerHTML;
+    console.log('Solution for comparison is' +solution);   
+    // then pick up the 5 elements from that row //
+    let guess = document.getElementsByClassName('row'+attemptNum);
+    // console.log("The number of items retrieved with class "+'row'+attemptNum+' is '+guess.length);
+    let guessItems = [guess[0].innerHTML, guess[1].innerHTML, guess[2].innerHTML, guess[3].innerHTML, guess[4].innerHTML];
+
+    // console.log('Guessed array passed is '+ guess[0].innerHTML + ' ' + guess[1].innerHTML + ' ' + guess[2].innerHTML + ' ' + guess[3].innerHTML + ' ' + guess[4].innerHTML + ' ' + guess[5].innerHTML);
+    // console.log('Guessed array items passed is '+ guessItems);
+    calcTarget = calcArray(guessItems);
+    // console.log('Calculated target returned to checkSolution is '+calcTarget);
+    let fred = document.getElementsByClassName('row' + attemptNum);
+    fred[5].innerHTML=calcTarget;
+    // console.log('Current value of target for this row is '+fred[5].innerHTML);
+    if (fred[5].innerHTML!=calcTarget) {
+        alert('Calculated total not equal to target value!');
+    }
+    console.log('Current value of target for this row is '+fred[5].innerHTML);
+        console.log ('More logic needed in checkSolution to double check total and to check each of the items');
+        /* first check each element of the array to see if it is found anywhere within the solution array */
+for (i=0; i<guess.length; i++) {
+    for (j=0; j<solution.length; j++) {
+        console.log('Solution ['+j+']'+solution[j]);
+    }
+}
 }
 
 // DMcC 17/05/23 The function below writeLetter is used to write a single letter of a guess onto the screen //
@@ -58,10 +219,8 @@ function writeLetter(rowNum, position, guessItem) {
     console.log("writing to position: row: " + ('row' + rowNum) + " position: " + position + " Guessed item: " + guessItem);
     let fred = document.getElementsByClassName('row' + rowNum)[position];
     console.log("Character found at position is: " + fred);
-    fred.innerHTML = guessItem;
+    fred.innerHTML=guessItem;
 }
-
-
 
 // DMcC 17/05/23 This function is used to write an entire line of guessArray to the screen //
 // Parameters are rowNum (which links to a specified row# ID on-screen) and guessArray //
@@ -80,7 +239,7 @@ function writeGuess(rowNum, guessArray) {
     console.log("guessRow array before population: " + guessRow);
     for (i = 0; i < (guessRow.length); i++) {
         console.log(guessRow[i]);
-        guessRow[i].innerHTML = guessArray[i];
+        guessRow[i].innerHTML=guessArray[i];
     }
 
     // assign values of guessed Array to display row
@@ -88,162 +247,10 @@ function writeGuess(rowNum, guessArray) {
     //    guessRow[i].innerHTML = guessArray[i];
     //}
 
-
     console.log('guessRow after population' + guessRow);
     console.log("guessRow array after population: " + guessRow);
     for (i = 0; i < guessRow.length; i++) {
         console.log(guessRow[i]);
     }
-
 }
 
-
-// DMcC 15/05/23:  The function below is used to parse out a character-basesd array and calcualte the result
-// Note that multiply done first, then divide, then add, then subtract 
-// Note:  standard eval() function could have been used but was avoided due to widely published security concerns....
-function calcArray(arrayParam) {
-    let result = 0;
-    console.log('Array passed is ' + arrayParam[0] + ' ' + arrayParam[1] + ' ' + arrayParam[2] + ' ' + arrayParam[3] + ' ' + arrayParam[4]);
-    console.log('ArrayParam[1]is' + arrayParam[1]);
-    switch (arrayParam[1]) {
-        case "*":
-            switch (arrayParam[3]) {
-                case "*":
-                    result = arrayParam[0] * arrayParam[2] * arrayParam[4];
-                    break;
-                case "/":
-                    result = arrayParam[0] * arrayParam[2] / arrayParam[4];
-                    break;
-                case "+":
-                    result = (arrayParam[0] * arrayParam[2]) + arrayParam[4];
-                    break;
-                case "-":
-                    result = (arrayParam[0] * arrayParam[2]) - arrayParam[4];
-                    break;
-                default:
-                    alert('second operator not recognised');
-                    break;
-            }
-            break;
-        case "/":
-            switch (arrayParam[3]) {
-                case "*":
-                    result = arrayParam[0] / arrayParam[2] * arrayParam[4];
-                    break;
-                case "/":
-                    result = arrayParam[0] / arrayParam[2] / arrayParam[4];
-                    break;
-                case "+":
-                    result = (arrayParam[0] / arrayParam[2]) + arrayParam[4];
-                    break;
-                case "-":
-                    result = (arrayParam[0] / arrayParam[2]) - arrayParam[4];
-                    break;
-                default:
-                    alert('second operator not recognised');
-                    break;
-            }
-            break;
-        case "+":
-            switch (arrayParam[3]) {
-                case "*":
-                    result = arrayParam[0] + (arrayParam[2] * arrayParam[4]);
-                    break;
-                case "/":
-                    result = arrayParam[0] + (arrayParam[2] / arrayParam[4]);
-                    break;
-                case "+":
-                    result = arrayParam[0] + arrayParam[2] + arrayParam[4];
-                    break;
-                case "-":
-                    result = arrayParam[0] + arrayParam[2] - arrayParam[4];
-                    break;
-                default:
-                    alert('second operator not recognised');
-                    break;
-            }
-            break;
-        case "-":
-            switch (arrayParam[3]) {
-                case "*":
-                    result = arrayParam[0] - (arrayParam[2] * arrayParam[4]);
-                    break;
-                case "/":
-                    result = arrayParam[0] - (arrayParam[2] / arrayParam[4]);
-                    break;
-                case "+":
-                    result = arrayParam[0] - arrayParam[2] + arrayParam[4];
-                    break;
-                case "-":
-                    result = arrayParam[0] - arrayParam[2] - arrayParam[4];
-                    break;
-                default:
-                    alert('second operator not recognised');
-                    break;
-            }
-            break;
-        default:
-            alert('first operator ' + arrayParam[1] + ' not recognised');
-            break;
-
-    }
-    return (result);
-}
-
-function captureAttempt() {
-    // DMcC 17/05/23 Start with capturing what attempt number we are on: //
-    let attemptNum = document.getElementById('attemptNum').innerHTML;
-    console.log("Within captureAttempt function, attempt number is " + attemptNum);
-    let userTry = [0, "+", 0, "+", 0, 0];
-    userTry[0] = keyClick();
-    console.log('first key pressed is ' + userTry[0]); // Adding a console output for testing purposes, to show which key has been clicked //
-    writeLetter(attemptNum, 0, userTry[0]);
-    userTry[1] = keyClick();
-    writeLetter(attemptNum, 1, userTry[1]);
-    
-    // DMcC 17/05/23 this function needs a little more work as the onclick function needs to be adapted to populate an array //
-    // Checking that each of the keyboard entries is setup and associated with a number or character .....    
-    //    
-    //  console.log(keys);
-    //let userAttempt = [0, "+", 0, "+", 0, 0];
-    //for (j = 0; j < 5; j++) {
-    //   console.log('value of j when entering loop is' + j);
-    // Using logic identified by Ian Lenehan 'Build a Wordle clone using HTML, CSS & Javascript' to confirm that each key is populated //
-    // DMcC 17/05/23 This is weird because its like a loop that never exits; I need a loop that executes fro the right number of guess times
-
-}
-
-// DMcC 17/05/23 the below commented out as it was an approach to capturing keyclicks that was designed by someone else //
-// and just confused me.  Replaced with a simpler keyclick function //
-// function keyClick() {
-//    console.log('Within function keyClick');
-//    const keys = document.querySelectorAll('.selection-row button');
-//    for (let i = 0; i < keys.length; i++) {
-//        keys[i].onclick = ({
-//            target
-//        }) => {
-//            const key = target.getAttribute("data-key");
-//            console.log("function keyClick says " + key);
-//            console.log("this is where we need to populate an array of j characters");
-//            return key; // DMcC 17/05/23 this causes the function to exit but then it keeps running - why?  should this be the outer function?
-//        };
-//    }
-//}
-
-// The below function keyClick is invoked when the user clicks any of the buttons //
-// This function needs to establish: //
-// - which attempt is this?  
-function keyClick(selectedKey) {
-    // DMcC 17/05/23 Start with capturing what attempt number we are on: //
-   let attemptNum = document.getElementById('attemptNum').innerHTML;
-   // DMcC 17/05/23 also determine what is the next column number to populate: //
-   let colNum = document.getElementById('colNum').innerHTML;
-   console.log("Within keyClick function, attempt number " + attemptNum + "column Number "+colNum + "character "+ selectedKey);
-   writeGuess(attemptNum, colNum,selectedKey);
-}
-    
-function checkSolution(arrayParam) {
-    console.log('Array passed is ' + arrayParam[0] + ' ' + arrayParam[1] + ' ' + arrayParam[2] + ' ' + arrayParam[3] + ' ' + arrayParam[4]);
-    console.log('ArrayParam[1]is' + arrayParam[1]);
-
-}

@@ -33,9 +33,9 @@
                 <!-- DMcC 17/05/23 Add a class per tile, this can be dynamically altered by js and styled by CSS to change background colour-->
                 <!-- according to match status of the guessed number/operation ie present (orange)/ correct (green)/ absent (dark gray) -->
                 <div class="row" id="row1">
-                    <div class="tile row1 present">?</div>
-                    <div class="tile row1 correct">+-*/</div>
-                    <div class="tile row1 absent">?</div>
+                    <div class="tile row1">?</div>
+                    <div class="tile row1">+-*/</div>
+                    <div class="tile row1">?</div>
                     <div class="tile row1">+-*/</div>
                     <div class="tile row1">?</div>
                     <div class="tile">=</div>
@@ -98,9 +98,11 @@
             <div id="selectionPanel">
                 <div class="selection-row">
                     <div class="spacer-half"></div>
-                    <button id="1" data-key="1" onClick="keyClick(this.id)" class="present">1</button>
-                    <button id="2" data-key="2" onClick="keyClick(this.id)"  class="absent">2</button>
-                    <button id="3" data-key="3" onClick="keyClick(this.id)"  class="correct">3</button>
+                    <button id="1" data-key="1" onClick="keyClick(this.id)" >1</button>
+                    <button id="2" data-key="2" onClick="keyClick(this.id)" >2</button>
+                    <!-- DMcC 17/05/23:  keep for reference <button id="3" data-key="3" onClick="keyClick(this.id)"  class="correct">3</button> -->
+                    <button id="3" data-key="3" onClick="keyClick(this.id)"  >3</button>
+                    
                     <button id="4" data-key="4" onClick="keyClick(this.id)" >4</button>
                     <button id="5" data-key="5" onClick="keyClick(this.id)" >5</button>
                     <button id="6" data-key="6" onClick="keyClick(this.id)" >6</button>

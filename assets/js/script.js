@@ -48,10 +48,46 @@ function initSolution() {
     }
     thisSolution.innerHTML = (thisSolution.innerHTML + " = " + possSolution[solIndex][5]);
     console.log(thisSolution.innerHTML);
+// DMcC 17/05/23 Add code to test the writeGuess function is is intended to populate a row of guess to screen //
+    writeGuess(1, possSolution[solIndex]);
+    }
+
+// DMcC 17/05/23 This function is used to write an entire line of guessArray to the screen //
+// Parameters are rowNum (which links to a specified row# ID on-screen) and guessArray //
+// eventually the fields will each be displayed individually when they are loaded/validated but the below is good for testing //
+// Will need to add array parameters for guessed solutions to indicate if each entry is success(green) part-success(orange) fail(darkgrey) untested (blank))
+function writeGuess(rowNum, guessArray)  {
+    console.log("In function writeGuess!");
+    console.log("guessArray parameter is: "+ guessArray + " type: " +typeof(guessArray));
+    console.log("guessArray parameter is: ")
+    for (i = 0; i < guessArray.length; i++) {
+        console.log(guessArray[i]);
+        }
+    // DMcC 17/05/23 can strip out the 2 lines below and replace with calculation within array reference itelf // 
+    let rowName = 'row'+rowNum;
+    console.log ("rowName is: " +rowName +" which comes from parameter rowNum: " +rowNum);
+    let guessRow = document.getElementsByClassName('row'+rowNum);
+    console.log("guessRow array before population holds: " + guessRow);
+    for (i=0; i<guessRow.length; i++) {
+        console.log(guessRow[i]);
+    }
+    // assign values of guessed Array to display row
+    for (i = 0; i < guessArray.length; i++) {
+        guessRow[i].innerHTML = guessArray[i];
+    }
+
+console.log('guessRow after population' + guessRow);
+console.log("guessRow array after population holds: " + guessRow);
+    for (i=0; i<guessRow.length; i++) {
+        console.log(guessRow[i]);
+    }
+    
 }
+
 
 // DMcC 15/05/23:  The function below is used to parse out a character-basesd array and calcualte the result
 // Note that multiply done first, then divide, then add, then subtract 
+// Note:  standard eval() function could have been used but was avoided due to widely published security concerns....
 function calcArray(arrayParam) {
     let result = 0;
     console.log('Array passed is ' + arrayParam[0] + ' ' + arrayParam[1] + ' ' + arrayParam[2] + ' ' + arrayParam[3] + ' ' + arrayParam[4] );
@@ -142,18 +178,21 @@ function calcArray(arrayParam) {
 }
 
 function captureAttempt() {
+    // DMcC 17/05/23 this function needs a little more work as the onclick function needs to be adapted to populate an array //
     // Checking that each of the keyboard entries is setup and associated with a number or character .....    
     const keys = document.querySelectorAll('.selection-row button');
+    
     let userAttempt=[0, "+", 0, "+", 0, 0];
     for (j=0; j<userAttempt.length; j++) {
         console.log('value of j when entering loop is' +j);
     // Using logic identified by Ian Lenehan 'Build a Wordle clone using HTML, CSS & Javascript' to confirm that each key is populated //
+    // DMcC 17/05/23 This is weird because its like a loop that never exits; I need a loop that executes 
     for (let i = 0; i < keys.length; i++) {
         keys[i].onclick = ({
             target
         }) => {
-            userAttempt[j] = target.getAttribute("data-key");
-            console.log('char '+j +'is: '+ userAttempt[j]); // Adding a console output for testing purposes, to show which key has been clicked //
+            userAttempt[i] = target.getAttribute("data-key");
+            console.log('char '+i +'is: '+ userAttempt[i]); // Adding a console output for testing purposes, to show which key has been clicked //
         j++;
         }
     }

@@ -17,13 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     captureAttempt();
 });
 
-// Define an array to hold solution values.  This is a multi-dimension array which can be added to as new solutions are generated daily 
-// For now it will be used to pick a random entry from the array for that day's guess 
+
 function initSolution() {
     /* DMcC 17/05/23:  Note this function also sets attemptum and colNum back to 0 */
     document.getElementById('attemptNum').innerHTML=1;
     document.getElementById('colNum').innerHTML=0;
-        /* Below is some logic to select a possible solution.  This logic can be extended to generate random solutions - future fix */
+        // Below is some logic to select a possible solution.  This logic can be extended to generate random solutions - future fix //
+// Define an array to hold solution values.  This is a multi-dimension array which can be added to as new solutions are generated daily 
+// For now it will be used to pick a random entry from the array for that day's guess 
     let possSolution = [
         [1, "+", 2, "*", 5, 11, "Unused"],
         [10, '/', 5, "*", 20, 40, "Unused"],
@@ -36,21 +37,30 @@ function initSolution() {
     /* console.log('Calcuated result from calcArray is ', result); */
 
     let targetValue = document.getElementsByClassName('targetValue');
-    // console.log (targetValue.innerHTML);
+    console.log (targetValue.innerHTML);
     console.log(targetValue.className, targetValue.length, targetValue.attributes);
+    // Set targetvalue on all rows to be equal to the solution value (this will be re-verified for each row, it just acts as a user reminder) //
     for (let i = 0; i < targetValue.length; i++) {
         targetValue[i].innerHTML=possSolution[solIndex][5];
-        /* console.log('In loop ' + targetValue[i].innerHTML); */
+        console.log('In loop ' + targetValue[i].innerHTML); 
     }
     console.log('targetValue after initialise '+ targetValue.innerHTML);
     
+    // Populate single field with ID solution with string value of solution //
+    // Also populate array with class solution with the individual values within the solution //
     let thisSolution = document.getElementById('solution');
+    let solution = document.getElementsByClassName('solutionRow');
     thisSolution.innerHTML=("");
     for (let j = 0; j < (possSolution[solIndex].length - 2); j++) {
         thisSolution.innerHTML=(thisSolution.innerHTML + possSolution[solIndex][j] + " ");
+        solution[j].innerHTML=possSolution[solIndex][j];
     }
     thisSolution.innerHTML=(thisSolution.innerHTML + " = " + possSolution[solIndex][5]);
+    solution[5].innerHTML=possSolution[solIndex][5];
     console.log(thisSolution.innerHTML);
+    console.log(solution.innerHTML);
+    console.log('End of function initSolution');
+    
     // DMcC 17/05/23 Add code to test the writeGuess function is is intended to populate a row of guess to screen //
     // writeGuess(1, possSolution[solIndex]); //
 }
@@ -186,7 +196,7 @@ function checkSolution() {
     // First - retrieve the current attempt number //
     console.log("Within function checkSolution");
     let attemptNum = document.getElementById('attemptNum').innerHTML;
-    let solution = document.getElementById('solution').innerHTML;
+    let solution = document.getElementsByClassName('solutionRow');
     console.log('Solution for comparison is' +solution);   
     // then pick up the 5 elements from that row //
     let guess = document.getElementsByClassName('row'+attemptNum);
@@ -207,8 +217,20 @@ function checkSolution() {
         console.log ('More logic needed in checkSolution to double check total and to check each of the items');
         /* first check each element of the array to see if it is found anywhere within the solution array */
 for (i=0; i<guess.length; i++) {
+    console.log('Checking guess ' + guess[i].innerHTML +' for matches');
     for (j=0; j<solution.length; j++) {
-        console.log('Solution ['+j+']'+solution[j]);
+        console.log('Checking solution ' + solution[j].innerHTML +' for matches');
+        // Do a first check here to find the guess array item within the solution array //
+        if ((guess[i].innerHTML) === (solution[j].innerHTML))  {
+            if (i===j) {
+            alert('found an exact!');
+            // add a class onto the guess[i] item //
+            guess[i].classList.add('correct'); }
+            else {
+            /* present but not in the correct position */ 
+            guess[i].classList.add('present'); }
+            }
+    
     }
 }
 }

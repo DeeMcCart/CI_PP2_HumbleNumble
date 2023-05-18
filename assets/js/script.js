@@ -221,10 +221,10 @@ function checkSolution() {
     console.log('More logic needed in checkSolution to double check total and to check each of the items');
     /* first check each element of the array to see if it is found anywhere within the solution array */
     for (i = 0; i < (guess.length - 1); i++) {
-        console.log('Checking guess ' + guess[i].innerHTML + ' for matches');
+        // console.log('Checking guess ' + guess[i].innerHTML + ' for matches');
         // the following logic adapted from various research sources //
-        console.log('Solution has the following content, is it an array? ' + solution);
-        console.log('Solution has the following type, is it an array? ' + solution.type);
+        //console.log('Solution has the following content, is it an array? ' + solution);
+        //console.log('Solution has the following type, is it an array? ' + solution.type);
         if (Array.isArray(solution)) {
             let found = solution.find(x => (x.innerHTML === guess[i].innerHTML));
             console.log('Found ' + found + ' within the solution array');
@@ -253,10 +253,20 @@ function checkSolution() {
                     key.classList.add('present');
                 }
             } // end of (guess[i].innerHTML) === (solution[j].innerHTML)
-            // else {
-            //    guess[i].classList.add('absent');
-            //}
+
         } // End for loop j cycle (checking through each j item of solution array) //
+
+        // if j has reached  need to check if a particular guess[i] didnt find a match in all of solution... may need to reverse the above....else {
+        if (guess[i].classList.contains('correct') || guess[i].classList.contains('present')) {
+            //this element has been location in solution - nothing more needed
+        } else {
+            // add an absent status to pickup colour coding
+            guess[i].classList.add('absent');
+            // Find the matching keyboard item and add a class to change its display colour on keyboard //
+            key = document.getElementById(guess[i].innerHTML);
+            key.classList.add('absent');
+        }
+
     } // End for loop i cycle (checking through each i item of guessed array)//
 
     // Increment attempt number and current letter position//

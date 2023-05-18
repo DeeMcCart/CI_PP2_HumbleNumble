@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function initSolution() {
+    // Startby clearing the screen of previous guess */
+    clearScreen();
+    
     /* DMcC 17/05/23:  Note this function also sets attemptum and colNum back to 0 */
     document.getElementById('attemptNum').innerHTML = 1;
     document.getElementById('colNum').innerHTML = 0;
@@ -54,10 +57,38 @@ function initSolution() {
     //console.log(thisSolution.innerHTML);
     //console.log(solution.innerHTML);
     console.log('End of function initSolution');
+}
+
+//DMcC 18/05/23 Code below is used to clear screen of previous entries //
+function clearScreen() {
+
+// DMcC 18/05/23:  Add code to remove colours previously applied to grid and keys a game has already been played //
+let colouredTiles = document.getElementsByClassName('present');
+for (i=0; i< colouredTiles.length; i++) {
+    colouredTiles[i].classList.remove('present');
+}
+colouredTiles = document.getElementsByClassName('correct');
+for (i=0; i< colouredTiles.length; i++) {
+    colouredTiles[i].classList.remove('correct');
+} 
+colouredTiles = document.getElementsByClassName('absent');
+for (i=0; i< colouredTiles.length; i++) {
+    colouredTiles[i].classList.remove('absent');
+} 
+
+// Code below is used to clear out the contents of tiles for each row //
+for (i=1; i<7; i++) {
+    let initRow=document.getElementsByClassName('row'+i);
+    for (j=0; j<initRow.length-1; j++) {
+  initRow[j].innerHTML="";
+} // end j loop/ 
+}  // end i loop/
+} // end function clearScreen
+
 
     // DMcC 17/05/23 Add code to test the writeGuess function is is intended to populate a row of guess to screen //
     // writeGuess(1, possSolution[solIndex]); //
-}
+
 
 
 // DMcC 15/05/23:  The function below is used to parse out a character-based array and calcualte the result
@@ -91,7 +122,7 @@ function calcArray(arrayParam) {
         case "/":
             switch (arrayParam[3]) {
                 case "*":
-                    result = +arrayParam[0] / +arrayParam[2] * +arrayParam[4];
+                    result = +arrayParam[0] / (+arrayParam[2] * +arrayParam[4]);
                     break;
                 case "/":
                     result = +arrayParam[0] / +arrayParam[2] / +arrayParam[4];

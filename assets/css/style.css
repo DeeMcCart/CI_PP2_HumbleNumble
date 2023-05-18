@@ -63,6 +63,10 @@ title {
     height: 300px;
 }
 
+#solutionRow {
+    display:none;
+}
+
 .row {
     display: flex;
     flex-direction: row;

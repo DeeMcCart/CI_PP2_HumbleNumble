@@ -347,21 +347,26 @@ ENTER       +  -  *  /   <-BKSP
 Clicking on a selection panel button will place the corresponding character in the next available space within the current grid row.
 Clicking on ENTER will submit the current grid row as an entry.
 
-- __Settingss Page__
+- __Settings Page__
 Ability to choose settings
 
-![Walks Page](./assets/readme_images/P02-Walk_Details.jpg?raw=true "Page with details for each walk")
+![Walks Page](./docs/readme_images/P02-Walk_Details.jpg?raw=true "Page with details for each walk")
 
 
 - __About Page__
 - A chance to explain the rules of the game.
 
-![Gallery Page](./assets/readme_images/P03-Walk_Details.jpg?raw=true "Gallery")
+![Gallery Page](./docs/readme_images/P03-Walk_Details.jpg?raw=true "Gallery")
 
-- __Contact page__ 
+- __Contact/Feedback page__ 
 Signup for daily game playing reminder.
 
-![Contact Page](./assets/readme_images/P04-Feedback.jpg?raw=true "Feedback")
+![Contact Page](./docs/readme_images/P04-Feedback.jpg?raw=true "Feedback")
+
+
+- __404 Error Page__ 
+This allows graceful failure, where the header and footer are preserved, allowing the user to navigate away from an error page using the site navigation (rather than the back button).
+![Contact Page](./docs/readme_images/P04-Feedback.jpg?raw=true "Feedback")
 
 ### Implementation Decisions
 Pre-defined calculations are stored in a multi-dimensional array as follows:
@@ -382,11 +387,7 @@ Break out of loop when success, or when 6 tries reached.
 
 
 ### Features Left to Implement
-Some of the user stories could be addressed more directly in the future: 
-* Include suitability of various walks for dogs? - this has not really been expanded in the current setup, other than mentioning dogs on the walks details text.
-* Include details to access guided walks and walking/running groups in the area?
-* Moderation of user feedback - text and photos; and ability to upload this into the site content
-* Scaling of site - this is currently implemented for a particular geogrpahic location, however the design and implementation principles followed mean that it would be possible to re-use much of the code, and, by creating fresh Google MyMaps digitised routes and updated walk details, to re-use this solution for a different territory.  This is definitely something i would like to investigate in the near future. 
+Cookies to store user data from last attempts
 
 ### RTM
 Requirements traceability matrix showing link between user stories and implemented/ future-release features
@@ -476,24 +477,20 @@ This section should describe the process you went through to deploy the project 
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found here - https://deemccart.github.io/CI_PP1_ArklowTrails/index.html
+The live link can be found here - https://deemccart.github.io/CI_PP2_Humble_Numble/index.html
 
 
 ## Credits 
 Multiple sources were used in assembling this site.
 
 
-### Content - Arklow trails
-* Text for the Glenart Woods walk was re-used from https://www.coillte.ie/site/glenart-wood/ some text lifted from here also
-* Text for Arklow Nature Reserve walk was re-used from https://www.visitarklow.ie/post/4-family-friendly-trails-in-arklow-town-great-for-a-walk-cycle-or-scoot
-* Inspiration and content for walks reviews was taken from https://www.alltrails.com/ireland/county-wicklow/arklow 
+### Content - Humble Numble
+* Inspiration taken from wordle.com
 * The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
 
-### Media - arklow trails
-Images not credited are developer's own.
-* Moneylands Farm walk photos came from https://www.moneylandsfarm.com/
-* Glenart photos from the following site were re-used https://www.coillte.ie/site/glenart-wood/
+### Media - Humble Numble
+N/A
  
 ### Code - Humble Numble
 * https://laracasts.com/series/wordle-workshop/episodes/2 for tips on building a wordle-like grid (using HTML or JS)

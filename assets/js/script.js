@@ -15,13 +15,21 @@ function initSolution() {
     // Define an array to hold solution values.  This is a multi-dimension array which can be added to as new solutions are generated daily 
     // For now it will be used to pick a random entry from the array for that day's guess 
     let possSolution = [
-        [1, "+", 2, "*", 5, 11, "Unused"],
-        [5, '*', 20, "/", 10, 10, "Unused"],
-        [20, '*', 10, '/', 4, 50, "Unused"],
+        [1, "+", 2, "*", 5, 11, "Easy"],
+        [5, '*', 20, "/", 10, 10, "Medium"],
+        [20, '*', 10, '/', 4, 50, "Hard"],
+        [1, '*',2, "*",3, 6, "Easy"],
+        [15, '/', 3, '-', 2, 3, "Easy"],
+        [2, '*',5, "*",10, 100, "Easy"],
+        [3, '*',18, "-",8, 46, "Medium"],
+        [17, '*',3, "-",20, 31, "Hard"],
+        [17, '*',5, "/",5, 17, "Hard"],
+        [18, '/',3, "+",7, 13, "Hard"],
+        [15, '/', 5, '*', 3, 1, "Medium"]
     ];
 
-    /* console.log(possSolution); */
-    let solIndex = 1;
+    // DMcC 18/05/23: Use a random generator to choose from the array of possible solutions //
+    let solIndex = Math.floor(Math.random()*possSolution.length);
     let targetValue = document.getElementsByClassName('targetValue');
     console.log(targetValue.innerHTML);
     console.log(targetValue.className, targetValue.length, targetValue.attributes);
@@ -43,8 +51,8 @@ function initSolution() {
     }
     thisSolution.innerHTML = (thisSolution.innerHTML + " = " + possSolution[solIndex][5]);
     solution[5].innerHTML = possSolution[solIndex][5];
-    console.log(thisSolution.innerHTML);
-    console.log(solution.innerHTML);
+    //console.log(thisSolution.innerHTML);
+    //console.log(solution.innerHTML);
     console.log('End of function initSolution');
 
     // DMcC 17/05/23 Add code to test the writeGuess function is is intended to populate a row of guess to screen //

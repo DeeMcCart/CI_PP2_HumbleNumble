@@ -505,8 +505,9 @@ The following sites were ued for research and better understanding while creatin
 * https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_classlist_add2 Extensive use made of the W3Schools.com website
 * https://reactgo.com/javascript-find-is-not-a-function/
 * https://stackoverflow.com/questions/7364150/find-object-by-id-in-an-array-of-javascript-objects Extensive use made of the stackoverflow.com website
-* https://css-tricks.com/snippets/javascript/select-random-item-array/
-
+* https://css-tricks.com/snippets/javascript/select-random-item-array/ Used to randomly select a solution for each game from an array of solutions
+* https://stackoverflow.com/questions/71658560/adding-class-to-div-element-using-javascript Used to colour the grid items and keys after guess
+* https://stackoverflow.com/questions/16189060/html-and-javascript-how-to-update-innerhtml Updating on-screen data using javascript
  
 ### Acknowledgements
 * I would like to sincerely thank my mentor, Mo Shami for his patience and support throughout.

@@ -411,11 +411,9 @@ Requirements traceability matrix showing link between user stories and implement
 
 ### HTML Validation 
 - HTML
-  - No errors returned on the four website html pages when checked in the W3C validator:
+  - No errors returned on the index html pages when checked in the W3C validator:
   - [W3C validator - index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Findex.html) 
-  - [W3C validator - walks page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Fsettings.html) 
-  - [W3C validator - gallery page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Fabout.html) 
-  - [W3C validator - feedback page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Fcontact.html)
+
   
 ### CSS Validation
   - No errors returned when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https://deemccart.github.io/CI_PP2_HumbleNumble/&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
@@ -424,9 +422,7 @@ Requirements traceability matrix showing link between user stories and implement
 The site was tested using the WAVE WebAIM accessibility evaluation tool.
 All pages pass with 0 errors (more details...)
 - [Accessability: index page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/index.html)
-- [Accessibility: walks page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/settings.html)
-- [Accessibility: gallery page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/about.html)
-- [Accessibility:  feedback page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/contact.html)
+
 
 Ensure that accessibility is evaluated against both the normal-contrast and high-contrast pages
 
@@ -511,18 +507,16 @@ Images not credited are developer's own.
 * https://laracasts.com/series/wordle-workshop/episodes/2 for tips on building a wordle-like grid (using HTML or JS)
 * https://www.youtube.com/watch?v=j7OhcuZQ-q8 Build a Wordle clone using HTML, CSS & Javascript!
 
-
-
 ### References
 The following topics were researched and better understood as a result: 
 * https://stackoverflow.com/questions/13077923/how-can-i-convert-a-string-into-a-math-operator-in-javascript
 * https://www.w3schools.com/jsref/jsref_eval.asp Javascript eval() (Recommendation to not use due to security risk)
 * https://twitter.com/shannonical/status/1493430545614880771 Wordle Header Font - Shannon Loys, graphic designer
 * https://www.reddit.com/r/identifythisfont/comments/sdkxif/what_font_is_the_game_wordle/
+* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_classlist_add2 Extensive use made of the W3Schools.com website
+* https://reactgo.com/javascript-find-is-not-a-function/
+* https://stackoverflow.com/questions/7364150/find-object-by-id-in-an-array-of-javascript-objects Esntesive use made of the stackoverflow.com website
 
-For ideas on hosting a trails website and for certain photos and images:
-* For some ideas on local attractions:  https://www.arklowmaritimeheritage.ie/
-* For examples of feedback from users: https://www.sportireland.ie/outdoors/walking/trails/ 
  
 ### Acknowledgements
 * I would like to sincerely thank my mentor, Mo Shami for his patience and support throughout.

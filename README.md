@@ -500,14 +500,15 @@ Images not credited are developer's own.
 * https://www.youtube.com/watch?v=j7OhcuZQ-q8 Build a Wordle clone using HTML, CSS & Javascript!
 
 ### References
-The following topics were researched and better understood as a result: 
+The following sites were ued for research and better understanding while creating this website: 
 * https://stackoverflow.com/questions/13077923/how-can-i-convert-a-string-into-a-math-operator-in-javascript
 * https://www.w3schools.com/jsref/jsref_eval.asp Javascript eval() (Recommendation to not use due to security risk)
 * https://twitter.com/shannonical/status/1493430545614880771 Wordle Header Font - Shannon Loys, graphic designer
 * https://www.reddit.com/r/identifythisfont/comments/sdkxif/what_font_is_the_game_wordle/
 * https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_element_classlist_add2 Extensive use made of the W3Schools.com website
 * https://reactgo.com/javascript-find-is-not-a-function/
-* https://stackoverflow.com/questions/7364150/find-object-by-id-in-an-array-of-javascript-objects Esntesive use made of the stackoverflow.com website
+* https://stackoverflow.com/questions/7364150/find-object-by-id-in-an-array-of-javascript-objects Extensive use made of the stackoverflow.com website
+* https://css-tricks.com/snippets/javascript/select-random-item-array/
 
  
 ### Acknowledgements

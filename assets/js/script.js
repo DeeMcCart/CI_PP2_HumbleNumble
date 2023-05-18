@@ -1,20 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log('Dom Content loaded!'); // Adding a console output for testing purposes //
 
-    // the below logic umoved to function captureAttempt()
-    // Using logic identified by Ian Lenehan 'Build a Wordle clone using HTML, CSS & Javascript' to confirm that each key is populated //
-    //for (let i = 0; i < keys.length; i++) {
-    //  keys[i].onclick = ({
-    //    target
-    //}) => {
-    //   const key = target.getAttribute("data-key");
-    // console.log(key); // Adding a console output for testing purposes, to show which key has been clicked //
-    //};
-    // }
-
     /* DMcC 17/05/23:  the captureAttempt() function was used when javascript was pulling values from the user screen - */
     /* this approach has now changed so that the user is 'pushing' values to javaScript using the onclick() functions.. therefore may not be needed */
-    captureAttempt();
+ //   captureAttempt();
 });
 
 
@@ -33,9 +22,6 @@ function initSolution() {
 
     /* console.log(possSolution); */
     let solIndex = 1;
-    let result = calcArray(possSolution[solIndex]);
-    /* console.log('Calcuated result from calcArray is ', result); */
-
     let targetValue = document.getElementsByClassName('targetValue');
     console.log(targetValue.innerHTML);
     console.log(targetValue.className, targetValue.length, targetValue.attributes);
@@ -156,16 +142,17 @@ function calcArray(arrayParam) {
             break;
 
     }
-    console.log('result is ' + result + ', exiting function calcArray');
+    // console.log('result is ' + result + ', exiting function calcArray');
     return (result);
 }
 
-function captureAttempt() {
+// DMcC 18/05/23:  Think the function below is no longer needed //
+// function captureAttempt() {
     // DMcC 17/05/23 Start with capturing what attempt number we are on: //
-    let attemptNum = document.getElementById('attemptNum').innerHTML;
-    console.log("Within captureAttempt function, attempt number is " + attemptNum);
-    let userTry = [0, "+", 0, "+", 0, 0];
-}
+ //   let attemptNum = document.getElementById('attemptNum').innerHTML;
+ //   console.log("Within captureAttempt function, attempt number is " + attemptNum);
+ //   let userTry = [0, "+", 0, "+", 0, 0];
+//}
 
 // The below function keyClick is invoked when the user clicks any of the buttons //
 // This function needs to establish: //
@@ -219,14 +206,15 @@ function checkSolution() {
 
     // console.log('Guessed array passed is '+ guess[0].innerHTML + ' ' + guess[1].innerHTML + ' ' + guess[2].innerHTML + ' ' + guess[3].innerHTML + ' ' + guess[4].innerHTML + ' ' + guess[5].innerHTML);
     // console.log('Guessed array items passed is '+ guessItems);
-    calcTarget = calcArray(guessItems);
+    let calcTarget = calcArray(guessItems);
     // console.log('Calculated target returned to checkSolution is '+calcTarget);
     let fred = document.getElementsByClassName('row' + attemptNum);
-    fred[5].innerHTML = calcTarget;
     // console.log('Current value of target for this row is '+fred[5].innerHTML);
     if (fred[5].innerHTML != calcTarget) {
         alert('Calculated total not equal to target value!');
     }
+    fred[5].innerHTML = calcTarget;
+    
     console.log('Current value of target for this row is ' + fred[5].innerHTML);
     console.log('More logic needed in checkSolution to double check total and to check each of the items');
     /* first check each element of the array to see if it is found anywhere within the solution array */

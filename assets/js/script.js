@@ -180,6 +180,16 @@ function keyClick(selectedKey) {
     document.getElementById('colNum').innerHTML = (++colNum);
 }
 
+function backSpace() {
+    console.log("Within function backSpace");
+    let attemptNum = document.getElementById('attemptNum').innerHTML;
+    let colNum = (document.getElementById('colNum').innerHTML -1);
+    let guess = document.getElementsByClassName('row' + attemptNum);
+    if (colNum>=0) {
+        guess[colNum].innerHTML=" ";
+        document.getElementById('colNum').innerHTML=colNum;
+        }
+}
 function checkSolution() {
     // this function is invoked when the user presses the enter button //
     // It determines the current guess row //
@@ -282,6 +292,7 @@ function writeLetter(rowNum, position, guessItem) {
     console.log("Character found at position is: " + fred);
     fred.innerHTML = guessItem;
 }
+
 
 // DMcC 17/05/23 This function is used to write an entire line of guessArray to the screen //
 // Parameters are rowNum (which links to a specified row# ID on-screen) and guessArray //

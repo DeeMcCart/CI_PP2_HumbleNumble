@@ -420,7 +420,7 @@ Requirements traceability matrix showing link between user stories and implement
 
 ### Accessibility
 The site was tested using the WAVE WebAIM accessibility evaluation tool.
-All pages pass with 0 errors (more details...)
+All pages pass with 0 errors (DMcC 18/05/23:  more work needed here... )
 - [Accessability: index page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/index.html)
 
 
@@ -432,15 +432,7 @@ Performance for all pages was tested using the Lighthouse tool within Google Chr
 <details><summary>Performance: Index page</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-index-page.jpg">
 </details>
-<details><summary>Performance: Walks page</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-settings-page.jpg">
-</details>
-<details><summary>Performance: Gallery page</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-about-page.jpg">
-</details>
-<details><summary>Performance: Feedback page</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images//performance-results-contact-page.jpg">
-</details>
+
 
 ### Device Testing
 The website was tested on the following devices:

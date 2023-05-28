@@ -40,21 +40,38 @@ body {
 
 #helpText {
     max-width:600px;
-    height:300px;
-    margin:auto;
+    height:400px;
+    margin: auto;
+    padding-left: 20px;
     background-color:white;
     color: black;
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 100px;
-    right: 100px;
+    left: 0;
+    right: 0;
     font-family: 'Roboto Slab';
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: 0.1rm;
     overflow:scroll;
     }
+
+    #helpText div {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+#helpText button {
+margin: 0 20px 0 0;    
+display:inline-block;
+text-align:right;}
+
+#closeHelpText-btn {
+    font-weight:bold;
+    border:none;
+    text-size-adjust: 2rem;
+}
     #helpText h3 {
         font-size: 1rem;
         font-weight: 300;
@@ -66,6 +83,7 @@ body {
 
     li {
         font-size: 0.75rem;
+        list-style: none;
     }
 /* CSS settings for intro based on Wordle (nytimes/games/wordle/index.html) settings */
 #intro {

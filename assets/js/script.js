@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setDate();
     /* DMcC 17/05/23:  the captureAttempt() function was used when javascript was pulling values from the user screen - */
     /* this approach has now changed so that the user is 'pushing' values to javaScript using the onclick() functions.. therefore may not be needed */
- //   captureAttempt();
+    //   captureAttempt();
 });
 
 function setDate() {
@@ -12,41 +12,63 @@ function setDate() {
     const month = new Date().getMonth();
     const day = new Date().getDate();
     const year = new Date().getFullYear();
-    var monthName; 
-    switch(month) {
-        case 0: monthName = 'Jan';
-        case 1: monthName = 'Feb';
-        case 2: monthName = 'Mar'; break;
-        case 3: monthName = 'Apr'; break;
-        case 4: monthName = 'May'; break;
-        case 5: monthName = 'Jun'; break;
-        case 6: monthName = 'Jul'; break;
-        case 7: monthName = 'Aug'; break;
-        case 8: monthName = 'Sept'; break;
-        case 9: monthName = 'Oct'; break;
-        case 10: monthName = 'Nov'; break;
-        case 11: monthName = 'Dec'; break;
+    var monthName;
+    switch (month) {
+        case 0:
+            monthName = 'Jan';
+        case 1:
+            monthName = 'Feb';
+        case 2:
+            monthName = 'Mar';
+            break;
+        case 3:
+            monthName = 'Apr';
+            break;
+        case 4:
+            monthName = 'May';
+            break;
+        case 5:
+            monthName = 'Jun';
+            break;
+        case 6:
+            monthName = 'Jul';
+            break;
+        case 7:
+            monthName = 'Aug';
+            break;
+        case 8:
+            monthName = 'Sept';
+            break;
+        case 9:
+            monthName = 'Oct';
+            break;
+        case 10:
+            monthName = 'Nov';
+            break;
+        case 11:
+            monthName = 'Dec';
+            break;
     }
-document.getElementById('todayDate').innerHTML=monthName + " " + day + ", " + year;
+    document.getElementById('todayDate').innerHTML = monthName + " " + day + ", " + year;
 }
 
 function playGame() {
     console.log('In function playGame');
     // DMcC 28/05/23:  Initial screen has now been included - so begin by changing the displays so that initial screen no longer visible, and //
     // header and game panel becomes visible //
-    let intro=document.getElementById('intro');
+    let intro = document.getElementById('intro');
     intro.classList.remove('yesDisplay');
     intro.classList.add('noDisplay');
     let gameHead = document.getElementById('gameHead');
     gameHead.classList.remove('noDisplay');
-    let container=document.getElementById('container');
+    let container = document.getElementById('container');
     container.classList.remove('noDisplay');
 }
 
 function initSolution() {
     // Startby clearing the screen of previous guess */
     clearScreen();
-    
+
     /* DMcC 17/05/23:  Note This function sets attemptum and colNum back to 0 */
     document.getElementById('attemptNum').innerHTML = 1;
     document.getElementById('colNum').innerHTML = 0;
@@ -57,18 +79,18 @@ function initSolution() {
         [1, "+", 2, "*", 5, 11, "Easy"],
         [5, '*', 20, "/", 10, 10, "Medium"],
         [20, '*', 10, '/', 4, 50, "Hard"],
-        [1, '*',2, "*",3, 6, "Easy"],
+        [1, '*', 2, "*", 3, 6, "Easy"],
         [15, '/', 3, '-', 2, 3, "Easy"],
-        [2, '*',5, "*",10, 100, "Easy"],
-        [3, '*',18, "-",8, 46, "Medium"],
-        [17, '*',3, "-",20, 31, "Hard"],
-        [17, '*',5, "/",5, 17, "Hard"],
-        [18, '/',3, "+",7, 13, "Hard"],
+        [2, '*', 5, "*", 10, 100, "Easy"],
+        [3, '*', 18, "-", 8, 46, "Medium"],
+        [17, '*', 3, "-", 20, 31, "Hard"],
+        [17, '*', 5, "/", 5, 17, "Hard"],
+        [18, '/', 3, "+", 7, 13, "Hard"],
         [15, '/', 5, '*', 3, 1, "Medium"]
     ];
 
     // DMcC 18/05/23: Use a random generator to choose from the array of possible solutions //
-    let solIndex = Math.floor(Math.random()*possSolution.length);
+    let solIndex = Math.floor(Math.random() * possSolution.length);
     let targetValue = document.getElementsByClassName('targetValue');
     console.log(targetValue.innerHTML);
     console.log(targetValue.className, targetValue.length, targetValue.attributes);
@@ -98,35 +120,35 @@ function initSolution() {
 
 //DMcC 18/05/23 Code below is used to clear screen of previous entries //
 function clearScreen() {
-// DMcC 18/05/23:  Add code to remove colours previously applied to grid and keys a game has already been played //
-// DMcC 28/05/23:  Issue #001:  Not all previously coloured tiles are clearing - was using a single variable name and resetting it for each colour//
-// DMcC 28/05/23:  Issue 001 - problem identified, getElementsByClassName is a live node list which reduces in size as matching classes are removed //
-// Solution is to use a 'while' loop rather than a 'for' loop //
-let colouredTiles = document.getElementsByClassName('present');
-while (colouredTiles.length) {
-    colouredTiles[0].classList.remove('present');
-}
-colouredTiles = document.getElementsByClassName('correct');
-while (colouredTiles.length) {
-    colouredTiles[0].classList.remove('correct');
-} 
-colouredTiles = document.getElementsByClassName('absent');
-while (colouredTiles.length) {
-    colouredTiles[0].classList.remove('absent');
-} 
+    // DMcC 18/05/23:  Add code to remove colours previously applied to grid and keys a game has already been played //
+    // DMcC 28/05/23:  Issue #001:  Not all previously coloured tiles are clearing - was using a single variable name and resetting it for each colour//
+    // DMcC 28/05/23:  Issue 001 - problem identified, getElementsByClassName is a live node list which reduces in size as matching classes are removed //
+    // Solution is to use a 'while' loop rather than a 'for' loop //
+    let colouredTiles = document.getElementsByClassName('present');
+    while (colouredTiles.length) {
+        colouredTiles[0].classList.remove('present');
+    }
+    colouredTiles = document.getElementsByClassName('correct');
+    while (colouredTiles.length) {
+        colouredTiles[0].classList.remove('correct');
+    }
+    colouredTiles = document.getElementsByClassName('absent');
+    while (colouredTiles.length) {
+        colouredTiles[0].classList.remove('absent');
+    }
 
-// Code below is used to clear out the contents of tiles for each row //
-for (i=1; i<7; i++) {
-    let initRow=document.getElementsByClassName('row'+i);
-    for (j=0; j<initRow.length-1; j++) {
-  initRow[j].innerHTML="";
-} // end j loop/ 
-}  // end i loop/
+    // Code below is used to clear out the contents of tiles for each row //
+    for (i = 1; i < 7; i++) {
+        let initRow = document.getElementsByClassName('row' + i);
+        for (j = 0; j < initRow.length - 1; j++) {
+            initRow[j].innerHTML = "";
+        } // end j loop/ 
+    } // end i loop/
 } // end function clearScreen
 
 
-    // DMcC 17/05/23 Add code to test the writeGuess function is is intended to populate a row of guess to screen //
-    // writeGuess(1, possSolution[solIndex]); //
+// DMcC 17/05/23 Add code to test the writeGuess function is is intended to populate a row of guess to screen //
+// writeGuess(1, possSolution[solIndex]); //
 
 
 
@@ -226,10 +248,10 @@ function calcArray(arrayParam) {
 
 // DMcC 18/05/23:  Think the function below is no longer needed //
 // function captureAttempt() {
-    // DMcC 17/05/23 Start with capturing what attempt number we are on: //
- //   let attemptNum = document.getElementById('attemptNum').innerHTML;
- //   console.log("Within captureAttempt function, attempt number is " + attemptNum);
- //   let userTry = [0, "+", 0, "+", 0, 0];
+// DMcC 17/05/23 Start with capturing what attempt number we are on: //
+//   let attemptNum = document.getElementById('attemptNum').innerHTML;
+//   console.log("Within captureAttempt function, attempt number is " + attemptNum);
+//   let userTry = [0, "+", 0, "+", 0, 0];
 //}
 
 // The below function keyClick is invoked when the user clicks any of the buttons //
@@ -248,13 +270,14 @@ function keyClick(selectedKey) {
 function backSpace() {
     console.log("Within function backSpace");
     let attemptNum = document.getElementById('attemptNum').innerHTML;
-    let colNum = (document.getElementById('colNum').innerHTML -1);
+    let colNum = (document.getElementById('colNum').innerHTML - 1);
     let guess = document.getElementsByClassName('row' + attemptNum);
-    if (colNum>=0) {
-        guess[colNum].innerHTML=" ";
-        document.getElementById('colNum').innerHTML=colNum;
-        }
+    if (colNum >= 0) {
+        guess[colNum].innerHTML = " ";
+        document.getElementById('colNum').innerHTML = colNum;
+    }
 }
+
 function checkSolution() {
     // this function is invoked when the user presses the enter button //
     // It determines the current guess row //
@@ -292,11 +315,11 @@ function checkSolution() {
         alert('Calculated total not equal to target value!');
     }
     fred[5].innerHTML = calcTarget;
-    
+
     console.log('Current value of target for this row is ' + fred[5].innerHTML);
     console.log('More logic needed in checkSolution to double check total and to check each of the items');
     // reset the 'correct element' counter //
-    let correctCount=0;
+    let correctCount = 0;
     /* first check each element of the array to see if it is found anywhere within the solution array */
     for (i = 0; i < (guess.length - 1); i++) {
         // console.log('Checking guess ' + guess[i].innerHTML + ' for matches');
@@ -326,7 +349,7 @@ function checkSolution() {
                     // Find the matching keyboard item and add a class to change its display colour on keyboard //
                     key = document.getElementById(guess[i].innerHTML);
                     key.classList.add('correct');
-                    if (correctCount==5) {
+                    if (correctCount == 5) {
                         console.log('All elements guessed, turning remainder of line green');
                         // Turn the last two columns of the line green as well to make it really visible //
                         jack = (document.getElementsByClassName('row' + attemptNum))[5];
@@ -358,16 +381,16 @@ function checkSolution() {
     } // End for loop i cycle (checking through each i item of guessed array)//
 
     // Check if full solution has been reached - ie correctCount = 5 - if so then break out and give the user a congratulations message;
-  if (correctCount==5) {
-    console.log('correctCount is 5, ending game!');
-    endGame(attemptNum);
-    // DMcC 28/05/23 - would also like to set the 2 remaining characters on the line to green so the total row appears green //
-}
-  // else Increment attempt number and reset current letter position//
-else {
+    if (correctCount == 5) {
+        console.log('correctCount is 5, ending game!');
+        endGame(attemptNum);
+        // DMcC 28/05/23 - would also like to set the 2 remaining characters on the line to green so the total row appears green //
+    }
+    // else Increment attempt number and reset current letter position//
+    else {
         document.getElementById('attemptNum').innerHTML = ++attemptNum;
-    document.getElementById('colNum').innerHTML = 0;
-}
+        document.getElementById('colNum').innerHTML = 0;
+    }
 } // End of function checkSolution()
 
 // DMcC 17/05/23 The function below writeLetter is used to write a single letter of a guess onto the screen //
@@ -413,36 +436,61 @@ function writeGuess(rowNum, guessArray) {
 }
 
 function endGame(attemptNum) {
-  console.log('Function endGame, number of attempts was '+ attemptNum);  
-  switch (attemptNum) {
-  case ('1'): alert('Genius'); break;
-  case ('2'): alert('Magnificent'); break;
-  case ('3'): alert('Impressive'); break;
-  case ('4'): alert('Splendid'); break;
-  case ('5'): alert('Great'); break;
-  case ('6'): alert('Whew!'); break;
-  default: alert('No match found for attemptNum '+attemptNum);
-  }
+    console.log('Function endGame, number of attempts was ' + attemptNum);
+    resultOverLay = document.getElementById('resultOverLay');
+    resultOverLay.classList.remove('noDisplay');
+            resultOverLay.classList.add('yesDisplay');
+    resultText = document.getElementById('resultText');
+            resultText.classList.remove('noDisplay');
+            resultText.classList.add('yesDisplay');
+
+    switch (attemptNum) {
+        case ('1'):
+            resultText.innerHTML = 'Genius';
+            break;
+        case ('2'):
+            resultText.innerHTML = 'Magnificent';
+            break;
+        case ('3'):
+            resultText.innerHTML = 'Impressive';
+            break;
+        case ('4'):
+            resultText.innerHTML = 'Splendid';
+            break;
+        case ('5'):
+            resultText.innerHTML = 'Great';
+            break;
+        case ('6'):
+            resultText.innerHTML = 'Whew!';
+            break;
+        default:
+            alert('No match found for attemptNum ' + attemptNum);
+
+            resultOverLay.classList.remove('noDisplay');
+            resultOverLay.classList.add('yesDisplay');
+            resultText.classList.remove('noDisplay');
+            resultText.classList.add('yesDisplay');
+
+    }
 }
 
 function hideHelp() {
     // Hide the help text when the close button is selected //
     let helpOverLay = document.getElementById('helpOverLay');
     helpOverLay.classList.remove('yesDisplay');
-    helpOverLay.classList.add('noDisplay');    
- 
+    helpOverLay.classList.add('noDisplay');
+
     let helpText = document.getElementById('helpText');
     helpText.classList.remove('yesDisplay');
-    helpText.classList.add('noDisplay');    
+    helpText.classList.add('noDisplay');
 }
 
 function help() {
     let helpOverLay = document.getElementById('helpOverLay');
     helpOverLay.classList.remove('noDisplay');
-    helpOverLay.classList.add('yesDisplay');    
+    helpOverLay.classList.add('yesDisplay');
 
     let helpText = document.getElementById('helpText');
     helpText.classList.remove('noDisplay');
-    helpText.classList.add('yesDisplay');    
+    helpText.classList.add('yesDisplay');
 }
-

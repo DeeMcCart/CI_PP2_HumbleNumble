@@ -293,6 +293,8 @@ function checkSolution() {
     
     console.log('Current value of target for this row is ' + fred[5].innerHTML);
     console.log('More logic needed in checkSolution to double check total and to check each of the items');
+    // reset the 'correct element' counter //
+    let correctCount=0;
     /* first check each element of the array to see if it is found anywhere within the solution array */
     for (i = 0; i < (guess.length - 1); i++) {
         // console.log('Checking guess ' + guess[i].innerHTML + ' for matches');
@@ -307,7 +309,7 @@ function checkSolution() {
         }
 
         for (j = 0; j < solution.length; j++) {
-            console.log('Checking solution ' + solution[j].innerHTML + ' for matches');
+            // console.log('Checking solution ' + solution[j].innerHTML + ' for matches'); //
             // Do a first check here to find the guess array item within the solution array //
             // this would be handy becuase it can be greyed out if absent //
             // if I did a find of 2, would it also find 20? //
@@ -316,6 +318,9 @@ function checkSolution() {
                 if (i === j) {
                     // add a class onto the guess[i] item to change the display colour on grid//
                     guess[i].classList.add('correct');
+                    // increment the count of correct matches //
+                    correctCount++;
+                    console.log('Number of correct items is ' + correctCount);
                     // Find the matching keyboard item and add a class to change its display colour on keyboard //
                     key = document.getElementById(guess[i].innerHTML);
                     key.classList.add('correct');
@@ -330,9 +335,10 @@ function checkSolution() {
 
         } // End for loop j cycle (checking through each j item of solution array) //
 
-        // if j has reached  need to check if a particular guess[i] didnt find a match in all of solution... may need to reverse the above....else {
+        // if j has reached  need to check if a particular guess[i] didnt find a match in all of solution... 
+        // may need to reverse the above....else {
         if (guess[i].classList.contains('correct') || guess[i].classList.contains('present')) {
-            //this element has been location in solution - nothing more needed
+            //this element has been located in solution - nothing more needed
         } else {
             // add an absent status to pickup colour coding
             guess[i].classList.add('absent');
@@ -343,9 +349,16 @@ function checkSolution() {
 
     } // End for loop i cycle (checking through each i item of guessed array)//
 
-    // Increment attempt number and current letter position//
-    document.getElementById('attemptNum').innerHTML = ++attemptNum;
+    // Check if full solution has been reached - ie correctCount = 5 - if so then break out and give the user a congratulations message;
+  if (correctCount==5) {
+    endGame(attemptNum);
+    // DMcC 28/05/23 - would also like to set the 2 remaining characters on the line to green so the total row appears green //
+}
+  // else Increment attempt number and reset current letter position//
+else {
+        document.getElementById('attemptNum').innerHTML = ++attemptNum;
     document.getElementById('colNum').innerHTML = 0;
+}
 } // End of function checkSolution()
 
 // DMcC 17/05/23 The function below writeLetter is used to write a single letter of a guess onto the screen //
@@ -388,4 +401,15 @@ function writeGuess(rowNum, guessArray) {
     for (i = 0; i < guessRow.length; i++) {
         console.log(guessRow[i]);
     }
+}
+
+function endGame(attemptNum) {
+  switch (attemptNum) {
+  case (1): alert('Genius'); break;
+  case (2): alert('Magnificent'); break;
+  case (3): alert('Impressive'); break;
+  case (4): alert('Splendid'); break;
+  case (5): alert('Great'); break;
+  case (6): alert('Whew!'); break
+  }
 }

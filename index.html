@@ -51,7 +51,7 @@
         <div id="container" class="noDisplay">
         <div id="game">
             <div id="gamePanel">
-                <!-- The solutionRow below will be populated and used for comparison and for testing purposes -->
+                <!-- DMcC c. 10/05/23:  The solutionRow below will be populated and used for comparison and for testing purposes -->
                 <!-- but will not be displayed in the live game -->
                 <div class="row" id="solutionRow">
                     <div class="tile solutionRow">?</div>
@@ -63,9 +63,10 @@
                     <div class="tile solutionRow targetValue">0</div>
                 </div>
 
-                <!-- 08/05/23 DMcC: The code below to create grid based on  https://laracasts.com/series/wordle-workshop/episodes/2 -->
-                <!-- create a grid of 6 rows with 7 entries in each: -->
-                <!--   2 rightmost entries will be pre-populated with '=' and targetValue -->
+                <!-- 08/05/23 DMcC: Code to create grid below was based on  https://laracasts.com/series/wordle-workshop/episodes/2 -->
+                <!-- to create a display grid of 6 rows with 7 entries in each: -->
+
+                <!-- For this Numble game, 2 rightmost entries will be pre-populated with '=' and targetValue -->
                 <!--   5 leftmost entries on each row represent the user guess fields -->
                 <!-- DMcC 17/05/23 Add a class per tile, this can be dynamically altered by js and styled by CSS to change background colour-->
                 <!-- according to match status of the guessed number/operation ie present (orange)/ correct (green)/ absent (dark gray) -->

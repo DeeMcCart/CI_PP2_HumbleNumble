@@ -24,6 +24,49 @@ body {
     display: flex;
 }
 
+#helpOverLay {
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#helpOverLay .yesDisplay {
+    display:block;
+}
+
+#helpText {
+    max-width:600px;
+    height:300px;
+    margin:auto;
+    background-color:white;
+    color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100px;
+    right: 100px;
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.1rm;
+    overflow:scroll;
+    }
+    #helpText h3 {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    #helpText p {
+        font-size: 0.75rem;
+    }
+
+    li {
+        font-size: 0.75rem;
+    }
 /* CSS settings for intro based on Wordle (nytimes/games/wordle/index.html) settings */
 #intro {
     height: 100%;

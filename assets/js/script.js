@@ -424,3 +424,25 @@ function endGame(attemptNum) {
   default: alert('No match found for attemptNum '+attemptNum);
   }
 }
+
+function hideHelp() {
+    // Hide the help text when the close button is selected //
+    let helpOverLay = document.getElementById('helpOverLay');
+    helpOverLay.classList.remove('yesDisplay');
+    helpOverLay.classList.add('noDisplay');    
+ 
+    let helpText = document.getElementById('helpText');
+    helpText.classList.remove('yesDisplay');
+    helpText.classList.add('noDisplay');    
+}
+
+function help() {
+    let helpOverLay = document.getElementById('helpOverLay');
+    helpOverLay.classList.remove('noDisplay');
+    helpOverLay.classList.add('yesDisplay');    
+
+    let helpText = document.getElementById('helpText');
+    helpText.classList.remove('noDisplay');
+    helpText.classList.add('yesDisplay');    
+}
+

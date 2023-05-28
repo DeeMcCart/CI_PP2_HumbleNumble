@@ -511,6 +511,7 @@ The following sites were ued for research and better understanding while creatin
 * https://www.delftstack.com/howto/html/html-todays-date/?utm_content=cmp-true used to determine how to display and format todays date 
 * https://stackoverflow.com/questions/69565192/how-to-bring-the-popup-fully-displayed-in-front-of-everything used to get the results popup to display in a predictable on-screen position
 * https://stackoverflow.com/questions/42610369/javascript-classlist-remove-not-working-properly used to resolve issue #001 where not all classLists removing as expected
+* https://www.youtube.com/watch?v=uUCpopjPZdI HTML, CSS & JavaScript - How to Create a Pop-Up Modal ( Manual Version ) - Web Dev Tutorials @codefoxx used to help create a pop up help window
 
  
 ### Acknowledgements

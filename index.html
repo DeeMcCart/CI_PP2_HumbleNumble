@@ -13,43 +13,84 @@
     <title>Humble Numble</title>
 </head>
 
-<body >
+<div id="helpOverLay" class="noDisplay">
+    <div id="helpText" class="noDisplay">
+        <!-- This is a pop up window/ modal of help text -->
+        <!-- DMcC 28/05/23 add button to close the pop-up help window-->
+        <button id="closeHelpText-btn" onclick="hideHelp();"><em>X</em></button>
+        <!-- DMcC 28/05/23 This is help text section -->
+        <h2>How to Play</h2>
+        <h3>Guess the equation in 6 tries.</h3>
+        <ul>
+            <li>Target result is in rightmost column; guess the correct equation to arrive at this result.</li>
+            <li>All guesses are in the form <em>num1 op num2 op num3</em> where</li>
+            <li> - num is a number between 1 and 20 (and yes, the same number can appear twice grrrrr)</li>
+            <li> - op is a mathematical operator + - * / (add subtract multiply divide) </li>
+            <p></p>
+            <li>Equations are evaluated as follows:</li>
+             <li>   * any multiply operation(s) are calculated first</li>
+             <li>   / any divide operation(s) are calculated next</li>
+             <li>   + any add operation(s) are calculated next</li>
+             <li>   – any minus operation(s) are calculated last</li>
+            
+            <li>e.g. 3+2*5 is calculated as 3+(2*5) = 3+10 = 13 (grrrr again)</li>
+            <li>The colour of the tiles will change to show how close your guess was to the solution.
+                Examples:
+            </li>
+            <img src="assets/images/help_example1.jpg"><p>15, 1, 6, +, - are not in the equation in any spot</p>
+            <img src="assets/images/help_example2.jpg">
+            <li><em>5</em> is in the equation but not at 3rd position (so must be 1st or 5th position)</li>
+            <li>Multiply * is correctly guessed at the 2nd position, as is divide / at the 4th position.</li>
+            <br>
+            <li>• Note that the current version of Humble Numble WILL permit you to enter an equation that does not
+                calculate to the required total…..</li>
+            <li>    this may help when you are REALLY stuck!</li>
+            <br>
+            <li>* Note that the exact equation is required, ie 1+2+3=6 will not accept 3+1+2 as a solution (grrrr again again)</li>
+            </ul>
+    </div> <!-- end div 'helpText'-->
+</div> <!-- end div overLay -->
+
+<body> 
     <div id="intro" class="yesDisplay">
         <img src="assets/images/wordle_Icon.jpg">
         <br>
         <h2>Humble Numble</h2>
         <br>
         <h3> Get 6 chances to guess <h3>
-         <h3>a 5-part equation.</h3>   
-            <br>
-        <button class="gameButton" onclick="help();">
-            How to play
-        </button>
-        <button class = "gameButton" onclick="playGame();">
-            Play
-        </button>
-        <br>
-        <!-- DMcc 28/05/23 Added a javascript function to replace the inner HTML below to current formatted date -->
-        <div id="todayDate">todayDate</div>
-        <div id="gameNum">No. 1</div>
-        <p>Based on Wordle, created by Josh Wardle, now owned by New York Times</p>
-        <p>Copyright 2023 Deirdre McCarthy t/a AllSkills Tech</p>    
-        </div> <!-- End div intro -->
+                <h3>a 5-part equation.</h3>
+                <br>
+                <button class="gameButton" onclick="help();">
+                    How to play
+                </button>
+                <button class="gameButton" onclick="playGame();">
+                    Play
+                </button>
+                <br>
+                <!-- DMcc 28/05/23 Added a javascript function to replace the inner HTML below to current formatted date -->
+                <div id="todayDate">todayDate</div>
+                <div id="gameNum">No. 1</div>
+                <p>Based on Wordle, created by Josh Wardle, now owned by New York Times</p>
+                <p>Copyright 2023 Deirdre McCarthy t/a AllSkills Tech</p>
+    </div> <!-- End div intro -->
+
+
+
     <!-- DMcC 28/05/23 add div gameHead to permit display toggle on/off-->
-    <div id = "gameHead" class="noDisplay">
-        <header >
+    <div id="gameHead" class="noDisplay">
+        <header>
             <h1>Humble Numble</h1>
         </header>
         <button class="gameButton" onclick="initSolution();">
-        Initialise Solution!
-    </button>
-    <!-- DMcC 17/05/23 the below is possibly no longer needed as has been replaced by an array -->
-     <p id="solution">Solution here: </p> 
+            Initialise Solution!
+        </button>
+        <!-- DMcC 17/05/23 the below is possibly no longer needed as has been replaced by an array -->
+        <p id="solution">Solution here: </p>
 
-    <p>Attempt: <span id="attemptNum">1</span> col: <span id="colNum">0</span></p>
-</div> <!-- end div gameHead-->
+        <p>Attempt: <span id="attemptNum">1</span> col: <span id="colNum">0</span></p>
+    </div> <!-- end div gameHead-->
 
-        <div id="container" class="noDisplay">
+    <div id="container" class="noDisplay">
         <div id="game">
             <div id="gamePanel">
                 <!-- DMcC c. 10/05/23:  The solutionRow below will be populated and used for comparison and for testing purposes -->

@@ -98,19 +98,21 @@ function initSolution() {
 
 //DMcC 18/05/23 Code below is used to clear screen of previous entries //
 function clearScreen() {
-
 // DMcC 18/05/23:  Add code to remove colours previously applied to grid and keys a game has already been played //
+// DMcC 28/05/23:  Issue #001:  Not all previously coloured tiles are clearing - was using a single variable name and resetting it for each colour//
+// DMcC 28/05/23:  Issue 001 - problem identified, getElementsByClassName is a live node list which reduces in size as matching classes are removed //
+// Solution is to use a 'while' loop rather than a 'for' loop //
 let colouredTiles = document.getElementsByClassName('present');
-for (i=0; i< colouredTiles.length; i++) {
-    colouredTiles[i].classList.remove('present');
+while (colouredTiles.length) {
+    colouredTiles[0].classList.remove('present');
 }
 colouredTiles = document.getElementsByClassName('correct');
-for (i=0; i< colouredTiles.length; i++) {
-    colouredTiles[i].classList.remove('correct');
+while (colouredTiles.length) {
+    colouredTiles[0].classList.remove('correct');
 } 
 colouredTiles = document.getElementsByClassName('absent');
-for (i=0; i< colouredTiles.length; i++) {
-    colouredTiles[i].classList.remove('absent');
+while (colouredTiles.length) {
+    colouredTiles[0].classList.remove('absent');
 } 
 
 // Code below is used to clear out the contents of tiles for each row //

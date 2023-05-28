@@ -5,25 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- DMcC 28/05/23 include Roboto slab font for title -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@400;690&display=swap');
     </style>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Humble Numble</title>
 </head>
 
-<body>
-    <header>
-        <h1>Humble Numble</h1>
-    </header>
-    <button onclick="initSolution();">
+<body >
+    <div id="intro" class="yesDisplay">
+        <img src="assets/images/wordle_Icon.jpg">
+        <br>
+        <h2>Humble Numble</h2>
+        <br>
+        <h3> Get 6 chances to guess a 5-part equation</h3>
+        <br>
+        <button class="gameButton" onclick="help();">
+            How to play
+        </button>
+        <button class = "gameButton" onclick="playGame();">
+            Play
+        </button>
+        <br>
+        <!-- DMcc 28/03/23 remember to add a javascript function to convert the inner HTML below with current formatted date -->
+        <div id="todayDate">todayDate</div>
+        <div id="gameNum">No. 1</div>
+        <p>Based on Wordle, original creator Josh Wardle, current owners New York Times</p>
+        <p>Copyright 2023 Deirdre McCarthy t/a AllSkills Tech</p>    
+    </div> <!-- End div intro -->
+    <!-- DMcC 28/05/23 add div gameHead to permit display toggle on/off-->
+    <div id = "gameHead" class="noDisplay">
+        <header >
+            <h1>Humble Numble</h1>
+        </header>
+        <button class="gameButton" onclick="initSolution();">
         Initialise Solution!
     </button>
     <!-- DMcC 17/05/23 the below is possibly no longer needed as has been replaced by an array -->
      <p id="solution">Solution here: </p> 
 
     <p>Attempt: <span id="attemptNum">1</span> col: <span id="colNum">0</span></p>
-        <div id="container">
+</div> <!-- end div gameHead-->
+
+        <div id="container" class="noDisplay">
         <div id="game">
             <div id="gamePanel">
                 <!-- The solutionRow below will be populated and used for comparison and for testing purposes -->

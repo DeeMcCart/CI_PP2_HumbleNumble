@@ -10,6 +10,50 @@ body {
     /*     font-family: Arial, sans-serif; */
 }
 
+/* DMcC 28/05/23:  The yesDisplay and noDisplay below are used to toggle key screen elements on/off display */
+.noDisplay {
+    display: none;
+}
+
+#container .yesDisplay {
+    display: block;
+    /* switched from flex to block 08/05/23 DMcC to force selectionPanel below gamePanel */
+    
+}
+.yesDisplay {
+    display: flex;
+}
+
+/* CSS settings for intro based on Wordle (nytimes/games/wordle/index.html) settings */
+#intro {
+    height: 100%;
+    width: 100%;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 42px;
+    background-color: #ccc;
+    color:black;  
+}
+
+#intro h2 {
+    font-family: 'Roboto Slab';
+    font-weight: 1400;
+    letter-spacing: 0.1rm;
+}
+
+#intro h3 {
+    font-weight: 400;
+}
+
+#intro >p {
+        height: 2em;
+        font-family: inherit;
+        font-size:14px;
+        font-weight:400;
+        letter-spacing: .01em;
+    }
+    
 body {
     display: grid;
     place-items: center;
@@ -37,12 +81,40 @@ title {
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.gameButton {
+    height: 3em;
+    font-family: inherit;
+    background-color: #ccc;
+    font-size:16px;
+    font-weight:400;
+    letter-spacing: .01em;
+    border-radius: 1.5em;
+    border: 1px solid;
+    padding: 0 2em;
+    margin: 0 10px 8px;
+}
+    
+.selection-row button {
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    /* background-color: rgb(129,131,132); */
+    /* DMcC 17/05/23:  Change background colour to match current published Wordle */
+    background-color: #818384;
+    /* color: rgb(215, 218, 220); */
+    color: white;
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
 #container {
-    display: block;
-    /* switched from flex to block 08/05/23 DMcC to force selectionPanel below gamePanel */
-    /* DMcC 17/05/23 Change background colour to closer to Wordle standard: */
-    /*  background-color: rgb(34, 34, 34); */
-    background-color: rgb(25, 25, 25);
     height: 600px;
     padding: 0;
     margin: 0;

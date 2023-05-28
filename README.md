@@ -508,6 +508,7 @@ The following sites were ued for research and better understanding while creatin
 * https://css-tricks.com/snippets/javascript/select-random-item-array/ Used to randomly select a solution for each game from an array of solutions
 * https://stackoverflow.com/questions/71658560/adding-class-to-div-element-using-javascript Used to colour the grid items and keys after guess
 * https://stackoverflow.com/questions/16189060/html-and-javascript-how-to-update-innerhtml Updating on-screen data using javascript
+* https://www.delftstack.com/howto/html/html-todays-date/?utm_content=cmp-true used to determine how to display and format todays date 
  
 ### Acknowledgements
 * I would like to sincerely thank my mentor, Mo Shami for his patience and support throughout.

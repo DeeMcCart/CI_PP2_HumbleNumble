@@ -1,17 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log('Dom Content loaded!'); // Adding a console output for testing purposes //
-
+    setDate();
     /* DMcC 17/05/23:  the captureAttempt() function was used when javascript was pulling values from the user screen - */
     /* this approach has now changed so that the user is 'pushing' values to javaScript using the onclick() functions.. therefore may not be needed */
  //   captureAttempt();
 });
 
+function setDate() {
+    /* DMcC 28/05/23 this function generates a date for the intro screen, formatted as per the Wordle date ie MMM DD, YYYY */
+    console.log('In function setDate')
+    const month = new Date().getMonth();
+    const day = new Date().getDate();
+    const year = new Date().getFullYear();
+    var monthName; 
+    switch(month) {
+        case 0: monthName = 'Jan';
+        case 1: monthName = 'Feb';
+        case 2: monthName = 'Mar'; break;
+        case 3: monthName = 'Apr'; break;
+        case 4: monthName = 'May'; break;
+        case 5: monthName = 'Jun'; break;
+        case 6: monthName = 'Jul'; break;
+        case 7: monthName = 'Aug'; break;
+        case 8: monthName = 'Sept'; break;
+        case 9: monthName = 'Oct'; break;
+        case 10: monthName = 'Nov'; break;
+        case 11: monthName = 'Dec'; break;
+    }
+document.getElementById('todayDate').innerHTML=monthName + " " + day + ", " + year;
+}
+
+function playGame() {
+    console.log('In function playGame');
+    // DMcC 28/05/23:  Initial screen has now been included - so begin by changing the displays so that initial screen no longer visible, and //
+    // header and game panel becomes visible //
+    let intro=document.getElementById('intro');
+    intro.classList.remove('yesDisplay');
+    intro.classList.add('noDisplay');
+    let gameHead = document.getElementById('gameHead');
+    gameHead.classList.remove('noDisplay');
+    let container=document.getElementById('container');
+    container.classList.remove('noDisplay');
+}
 
 function initSolution() {
     // Startby clearing the screen of previous guess */
     clearScreen();
     
-    /* DMcC 17/05/23:  Note this function also sets attemptum and colNum back to 0 */
+    /* DMcC 17/05/23:  Note This function sets attemptum and colNum back to 0 */
     document.getElementById('attemptNum').innerHTML = 1;
     document.getElementById('colNum').innerHTML = 0;
     // Below is some logic to select a possible solution.  This logic can be extended to generate random solutions - future fix //
@@ -58,6 +94,7 @@ function initSolution() {
     //console.log(solution.innerHTML);
     console.log('End of function initSolution');
 }
+
 
 //DMcC 18/05/23 Code below is used to clear screen of previous entries //
 function clearScreen() {

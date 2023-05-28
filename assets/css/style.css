@@ -46,7 +46,7 @@ body {
     font-weight: 400;
 }
 
-#intro >p {
+#intro  p {
         height: 2em;
         font-family: inherit;
         font-size:14px;

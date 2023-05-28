@@ -324,6 +324,12 @@ function checkSolution() {
                     // Find the matching keyboard item and add a class to change its display colour on keyboard //
                     key = document.getElementById(guess[i].innerHTML);
                     key.classList.add('correct');
+                    if (correctCount==5) {
+                        console.log('All elements guessed, turning remainder of line green');
+                        // Turn the last two columns of the line green as well to make it really visible //
+                        jack = (document.getElementsByClassName('row' + attemptNum))[5];
+                        jack.classList.add('correct');
+                    }
                 } else {
                     /* present but not in the correct position */
                     guess[i].classList.add('present');
@@ -351,6 +357,7 @@ function checkSolution() {
 
     // Check if full solution has been reached - ie correctCount = 5 - if so then break out and give the user a congratulations message;
   if (correctCount==5) {
+    console.log('correctCount is 5, ending game!');
     endGame(attemptNum);
     // DMcC 28/05/23 - would also like to set the 2 remaining characters on the line to green so the total row appears green //
 }
@@ -404,12 +411,14 @@ function writeGuess(rowNum, guessArray) {
 }
 
 function endGame(attemptNum) {
+  console.log('Function endGame, number of attempts was '+ attemptNum);  
   switch (attemptNum) {
-  case (1): alert('Genius'); break;
-  case (2): alert('Magnificent'); break;
-  case (3): alert('Impressive'); break;
-  case (4): alert('Splendid'); break;
-  case (5): alert('Great'); break;
-  case (6): alert('Whew!'); break
+  case ('1'): alert('Genius'); break;
+  case ('2'): alert('Magnificent'); break;
+  case ('3'): alert('Impressive'); break;
+  case ('4'): alert('Splendid'); break;
+  case ('5'): alert('Great'); break;
+  case ('6'): alert('Whew!'); break;
+  default: alert('No match found for attemptNum '+attemptNum);
   }
 }

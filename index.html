@@ -74,7 +74,7 @@
                 <div id="todayDate">todayDate</div>
                 <div id="gameNum">No. 1</div>
                 <p>Based on Wordle, created by Josh Wardle, now owned by New York Times</p>
-                <p>Copyright 2023 Deirdre McCarthy t/a AllSkills Tech</p>
+                <p><span>&copy</span>2023 Deirdre McCarthy t/a AllSkills Tech</p>
     </div> <!-- End div intro -->
 
 
@@ -106,6 +106,13 @@
                     <div class="tile solutionRow">?</div>
                     <div class="tile">=</div>
                     <div class="tile solutionRow targetValue">0</div>
+                </div>
+
+                <!-- DMcC 28/05/23 The resultOverlay below is a placeholder for positioning game result once the player has reached the solution -->
+                <!-- or exceeded 6 tries -->
+                <div class="result" id="resultOverLay">
+                    <div class ="result" id="resultText">
+                        Example</div>
                 </div>
 
                 <!-- 08/05/23 DMcC: Code to create grid below was based on  https://laracasts.com/series/wordle-workshop/episodes/2 -->

@@ -37,16 +37,37 @@ body {
 }
 
 #intro h2 {
+    height: 40px;
     font-family: 'Roboto Slab';
-    font-weight: 1400;
+    font-weight: 2000;
+    font-size: 2.5rem;
     letter-spacing: 0.1rm;
 }
 
 #intro h3 {
     font-weight: 400;
+    font-size: 2rem;
+    align-items:center;
+    justify-content: center;
 }
 
-#intro  p {
+#intro #todayDate {
+    height: 1.5em;
+    font-family: inherit;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing: .01em;
+}
+
+#intro #gameNum {
+    height: 1.5em;
+    font-weight: 400;
+    font-family: inherit;
+    font-size:14px;
+    letter-spacing: .01em;
+}
+
+#intro p {
         height: 2em;
         font-family: inherit;
         font-size:14px;

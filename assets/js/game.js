@@ -358,7 +358,9 @@ function checkSolution() {
                     if (correctCount == 5) {
                         // Turn the last two columns of the line green as well to make it really visible //
                         jack = (document.getElementsByClassName('row' + attemptNum))[5];
+                        jill = document.getElementsByClassName('equalSign')[attemptNum];
                         jack.classList.add('correct');
+                        jill.classList.add('correct');
                     }
                 } else {
                     /* present but not in the correct position */
@@ -388,8 +390,7 @@ function checkSolution() {
     // Check if full solution has been reached - ie correctCount = 5 - if so then break out and give the user a congratulations message;
     if (correctCount == 5) {
         endGame(attemptNum);
-        // DMcC 28/05/23 - would also like to set the 2 remaining characters on the line to green so the total row appears green //
-    }
+      }
     // else Increment attempt number and reset current letter position//
     else {
         document.getElementById('attemptNum').innerHTML = ++attemptNum;

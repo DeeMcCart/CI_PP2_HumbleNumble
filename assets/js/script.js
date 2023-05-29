@@ -148,13 +148,13 @@ function clearScreen() {
             initRow[j].innerHTML = "";
         } // end j loop/ 
     } // end i loop/
-
-    clearResult(10);
+    // delay 1 seconds, then clear error message
+     clearResult(0); 
 } // end function clearScreen
 
-function clearResult(timeDelay) {
-    // wait for a time delay //
-    WebGLActiveInfo(timeDelay*1000);
+function clearResult(delaySecs) {
+    // DMcC 29/05/23:  Pause for specified number of seconds... //
+    sleep(delaySecs * 1000);
 
     // Clear any result text which remains onscreen from a previous attempt //
     resultOverLay = document.getElementById('resultOverLay');
@@ -169,12 +169,18 @@ function clearResult(timeDelay) {
 // writeGuess(1, possSolution[solIndex]); //
 
 
+function sleep(miliSeconds) {
+    // This function is to delay in some situations eg error message on-screen //
+    var currentTime = new Date().getTime();
+    while (currentTime + miliSeconds >= new Date().getTime()) { // pausing for the specified miliseconds}
+    }
+}
 
+function calcArray(arrayParam) {
 // DMcC 15/05/23:  The function below is used to parse out a character-based array and calcualte the result
 // Note that multiply done first, then divide, then add, then subtract 
 // Note:  standard eval() function could have been used but was avoided due to widely published security concerns....
-function calcArray(arrayParam) {
-    console.log('Within function calcArray');
+console.log('Within function calcArray');
     let result = 0;
     console.log('Array passed is ' + arrayParam[0] + ' ' + arrayParam[1] + ' ' + arrayParam[2] + ' ' + arrayParam[3] + ' ' + arrayParam[4]);
     console.log('ArrayParam[1]is' + arrayParam[1]);
@@ -280,6 +286,12 @@ function keyClick(selectedKey) {
     let attemptNum = document.getElementById('attemptNum').innerHTML;
     // DMcC 17/05/23 also determine what is the next column number to populate: //
     let colNum = document.getElementById('colNum').innerHTML;
+    // 29/05/23 - DMcC - workaround for clearing an error message (e.g. 'Incorrect total') remaining from //
+    // a previous row //
+    // if an entry has been made on a new row (column 1) then clear any on-screen display or error messages with a half-second delay//
+    if (colNum==0) {
+        clearResult(0.5)
+    };
     console.log("Within keyClick function, attempt number " + attemptNum + "column Number " + colNum + "character " + selectedKey);
     writeLetter(attemptNum, colNum, selectedKey);
     document.getElementById('colNum').innerHTML = (++colNum);
@@ -333,9 +345,8 @@ function checkSolution() {
         // alert('Calculated total not equal to target value!');//
         displayResult('Incorrect calc!');
         // DMcC 29/05/23 - need to take some action here to display incorrect result and to return to the start of the line //
-        // therefore added return statement here //
-        return;
-    }
+        // tried clearResult with a 2-second timer but it executed in parallel and didnt cause the required delay => workaround clear message at start of next line//
+        }
     fred[5].innerHTML = calcTarget;
     // DMcC 29/05/23: --- would really prefer to reverse out at this point and not accept the entry as the calculated total is incorrect //
     // hmmm might need a think about this.... //

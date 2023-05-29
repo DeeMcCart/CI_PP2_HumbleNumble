@@ -149,7 +149,7 @@ function clearScreen() {
         } // end j loop/ 
     } // end i loop/
     // delay 1 seconds, then clear error message
-     clearResult(0); 
+    clearResult(0);
 } // end function clearScreen
 
 function clearResult(delaySecs) {
@@ -177,10 +177,10 @@ function sleep(miliSeconds) {
 }
 
 function calcArray(arrayParam) {
-// DMcC 15/05/23:  The function below is used to parse out a character-based array and calcualte the result
-// Note that multiply done first, then divide, then add, then subtract 
-// Note:  standard eval() function could have been used but was avoided due to widely published security concerns....
-console.log('Within function calcArray');
+    // DMcC 15/05/23:  The function below is used to parse out a character-based array and calcualte the result
+    // Note that multiply done first, then divide, then add, then subtract 
+    // Note:  standard eval() function could have been used but was avoided due to widely published security concerns....
+    console.log('Within function calcArray');
     let result = 0;
     console.log('Array passed is ' + arrayParam[0] + ' ' + arrayParam[1] + ' ' + arrayParam[2] + ' ' + arrayParam[3] + ' ' + arrayParam[4]);
     console.log('ArrayParam[1]is' + arrayParam[1]);
@@ -191,7 +191,7 @@ console.log('Within function calcArray');
                     result = +arrayParam[0] * +arrayParam[2] * +arrayParam[4];
                     break;
                 case "/":
-                    result = +arrayParam[0] * +arrayParam[2] / +arrayParam[4];
+                    result = (+arrayParam[0] * +arrayParam[2]) / +arrayParam[4];
                     break;
                 case "+":
                     result = (+arrayParam[0] * +arrayParam[2]) + +arrayParam[4];
@@ -284,17 +284,22 @@ console.log('Within function calcArray');
 function keyClick(selectedKey) {
     // DMcC 17/05/23 Start with capturing what attempt number we are on: //
     let attemptNum = document.getElementById('attemptNum').innerHTML;
-    // DMcC 17/05/23 also determine what is the next column number to populate: //
-    let colNum = document.getElementById('colNum').innerHTML;
-    // 29/05/23 - DMcC - workaround for clearing an error message (e.g. 'Incorrect total') remaining from //
-    // a previous row //
-    // if an entry has been made on a new row (column 1) then clear any on-screen display or error messages with a half-second delay//
-    if (colNum==0) {
-        clearResult(0.5)
-    };
-    console.log("Within keyClick function, attempt number " + attemptNum + "column Number " + colNum + "character " + selectedKey);
-    writeLetter(attemptNum, colNum, selectedKey);
-    document.getElementById('colNum').innerHTML = (++colNum);
+    // If attempt number 7 is reached then game is over //
+    if (attemptNum == 7) {
+        endGame(7);
+    } else {
+        // DMcC 17/05/23 also determine what is the next column number to populate: //
+        let colNum = document.getElementById('colNum').innerHTML;
+        // 29/05/23 - DMcC - workaround for clearing an error message (e.g. 'Incorrect total') remaining from //
+        // a previous row //
+        // if an entry has been made on a new row (column 1) then clear any on-screen display or error messages with a half-second delay//
+        if (colNum == 0) {
+            clearResult(0.5)
+        };
+        console.log("Within keyClick function, attempt number " + attemptNum + "column Number " + colNum + "character " + selectedKey);
+        writeLetter(attemptNum, colNum, selectedKey);
+        document.getElementById('colNum').innerHTML = (++colNum);
+    }
 }
 
 function backSpace() {
@@ -344,9 +349,10 @@ function checkSolution() {
     if (fred[5].innerHTML != calcTarget) {
         // alert('Calculated total not equal to target value!');//
         displayResult('Incorrect calc!');
+        fred[5].innerHTML = calcTarget;
         // DMcC 29/05/23 - need to take some action here to display incorrect result and to return to the start of the line //
         // tried clearResult with a 2-second timer but it executed in parallel and didnt cause the required delay => workaround clear message at start of next line//
-        }
+    }
     fred[5].innerHTML = calcTarget;
     // DMcC 29/05/23: --- would really prefer to reverse out at this point and not accept the entry as the calculated total is incorrect //
     // hmmm might need a think about this.... //
@@ -423,7 +429,12 @@ function checkSolution() {
     // else Increment attempt number and reset current letter position//
     else {
         document.getElementById('attemptNum').innerHTML = ++attemptNum;
-        document.getElementById('colNum').innerHTML = 0;
+        // If attempt number 7 is reached then game is over //
+        if (attemptNum == 7) {
+            endGame(7);
+        } else {
+           document.getElementById('colNum').innerHTML = 0;
+        }
     }
 } // End of function checkSolution()
 
@@ -470,41 +481,29 @@ function writeGuess(rowNum, guessArray) {
 }
 
 function endGame(attemptNum) {
+    const solution = document.getElementById('solution');
     console.log('Function endGame, number of attempts was ' + attemptNum);
-    resultOverLay = document.getElementById('resultOverLay');
-    resultOverLay.classList.remove('noDisplay');
-    resultOverLay.classList.add('yesDisplay');
-    resultText = document.getElementById('resultText');
-    resultText.classList.remove('noDisplay');
-    resultText.classList.add('yesDisplay');
-
     switch (attemptNum) {
         case ('1'):
-            resultText.innerHTML = 'Genius';
+            displayResult('Genius');
             break;
         case ('2'):
-            resultText.innerHTML = 'Magnificent';
+            displayResult('Magnificent');
             break;
         case ('3'):
-            resultText.innerHTML = 'Impressive';
+            displayResult('Impressive');
             break;
         case ('4'):
-            resultText.innerHTML = 'Splendid';
+            displayResult('Splendid');
             break;
         case ('5'):
-            resultText.innerHTML = 'Great';
+            displayResult('Great');
             break;
         case ('6'):
-            resultText.innerHTML = 'Whew!';
+            displayResult('Whew!');
             break;
         default:
-            alert('No match found for attemptNum ' + attemptNum);
-
-            resultOverLay.classList.remove('noDisplay');
-            resultOverLay.classList.add('yesDisplay');
-            resultText.classList.remove('noDisplay');
-            resultText.classList.add('yesDisplay');
-
+            displayResult(solution.innerHTML);
     }
 }
 

@@ -189,16 +189,16 @@ function calcArray(arrayParam) {
             switch (arrayParam[3]) {
                 case "*":
                     // DMcC 29/05/23 removing the plus sign from the calcs below, just monitor if it causes a problem... */
-                    result = arrayParam[0] * arrayParam[2] * arrayParam[4];
+                    result = parseInt(arrayParam[0],10) * parseInt(arrayParam[2],10) * parseInt(arrayParam[4],10);
                     break;
                 case "/":
-                    result = ((arrayParam[0] * arrayParam[2]) / arrayParam[4]).toFixed(0);
+                    result = ((parseInt(arrayParam[0]) * parseInt(arrayParam[2],10)) / parseInt(arrayParam[4],10)).toFixed(0);
                     break;
                 case "+":
-                    result = (arrayParam[0] * arrayParam[2]) + arrayParam[4];
+                    result = (parseInt(arrayParam[0]) * parseInt(arrayParam[2],10)) + parseInt(arrayParam[4]);
                     break;
                 case "-":
-                    result = (arrayParam[0] * arrayParam[2]) - arrayParam[4];
+                    result = (parseInt(arrayParam[0]) * parseInt(arrayParam[2],10)) - parseInt(arrayParam[4]);
                     break;
                 default:
                     alert('second operator ' + arrayParam[3] + ' not recognised');
@@ -208,16 +208,16 @@ function calcArray(arrayParam) {
         case "/":
             switch (arrayParam[3]) {
                 case "*":
-                    result = (parseInt(arrayParam[0]) / (arrayParam[2] * arrayParam[4]).toFixed(0));
+                    result = (parseInt(arrayParam[0],10) / (parseInt(arrayParam[2],10) * parseInt(arrayParam[4],10))).toFixed(0);
                     break;
                 case "/":
-                    result = (arrayParam[0] / arrayParam[2] / arrayParam[4].toFixed(0));
+                    result = (parseInt(arrayParam[0],10) / parseInt(arrayParam[2],10) / parseInt(arrayParam[4],10)).toFixed(0);
                     break;
                 case "+":
-                    result = ((arrayParam[0] / arrayParam[2]) + arrayParam[4].toFixed(0));
+                    result = ((parseInt(arrayParam[0],10) / parseInt(arrayParam[2],10)) + parseInt(arrayParam[4],10)).toFixed(0);
                     break;
                 case "-":
-                    result = ((arrayParam[0] / arrayParam[2]) - arrayParam[4].toFixed(0));
+                    result = (parseInt(arrayParam[0],10) / parseInt(arrayParam[2],10)) - parseInt((arrayParam[4],10)).toFixed(0);
                     break;
                 default:
                     alert('second operator ' + arrayParam[3] + ' not recognised');
@@ -246,16 +246,16 @@ function calcArray(arrayParam) {
         case "-":
             switch (arrayParam[3]) {
                 case "*":
-                    result = parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) * parseInt(arrayParam[4], 10));
+                    result = parseInt(arrayParam[0],10) - (parseInt(arrayParam[2],10) * parseInt(arrayParam[4],10));
                     break;
                 case "/":
-                    result = (parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) / parseInt(arrayParam[4])).toFixed(0));
+                    result = (parseInt(arrayParam[0],10) - (parseInt(arrayParam[2],10) / parseInt(arrayParam[4],10)).toFixed(0));
                     break;
                 case "+":
-                    result = parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) + parseInt(arrayParam[4], 10));
+                    result = parseInt(arrayParam[0],10) - (parseInt(arrayParam[2],10) + parseInt(arrayParam[4],10));
                     break;
                 case "-":
-                    result = parseInt(arrayParam[0]) - parseInt(arrayParam[2]) - parseInt(arrayParam[4]);
+                    result = parseInt(arrayParam[0],10) - parseInt(arrayParam[2],10) - parseInt(arrayParam[4],10);
                     break;
                 default:
                     alert('second operator ' + arrayParam[3] + ' not recognised');

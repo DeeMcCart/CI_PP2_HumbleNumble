@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log('Dom Content loaded!'); // Adding a console output for testing purposes //
     setDate();
-    /* DMcC 17/05/23:  the captureAttempt() function was used when javascript was pulling values from the user screen - */
-    /* this approach has now changed so that the user is 'pushing' values to javaScript using the onclick() functions.. therefore may not be needed */
-    //   captureAttempt();
 });
 
 function setDate() {

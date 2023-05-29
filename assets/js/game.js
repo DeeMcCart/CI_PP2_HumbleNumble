@@ -190,13 +190,13 @@ function calcArray(arrayParam) {
                     result = parseInt(arrayParam[0],10) * parseInt(arrayParam[2],10) * parseInt(arrayParam[4],10);
                     break;
                 case "/":
-                    result = ((parseInt(arrayParam[0]) * parseInt(arrayParam[2],10)) / parseInt(arrayParam[4],10)).toFixed(0);
+                    result = ((parseInt(arrayParam[0],10) * parseInt(arrayParam[2],10)) / parseInt(arrayParam[4],10)).toFixed(0);
                     break;
                 case "+":
-                    result = (parseInt(arrayParam[0]) * parseInt(arrayParam[2],10)) + parseInt(arrayParam[4]);
+                    result = (parseInt(arrayParam[0],10) * parseInt(arrayParam[2],10)) + parseInt(arrayParam[4],10);
                     break;
                 case "-":
-                    result = (parseInt(arrayParam[0]) * parseInt(arrayParam[2],10)) - parseInt(arrayParam[4]);
+                    result = (parseInt(arrayParam[0],10) * parseInt(arrayParam[2],10)) - parseInt(arrayParam[4],10);
                     break;
                 default:
                     alert('second operator ' + arrayParam[3] + ' not recognised');
@@ -215,7 +215,7 @@ function calcArray(arrayParam) {
                     result = ((parseInt(arrayParam[0],10) / parseInt(arrayParam[2],10)) + parseInt(arrayParam[4],10)).toFixed(0);
                     break;
                 case "-":
-                    result = (parseInt(arrayParam[0],10) / parseInt(arrayParam[2],10)) - parseInt((arrayParam[4],10)).toFixed(0);
+                    result = ((parseInt(arrayParam[0],10) / parseInt(arrayParam[2],10)) - parseInt(arrayParam[4],10)).toFixed(0);
                     break;
                 default:
                     alert('second operator ' + arrayParam[3] + ' not recognised');
@@ -451,11 +451,12 @@ function endGame(attemptNum) {
             displayResult('Great');
             break;
         case ('6'):
-            displayResult('Whew!');
+            displayResult('Phew!');
             break;
         default:
             displayResult(solution.innerHTML);
     }
+    displayStats();
 }
 
 /** Function displayResult() displays text in results box for various scenarious - error message, success message etc 
@@ -469,6 +470,19 @@ function displayResult(displayText) {
     resultText.classList.remove('noDisplay');
     resultText.classList.add('yesDisplay');
     resultText.innerHTML = displayText;
+    }
+
+/*
+ * Function help - enables display of helptext modal screen 
+ */
+function help() {
+    let helpOverLay = document.getElementById('helpOverLay');
+    helpOverLay.classList.remove('noDisplay');
+    helpOverLay.classList.add('yesDisplay');
+
+    let helpText = document.getElementById('helpText');
+    helpText.classList.remove('noDisplay');
+    helpText.classList.add('yesDisplay');
 }
 
 /*
@@ -484,15 +498,40 @@ function hideHelp() {
     helpText.classList.add('noDisplay');
 }
 
-/*
- * Function help - enables display of helptext modal screen 
- */
-function help() {
-    let helpOverLay = document.getElementById('helpOverLay');
-    helpOverLay.classList.remove('noDisplay');
-    helpOverLay.classList.add('yesDisplay');
 
-    let helpText = document.getElementById('helpText');
-    helpText.classList.remove('noDisplay');
-    helpText.classList.add('yesDisplay');
+/*
+ * Function displayStats - enables display of player statistics modal screen 
+ */
+function displayStats() {
+    let statsOverLay = document.getElementById('statsOverLay');
+    statsOverLay.classList.remove('noDisplay');
+    statsOverLay.classList.add('yesDisplay');
+
+    let statsText = document.getElementById('statsText');
+    statsText.classList.remove('noDisplay');
+    statsText.classList.add('yesDisplay');
+}
+
+/*
+ * Function hideStats - hides the stats modal screen when the close button is selected 
+ */
+function hideStats() {
+    let statsOverLay = document.getElementById('statsOverLay');
+    statsOverLay.classList.remove('yesDisplay');
+    statsOverLay.classList.add('noDisplay');
+
+    let statsText = document.getElementById('statsText');
+    statsText.classList.remove('yesDisplay');
+    statsText.classList.add('noDisplay');
+}
+
+
+function shareStats() {
+    let statsOverLay = document.getElementById('statsOverLay');
+    statsOverLay.classList.remove('noDisplay');
+    statsOverLay.classList.add('yesDisplay');
+
+    let statsText = document.getElementById('helpText');
+    statsText.classList.remove('noDisplay');
+    statsText.classList.add('yesDisplay');
 }

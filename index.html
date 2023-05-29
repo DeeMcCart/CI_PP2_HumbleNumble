@@ -54,7 +54,25 @@
 
         </ul>
     </div> <!-- end div 'helpText'-->
-</div> <!-- end div overLay -->
+</div> <!-- end div helpOverLay -->
+
+<div id="statsOverLay" class="noDisplay">
+    <div id="statsText" class="noDisplay">
+        <!-- This is a pop up window/ modal of Statistics -->
+        <div> <!-- DMcC 28/05/23 created a separate div as want this element to right-align -->
+            <button id="closeStatsText-btn" onclick="hideStats();">X</button>
+        </div>
+        <!-- DMcC 28/05/23 This is player statistics section -->
+        <h2>STATISTICS</h2>
+        <h3>Played   Win%   Current Streak   Max Streak</h3>
+        <h3>GUESS DISTRIBUTION</h3>
+        <button id="shareStats-btn" onclick="shareStats();">X</button>
+        </div> <!-- end div 'statsText'-->
+</div> <!-- end div statsOverLay -->
+
+
+
+
 
 <body>
     <div id="intro" class="yesDisplay">

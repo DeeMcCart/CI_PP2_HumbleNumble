@@ -22,13 +22,13 @@ h1 {
 #container .yesDisplay {
     display: block;
     /* switched from flex to block 08/05/23 DMcC to force selectionPanel below gamePanel */
-    
-}
-.yesDisplay {
+    }
+
+    .yesDisplay {
     display: flex;
 }
 
-#helpOverLay {
+#helpOverLay, #statsOverLay{
     position:fixed;
     top: 0;
     bottom: 0;
@@ -38,11 +38,12 @@ h1 {
     background-color: rgba(0,0,0,0.5);
 }
 
-#helpOverLay .yesDisplay {
+#helpOverLay .yesDisplay, #statsOverLay .yesDisplay, #container .yesDisplay  {
     display:block;
 }
 
-#helpText {
+
+#helpText, #statsText {
     max-width:600px;
     height:400px;
     margin: auto;
@@ -61,28 +62,28 @@ h1 {
     overflow:scroll;
     }
 
-    #helpText div {
+    #helpText div, statsText div {
         display: flex;
         justify-content: flex-end;
     }
     
     
-#helpText button {
+#helpText button, #statsText button {
 margin: 0 20px 0 0;    
 display:inline-block;
 text-align:right;}
 
-#closeHelpText-btn {
+#closeHelpText-btn, #closeStatsText-btn {
     font-weight:bold;
     border:none;
     text-size-adjust: 2rem;
 }
-    #helpText h3 {
+    #helpText h3, #statsText h3 {
         font-size: 1rem;
         font-weight: 300;
     }
 
-    #helpText p {
+    #helpText p, #statsText p {
         font-size: 0.75rem;
     }
 

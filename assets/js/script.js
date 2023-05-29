@@ -149,6 +149,13 @@ function clearScreen() {
         } // end j loop/ 
     } // end i loop/
 
+    clearResult(10);
+} // end function clearScreen
+
+function clearResult(timeDelay) {
+    // wait for a time delay //
+    WebGLActiveInfo(timeDelay*1000);
+
     // Clear any result text which remains onscreen from a previous attempt //
     resultOverLay = document.getElementById('resultOverLay');
     resultOverLay.classList.remove('yesDisplay');
@@ -156,9 +163,7 @@ function clearScreen() {
     resultText = document.getElementById('resultText');
     resultText.classList.remove('yesDisplay');
     resultText.classList.add('noDisplay');
-
-} // end function clearScreen
-
+}
 
 // DMcC 17/05/23 Add code to test the writeGuess function is is intended to populate a row of guess to screen //
 // writeGuess(1, possSolution[solIndex]); //
@@ -325,10 +330,15 @@ function checkSolution() {
     let fred = document.getElementsByClassName('row' + attemptNum);
     // console.log('Current value of target for this row is '+fred[5].innerHTML);
     if (fred[5].innerHTML != calcTarget) {
-        alert('Calculated total not equal to target value!');
+        // alert('Calculated total not equal to target value!');//
+        displayResult('Incorrect calc!');
+        // DMcC 29/05/23 - need to take some action here to display incorrect result and to return to the start of the line //
+        // therefore added return statement here //
+        return;
     }
     fred[5].innerHTML = calcTarget;
-
+    // DMcC 29/05/23: --- would really prefer to reverse out at this point and not accept the entry as the calculated total is incorrect //
+    // hmmm might need a think about this.... //
     console.log('Current value of target for this row is ' + fred[5].innerHTML);
     console.log('More logic needed in checkSolution to double check total and to check each of the items');
     // reset the 'correct element' counter //
@@ -452,10 +462,10 @@ function endGame(attemptNum) {
     console.log('Function endGame, number of attempts was ' + attemptNum);
     resultOverLay = document.getElementById('resultOverLay');
     resultOverLay.classList.remove('noDisplay');
-            resultOverLay.classList.add('yesDisplay');
+    resultOverLay.classList.add('yesDisplay');
     resultText = document.getElementById('resultText');
-            resultText.classList.remove('noDisplay');
-            resultText.classList.add('yesDisplay');
+    resultText.classList.remove('noDisplay');
+    resultText.classList.add('yesDisplay');
 
     switch (attemptNum) {
         case ('1'):
@@ -485,6 +495,19 @@ function endGame(attemptNum) {
             resultText.classList.add('yesDisplay');
 
     }
+}
+
+function displayResult(displayText) {
+    // DMcC 29/05/23:  Added this function to display text in results box for various scenarious - error message, success message etc //
+    resultOverLay = document.getElementById('resultOverLay');
+    resultOverLay.classList.remove('noDisplay');
+    resultOverLay.classList.add('yesDisplay');
+    resultText = document.getElementById('resultText');
+    resultText.classList.remove('noDisplay');
+    resultText.classList.add('yesDisplay');
+
+    resultText.innerHTML = displayText;
+
 }
 
 function hideHelp() {

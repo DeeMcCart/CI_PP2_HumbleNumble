@@ -27,34 +27,36 @@
             <li>* All guesses are in the form <em>num1 op num2 op num3</em> where</li>
             <li> - num is a number between 1 and 20 </li>
             <li> - op is a mathematical operator + - * / (add subtract multiply divide) </li>
-            <li>* The colour of the tiles will change to show how close your guess was to the solution.</li> 
-                <br>
+            <li>* The colour of the tiles will change to show how close your guess was to the solution.</li>
+            <br>
             <li><b>Examples</b></li>
-            <img src="assets/images/help_example1.jpg"><p>15, 1, 6, +, - are not in the equation in any spot</p>
+            <img src="assets/images/help_example1.jpg">
+            <p>15, 1, 6, +, - are not in the equation in any spot</p>
             <img src="assets/images/help_example2.jpg">
             <li><em>5</em> is in the equation but not at 3rd position (so must be 1st or 5th position)</li>
             <li>Multiply * is correctly guessed at the 2nd position, as is divide / at the 4th position.</li>
             <br>
-                <li>Equations are evaluated as follows:</li>
-                 <li>   * any multiply operation(s) are calculated first</li>
-                 <li>   / any divide operation(s) are calculated next</li>
-                 <li>   + any add operation(s) are calculated next</li>
-                 <li>   – any minus operation(s) are calculated last</li>
-                
-                <li>e.g. 3+2*5 is calculated as 3+(2*5) = 3+10 = 13 (grrrr)</li>
-                <br>
-                <li><b>Notes:</b></li>
-                <li>the current version of Humble Numble WILL permit you to enter an equation that does not
+            <li>Equations are evaluated as follows:</li>
+            <li> * any multiply operation(s) are calculated first</li>
+            <li> / any divide operation(s) are calculated next</li>
+            <li> + any add operation(s) are calculated next</li>
+            <li> – any minus operation(s) are calculated last</li>
+
+            <li>e.g. 3+2*5 is calculated as 3+(2*5) = 3+10 = 13 (grrrr)</li>
+            <br>
+            <li><b>Notes:</b></li>
+            <li>the current version of Humble Numble WILL permit you to enter an equation that does not
                 calculate to the required total...this may help when you are REALLY stuck!</li>
-                <li>The <em>exact</em> equation is required, ie 1+2+3=6 will not accept 3+1+2 as a solution (grrrr again)</li>
+            <li>The <em>exact</em> equation is required, ie 1+2+3=6 will not accept 3+1+2 as a solution (grrrr again)
+            </li>
             <li>(and yes, the same number can appear twice grrrrr)</li>
             <li>Happy calculating!</li>
-            
-            </ul>
+
+        </ul>
     </div> <!-- end div 'helpText'-->
 </div> <!-- end div overLay -->
 
-<body> 
+<body>
     <div id="intro" class="yesDisplay">
         <img src="assets/images/wordle_Icon.jpg">
         <br>
@@ -84,13 +86,15 @@
         <header>
             <h1>Humble Numble</h1>
         </header>
-        <button class="gameButton" onclick="initSolution();">
+        <!-- DMcC 29/05/23 Make initialise Solution button non-display and instead auto initialise on start -->
+        <!-- <button class="gameButton" onclick="initSolution();">
             Initialise Solution!
-        </button>
-        <!-- DMcC 17/05/23 the below is possibly no longer needed as has been replaced by an array -->
-        <p id="solution">Solution here: </p>
-
-        <p>Attempt: <span id="attemptNum">1</span> col: <span id="colNum">0</span></p>
+        </button> -->
+        <!-- DMcC 29/05/23 the below is made non-display, it is populated but hidden as will be used for comparison  -->
+        <p id="solution" class="noDisplay">Solution here: </p>
+        <p>Target: <span class="targetValue">0</span>          Attempt: <span id="attemptNum">1</span>
+            <span id="colNum" class="noDisplay">0</span>
+        </p>
     </div> <!-- end div gameHead-->
 
     <div id="container" class="noDisplay">
@@ -111,7 +115,7 @@
                 <!-- DMcC 28/05/23 The resultOverlay below is a placeholder for positioning game result once the player has reached the solution -->
                 <!-- or exceeded 6 tries -->
                 <div class="noDisplay" id="resultOverLay">
-                    <div class ="noDisplay" id="resultText">
+                    <div class="noDisplay" id="resultText">
                         Example</div>
                 </div>
 

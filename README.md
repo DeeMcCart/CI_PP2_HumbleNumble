@@ -134,10 +134,10 @@ From this analysis, a set of possible requirements was identified for a new port
 The aim of this specific website is develop a Numble game which can be played in simple form
 
 The target audience is:<br>
-a. People who enjoy puzzle-solving
-b. People who already play Wordle and are familiar with the user interface (e.g. grey, orange, green guess-letter evaluation; 6 tries,  grid layout)
-c. People who want to have a reliable consistent experience through out the game (in other words, they want an opportunity to finish the game by reaching the end, and they want to be able to trust the process (ie they can understand how they move forward or backwards, and they dont feel it is unfair or impossible to complete).
-d. People who like to practice their mathametical skills
+a. People who enjoy puzzle-solving<br>
+b. People who already play Wordle and are familiar with the user interface (e.g. grey, orange, green guess-letter evaluation; 6 tries,  grid layout)<br>
+c. People who want to have a reliable consistent experience through out the game (in other words, they want an opportunity to finish the game by reaching the end, and they want to be able to trust the process (ie they can understand how they move forward or backwards, and they dont feel it is unfair or impossible to complete).<br>
+d. People who like to practice their mathametical skills<br>
 
 * Game players
 * who enjoy mathematical puzzles
@@ -156,7 +156,8 @@ d. People who like to practice their mathametical skills
 * The game is a fun way of applying simple mathematical principles
 
 ### UX Design Scope - Data
-A set of calculations needed to be pre-loaded which were consistent with game rules (e.g. operator numbers not > 20)
+A set of equations are pre-loaded which are consistent with game rules (e.g. operator numbers not > 20, calculations return an integer value)
+Currently HumBle Numble will randomly select one of these equations for eachh game.
 
 ## User Goals/ User Stories
 ----------------
@@ -245,6 +246,7 @@ The choice of colours for Humble Numble is very much in accordance with user sto
 
 ### Design Images
 This site has very few images as the focus is on the game content.
+A 'Wordle-type' logo is used on the Intro page.
 
 ### Design Images - Icons and Symbols
 
@@ -255,12 +257,12 @@ Certain icons and symbols used for quicklinks e.g. ? for About page, graphy symb
  
 ### F01 
 ![Introduction page](./docs/readme_images/humble_numble_intro.jpg?raw=true "Introduction page seen on first opening the website")
-On first using the game (or on use within incognito mode) the user will encounter an introduction page, they can take a button to 'Play' or 'How to Play' to view help text.
+On first using the game (or on use within incognito mode) the user will encounter an introduction window, they can take a button to 'Play' or 'How to Play' to view help text.  The intro page shows the current date, the Humble Numble day number, and some copyright and acknowledgement notices.
 
 ### F02 
 Description
 ![Humble Numble game explanation](./docs/readme_images/humble_numble_how_to_play.jpg?raw=true "Scrollable text to show user instructions on how to play Humble Numble game")
-A pop up window shows the user how to play the Humble Number game is available, this can also be accessed from within the game (for example if a user was mid-game and ewants to check the rules).   The 'How to Play' window can be closed by clicking on the X in top right hand corner and the user is returned to the previous screen.  
+A modal 'How to Play' window showing the user how to play the Humble Number game is accessed from the introduction window, or from within the game (for example if a user is mid-game and wants to check the rules).   The 'How to Play' window can be scrolled to see full text, and is closed by clicking on the X in top right hand corner, at which point it disappears from screen.  
 
 ### F03 
 Description
@@ -354,8 +356,9 @@ The pages - which effectively bring these features together - are:
 * Settings page (image link)
 * About page (image link)
 * Signup page
+- __Home Page Intro Screen__
 
-- __Landing Page__
+- __Main Game Screen__
 The initial website page shows a 6 row x 7 column grid, where the user can enter their guesses, one per row, in the 5 left most columns.
 The 6th column always contains the '=' sign
 and the 7th column contains the target figure.
@@ -369,12 +372,12 @@ Clicking on a selection panel button will place the corresponding character in t
 Clicking on ENTER will submit the current grid row as an entry.
 
 - __Settings Page__
-Ability to choose settings
+Ability to choose settings - to be decided
 
 ![Walks Page](./docs/readme_images/P02-Walk_Details.jpg?raw=true "Page with details for each walk")
 
 
-- __About Page__
+- __'How to Play' Modal Window__
 - A chance to explain the rules of the game.
 
 ![Gallery Page](./docs/readme_images/P03-Walk_Details.jpg?raw=true "Gallery")
@@ -533,6 +536,7 @@ The following sites were ued for research and better understanding while creatin
 * https://stackoverflow.com/questions/69565192/how-to-bring-the-popup-fully-displayed-in-front-of-everything used to get the results popup to display in a predictable on-screen position
 * https://stackoverflow.com/questions/42610369/javascript-classlist-remove-not-working-properly used to resolve issue #001 where not all classLists removing as expected
 * https://www.youtube.com/watch?v=uUCpopjPZdI HTML, CSS & JavaScript - How to Create a Pop-Up Modal ( Manual Version ) - Web Dev Tutorials @codefoxx used to help create a pop up help window
+* https://github.com/aleksandracodes/CI_PP2_SunshineGuessing (Aleksandra Haniok) was used for readme checklist and content
 
  
 ### Acknowledgements

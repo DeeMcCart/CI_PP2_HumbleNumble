@@ -63,15 +63,19 @@ function playGame() {
     gameHead.classList.remove('noDisplay');
     let container = document.getElementById('container');
     container.classList.remove('noDisplay');
+
+    // DMcC 29/05/23:  Automatically initialise the game with a new target solution //
+    initSolution();
 }
 
 function initSolution() {
-    // Startby clearing the screen of previous guess */
+    // Startby clearing the screen of previous guess (if exists)*/
     clearScreen();
 
     /* DMcC 17/05/23:  Note This function sets attemptum and colNum back to 0 */
     document.getElementById('attemptNum').innerHTML = 1;
     document.getElementById('colNum').innerHTML = 0;
+
     // Below is some logic to select a possible solution.  This logic can be extended to generate random solutions - future fix //
     // Define an array to hold solution values.  This is a multi-dimension array which can be added to as new solutions are generated daily 
     // For now it will be used to pick a random entry from the array for that day's guess 
@@ -144,6 +148,15 @@ function clearScreen() {
             initRow[j].innerHTML = "";
         } // end j loop/ 
     } // end i loop/
+
+    // Clear any result text which remains onscreen from a previous attempt //
+    resultOverLay = document.getElementById('resultOverLay');
+    resultOverLay.classList.remove('yesDisplay');
+    resultOverLay.classList.add('noDisplay');
+    resultText = document.getElementById('resultText');
+    resultText.classList.remove('yesDisplay');
+    resultText.classList.add('noDisplay');
+
 } // end function clearScreen
 
 

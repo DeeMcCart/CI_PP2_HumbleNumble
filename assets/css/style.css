@@ -15,6 +15,10 @@ body {
     display: none;
 }
 
+h1 {
+    font-family: 'Roboto Slab';
+}
+
 #container .yesDisplay {
     display: block;
     /* switched from flex to block 08/05/23 DMcC to force selectionPanel below gamePanel */

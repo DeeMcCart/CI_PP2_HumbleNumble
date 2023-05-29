@@ -4,17 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* This function generates a date for the intro screen, formatted as per the Wordle date ie MMM DD, YYYY */
-    function setDate() {
+function setDate() {
     const month = new Date().getMonth();
     const day = new Date().getDate();
     const year = new Date().getFullYear();
     var monthName;
     switch (month) {
         case 0:
-            monthName = 'Jan'; 
+            monthName = 'Jan';
             break;
         case 1:
-            monthName = 'Feb'; 
+            monthName = 'Feb';
             break;
         case 2:
             monthName = 'Mar';
@@ -68,14 +68,14 @@ function playGame() {
 }
 
 /*  Function initSolution() initialises the game as follows:
-*    - start by clearing the screen of previous guess (if exists; for testing the game was set to run repeatedly);
-*    - reset attemptNum to 1 and colNum to 0; 
-*    - select a possible solution randomly from a predefined multi-dimensional array of solution values.  
-*    - (This logic can be extended to generate random solutions - future feature) 
-*    - For now it will be used to pick a random entry from the array for that day's guess 
-*    -  // DMcC 18/05/23: Use a random generator to choose from the array of possible solutions //
-*      
-*/
+ *    - start by clearing the screen of previous guess (if exists; for testing the game was set to run repeatedly);
+ *    - reset attemptNum to 1 and colNum to 0; 
+ *    - select a possible solution randomly from a predefined multi-dimensional array of solution values.  
+ *    - (This logic can be extended to generate random solutions - future feature) 
+ *    - For now it will be used to pick a random entry from the array for that day's guess 
+ *    -  // DMcC 18/05/23: Use a random generator to choose from the array of possible solutions //
+ *      
+ */
 
 
 function initSolution() {
@@ -99,14 +99,11 @@ function initSolution() {
 
     let solIndex = Math.floor(Math.random() * possSolution.length);
     let targetValue = document.getElementsByClassName('targetValue');
-   
-    // Set targetvalue on all rows to be equal to the solution value (this will be re-verified for each row, it just acts as a user reminder) //
-       for (let i = 0; i < targetValue.length; i++) {
-        targetValue[i].innerHTML = possSolution[solIndex][5];
-        console.log('In loop ' + targetValue[i].innerHTML);
-    }
-    console.log('targetValue after initialise ' + targetValue.innerHTML);
 
+    // Set targetvalue on all rows to be equal to the solution value (this will be re-verified for each row, it just acts as a user reminder) //
+    for (let i = 0; i < targetValue.length; i++) {
+        targetValue[i].innerHTML = possSolution[solIndex][5];
+    }
     // Populate single field with ID solution with string value of solution //
     // Also populate array with class solution with the individual values within the solution //
     let thisSolution = document.getElementById('solution');
@@ -118,17 +115,17 @@ function initSolution() {
     }
     thisSolution.innerHTML = (thisSolution.innerHTML + " = " + possSolution[solIndex][5]);
     solution[5].innerHTML = possSolution[solIndex][5];
-   }
+}
 
 
 /**
  * DMcC 18/05/23 Code below is used to clear screen of previous entries 
  */
- // DMcC 18/05/23:  Removes colours previously applied to grid and keys when a game has already been played //
-    // DMcC 28/05/23:  Issue #001:  Not all previously coloured tiles are clearing - was using a single variable name and resetting it for each colour//
-    // DMcC 28/05/23:  Issue 001 - problem identified, getElementsByClassName is a live node list which reduces in size as matching classes are removed //
-    // Solution is to use a 'while' loop rather than a 'for' loop //
-   function clearScreen() {
+// DMcC 18/05/23:  Removes colours previously applied to grid and keys when a game has already been played //
+// DMcC 28/05/23:  Issue #001:  Not all previously coloured tiles are clearing - was using a single variable name and resetting it for each colour//
+// DMcC 28/05/23:  Issue 001 - problem identified, getElementsByClassName is a live node list which reduces in size as matching classes are removed //
+// Solution is to use a 'while' loop rather than a 'for' loop //
+function clearScreen() {
     let colouredTiles = document.getElementsByClassName('present');
     while (colouredTiles.length) {
         colouredTiles[0].classList.remove('present');
@@ -172,14 +169,14 @@ function clearResult(delaySecs) {
 
 /**  
  * This function is to delay in some situations eg error message on-screen - give the user time to read it before clearing
-*/
+ */
 function sleep(miliSeconds) {
     var currentTime = new Date().getTime();
     while (currentTime + miliSeconds >= new Date().getTime()) { // pausing for the specified miliseconds}
     }
 }
 
- /** DMcC 15/05/23:  The function below is used to parse out a character-based array and calcualte the result
+/** DMcC 15/05/23:  The function below is used to parse out a character-based array and calcualte the result
  * Note that multiply done first, then divide, then add, then subtract 
  * Note:  standard eval() function could have been used but was avoided due to widely published security concerns....
  * @param {array} is an equation passed to this function for evaluation
@@ -230,16 +227,16 @@ function calcArray(arrayParam) {
         case "+":
             switch (arrayParam[3]) {
                 case "*":
-                    result = arrayParam[0] + (arrayParam[2] * arrayParam[4]);
+                    result = parseInt(arrayParam[0], 10) + (parseInt(arrayParam[2], 10) * parseInt(arrayParam[4], 10));
                     break;
                 case "/":
-                    result = arrayParam[0] + (arrayParam[2] / arrayParam[4]);
+                    result = (parseInt(arrayParam[0], 10) + (parseInt(arrayParam[2], 10) / parseInt(arrayParam[4], 10)));
                     break;
                 case "+":
-                    result = arrayParam[0] + arrayParam[2] + arrayParam[4];
+                    result = parseInt(arrayParam[0], 10) + parseInt(arrayParam[2], 10) + parseInt(arrayParam[4], 10);
                     break;
                 case "-":
-                    result = arrayParam[0] + arrayParam[2] - arrayParam[4];
+                    result = (parseInt(arrayParam[0], 10) + parseInt(arrayParam[2]), 10) - parseInt(arrayParam[4], 10);
                     break;
                 default:
                     alert('second operator' + arrayParam[3] + ' not recognised');
@@ -249,16 +246,16 @@ function calcArray(arrayParam) {
         case "-":
             switch (arrayParam[3]) {
                 case "*":
-                    result = arrayParam[0] - (arrayParam[2] * arrayParam[4]);
+                    result = parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) * parseInt(arrayParam[4], 10));
                     break;
                 case "/":
-                    result = arrayParam[0] - (arrayParam[2] / arrayParam[4]);
+                    result = parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) / parseInt(arrayParam[4]));
                     break;
                 case "+":
-                    result = arrayParam[0] - arrayParam[2] + arrayParam[4];
+                    result = parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) + parseInt(arrayParam[4], 10));
                     break;
                 case "-":
-                    result = arrayParam[0] - arrayParam[2] - arrayParam[4];
+                    result = parseInt(arrayParam[0]) - parseInt(arrayParam[2]) - parseInt(arrayParam[4]);
                     break;
                 default:
                     alert('second operator ' + arrayParam[3] + ' not recognised');
@@ -274,22 +271,21 @@ function calcArray(arrayParam) {
 }
 
 /** function keyClick() is invoked when the user clicks any of the buttons 
-*    This function needs to establish: //
-*    - which attempt is this?  - Start with capturing what attempt number we are on: 
-*    - If attempt number 7 is reached then game is over & call function endGame to end gracefully
-*    - also determine what is the next column number to populate: 
-*    - 29/05/23 - DMcC - workaround for clearing an error message (e.g. 'Incorrect total') remaining from //
-*    - a previous row - if an entry has been made on a new row (column 1) then clear any on-screen display or error messages with a half-second delay
-*    - Use the writeLetter function to display the letter at the correct position within the on-screen grid.
-*    - Increment the current column number.
-* @param(keyboard key)  ie 1 to 20 or + - * /   
-*/
+ *    This function needs to establish: //
+ *    - which attempt is this?  - Start with capturing what attempt number we are on: 
+ *    - If attempt number 7 is reached then game is over & call function endGame to end gracefully
+ *    - also determine what is the next column number to populate: 
+ *    - 29/05/23 - DMcC - workaround for clearing an error message (e.g. 'Incorrect total') remaining from //
+ *    - a previous row - if an entry has been made on a new row (column 1) then clear any on-screen display or error messages with a half-second delay
+ *    - Use the writeLetter function to display the letter at the correct position within the on-screen grid.
+ *    - Increment the current column number.
+ * @param(keyboard key)  ie 1 to 20 or + - * /   
+ */
 function keyClick(selectedKey) {
     let attemptNum = document.getElementById('attemptNum').innerHTML;
     if (attemptNum == 7) {
         endGame(7);
-    } 
-    else {
+    } else {
         let colNum = document.getElementById('colNum').innerHTML;
         if (colNum == 0) {
             clearResult(0.5);
@@ -301,7 +297,7 @@ function keyClick(selectedKey) {
 
 /**
  * function backSpace() is used to blank out the inner HTML of the previous guess entry and decrement the current column number 
- */ 
+ */
 function backSpace() {
     let attemptNum = document.getElementById('attemptNum').innerHTML;
     let colNum = (document.getElementById('colNum').innerHTML - 1);
@@ -313,16 +309,16 @@ function backSpace() {
 }
 
 /* Function checkSolution() is invoked when the user presses the enter button 
-*    It determines the current guess row
-*    performs error checking to ensure:
-* 1. Proposed solution is in structure num op num op num - error message if not and exit function 
-* 2. Proposed solution calculates to correct total (this should already be populated as part of the entry process) 
-*    and then it must parse each element of the proposed solution and check it against the target solution 
-* depending on the result for each element, set the class for the identified element (in row grid) and set the class 
-* for the associated element (in keyboard display)
-* Setting the class to absent /present /correct will invoke the css display to change the tile/button colour to grey/ orange/ green
-*   First - retrieve the current attempt number 
-*/
+ *    It determines the current guess row
+ *    performs error checking to ensure:
+ * 1. Proposed solution is in structure num op num op num - error message if not and exit function 
+ * 2. Proposed solution calculates to correct total (this should already be populated as part of the entry process) 
+ *    and then it must parse each element of the proposed solution and check it against the target solution 
+ * depending on the result for each element, set the class for the identified element (in row grid) and set the class 
+ * for the associated element (in keyboard display)
+ * Setting the class to absent /present /correct will invoke the css display to change the tile/button colour to grey/ orange/ green
+ *   First - retrieve the current attempt number 
+ */
 function checkSolution() {
     let attemptNum = document.getElementById('attemptNum').innerHTML;
     const solution = document.getElementsByClassName('solutionRow');
@@ -331,7 +327,7 @@ function checkSolution() {
     // then pick up the 5 elements from that row //
     let guess = document.getElementsByClassName('row' + attemptNum);
     let guessItems = [guess[0].innerHTML, guess[1].innerHTML, guess[2].innerHTML, guess[3].innerHTML, guess[4].innerHTML];
-  let calcTarget = calcArray(guessItems);
+    let calcTarget = calcArray(guessItems);
     let fred = document.getElementsByClassName('row' + attemptNum);
     if (fred[5].innerHTML != calcTarget) {
         // alert('Calculated total not equal to target value!');//
@@ -349,18 +345,6 @@ function checkSolution() {
     let correctCount = 0;
     /* first check each element of the array to see if it is found anywhere within the solution array */
     for (i = 0; i < (guess.length - 1); i++) {
-        // console.log('Checking guess ' + guess[i].innerHTML + ' for matches');
-        // the following logic adapted from various research sources //
-        //console.log('Solution has the following content, is it an array? ' + solution);
-        //console.log('Solution has the following type, is it an array? ' + solution.type);
-        // DMcC 29/05/23 - check if the solution below is actually functional?
-        if (Array.isArray(solution)) {
-            let found = solution.find(x => (x.innerHTML === guess[i].innerHTML));
-            console.log('Found ' + found + ' within the solution array');
-        } else {
-            console.log('solution is not an array');
-        }
-
         for (j = 0; j < solution.length; j++) {
             // Do a first check here to find the guess array item within the solution array //
             // this would be handy becuase it can be greyed out if absent //
@@ -420,7 +404,7 @@ function checkSolution() {
         if (attemptNum == 7) {
             endGame(7);
         } else {
-           document.getElementById('colNum').innerHTML = 0;
+            document.getElementById('colNum').innerHTML = 0;
         }
     }
 } // End of function checkSolution()
@@ -429,17 +413,17 @@ function checkSolution() {
  * @param(rowNum integer)
  * @param(position integer)
  * @param(guessItem character)
-*/
+ */
 function writeLetter(rowNum, position, guessItem) {
     let fred = document.getElementsByClassName('row' + rowNum)[position];
     fred.innerHTML = guessItem;
 }
 
 /** Function writeGuess() is used to write an entire line of guessArray to the screen //
-* Parameters are rowNum (which links to a specified row# ID on-screen) and guessArray //
-* eventually the fields will each be displayed individually when they are loaded/validated but the below is good for testing //
-* Will need to add array parameters for guessed solutions to indicate if each entry is success(green) part-success(orange) fail(darkgrey) untested (blank))
-*/
+ * Parameters are rowNum (which links to a specified row# ID on-screen) and guessArray //
+ * eventually the fields will each be displayed individually when they are loaded/validated but the below is good for testing //
+ * Will need to add array parameters for guessed solutions to indicate if each entry is success(green) part-success(orange) fail(darkgrey) untested (blank))
+ */
 function writeGuess(rowNum, guessArray) {
     // DMcC 17/05/23 can strip out the 2 lines below and replace with calculation within array reference itelf // 
     let guessRow = document.getElementsByClassName('row' + rowNum);
@@ -462,7 +446,7 @@ function writeGuess(rowNum, guessArray) {
 }
 
 /**  Function endGame() is used to bring a graceful end to the game
- * @param (attemptNum: integer)
+ * @param {attemptNum: integer}
  */
 function endGame(attemptNum) {
     const solution = document.getElementById('solution');
@@ -490,10 +474,10 @@ function endGame(attemptNum) {
     }
 }
 
- /** Function displayResult() displays text in results box for various scenarious - error message, success message etc 
-  * @param(displayText: text)
-  */
-  function displayResult(displayText) {
+/** Function displayResult() displays text in results box for various scenarious - error message, success message etc 
+ * @param {displayText: string}
+ */
+function displayResult(displayText) {
     resultOverLay = document.getElementById('resultOverLay');
     resultOverLay.classList.remove('noDisplay');
     resultOverLay.classList.add('yesDisplay');
@@ -504,8 +488,8 @@ function endGame(attemptNum) {
 }
 
 /*
-* Function hideHelp - hides the help text when the close button is selected 
-*/
+ * Function hideHelp - hides the help modal screen when the close button is selected 
+ */
 function hideHelp() {
     let helpOverLay = document.getElementById('helpOverLay');
     helpOverLay.classList.remove('yesDisplay');
@@ -517,8 +501,8 @@ function hideHelp() {
 }
 
 /*
-* Function help - enables display of helptext modal 
-*/
+ * Function help - enables display of helptext modal screen 
+ */
 function help() {
     let helpOverLay = document.getElementById('helpOverLay');
     helpOverLay.classList.remove('noDisplay');

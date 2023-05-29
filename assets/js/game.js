@@ -192,7 +192,7 @@ function calcArray(arrayParam) {
                     result = arrayParam[0] * arrayParam[2] * arrayParam[4];
                     break;
                 case "/":
-                    result = (arrayParam[0] * arrayParam[2]) / arrayParam[4];
+                    result = ((arrayParam[0] * arrayParam[2]) / arrayParam[4]).toFixed(0);
                     break;
                 case "+":
                     result = (arrayParam[0] * arrayParam[2]) + arrayParam[4];
@@ -208,16 +208,16 @@ function calcArray(arrayParam) {
         case "/":
             switch (arrayParam[3]) {
                 case "*":
-                    result = arrayParam[0] / (arrayParam[2] * arrayParam[4]);
+                    result = (parseInt(arrayParam[0]) / (arrayParam[2] * arrayParam[4]).toFixed(0));
                     break;
                 case "/":
-                    result = arrayParam[0] / arrayParam[2] / arrayParam[4];
+                    result = (arrayParam[0] / arrayParam[2] / arrayParam[4].toFixed(0));
                     break;
                 case "+":
-                    result = (arrayParam[0] / arrayParam[2]) + arrayParam[4];
+                    result = ((arrayParam[0] / arrayParam[2]) + arrayParam[4].toFixed(0));
                     break;
                 case "-":
-                    result = (arrayParam[0] / arrayParam[2]) - arrayParam[4];
+                    result = ((arrayParam[0] / arrayParam[2]) - arrayParam[4].toFixed(0));
                     break;
                 default:
                     alert('second operator ' + arrayParam[3] + ' not recognised');
@@ -230,7 +230,7 @@ function calcArray(arrayParam) {
                     result = parseInt(arrayParam[0], 10) + (parseInt(arrayParam[2], 10) * parseInt(arrayParam[4], 10));
                     break;
                 case "/":
-                    result = (parseInt(arrayParam[0], 10) + (parseInt(arrayParam[2], 10) / parseInt(arrayParam[4], 10)));
+                    result = (parseInt(arrayParam[0], 10) + (parseInt(arrayParam[2], 10) / parseInt(arrayParam[4], 10))).toFixed(0);
                     break;
                 case "+":
                     result = parseInt(arrayParam[0], 10) + parseInt(arrayParam[2], 10) + parseInt(arrayParam[4], 10);
@@ -249,7 +249,7 @@ function calcArray(arrayParam) {
                     result = parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) * parseInt(arrayParam[4], 10));
                     break;
                 case "/":
-                    result = parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) / parseInt(arrayParam[4]));
+                    result = (parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) / parseInt(arrayParam[4])).toFixed(0));
                     break;
                 case "+":
                     result = parseInt(arrayParam[0], 10) - (parseInt(arrayParam[2], 10) + parseInt(arrayParam[4], 10));
@@ -337,10 +337,6 @@ function checkSolution() {
         // tried clearResult with a 2-second timer but it executed in parallel and didnt cause the required delay => workaround clear message at start of next line//
     }
     fred[5].innerHTML = calcTarget;
-    // DMcC 29/05/23: --- would really prefer to reverse out at this point and not accept the entry as the calculated total is incorrect //
-    // hmmm might need a think about this.... //
-    console.log('Current value of target for this row is ' + fred[5].innerHTML);
-    console.log('More logic needed in checkSolution to double check total and to check each of the items');
     // reset the 'correct element' counter //
     let correctCount = 0;
     /* first check each element of the array to see if it is found anywhere within the solution array */
@@ -356,12 +352,10 @@ function checkSolution() {
                     guess[i].classList.add('correct');
                     // increment the count of correct matches //
                     correctCount++;
-                    console.log('Number of correct items is ' + correctCount);
                     // Find the matching keyboard item and add a class to change its display colour on keyboard //
                     key = document.getElementById(guess[i].innerHTML);
                     key.classList.add('correct');
                     if (correctCount == 5) {
-                        console.log('All elements guessed, turning remainder of line green');
                         // Turn the last two columns of the line green as well to make it really visible //
                         jack = (document.getElementsByClassName('row' + attemptNum))[5];
                         jack.classList.add('correct');
@@ -393,7 +387,6 @@ function checkSolution() {
 
     // Check if full solution has been reached - ie correctCount = 5 - if so then break out and give the user a congratulations message;
     if (correctCount == 5) {
-        console.log('correctCount is 5, ending game!');
         endGame(attemptNum);
         // DMcC 28/05/23 - would also like to set the 2 remaining characters on the line to green so the total row appears green //
     }

@@ -351,4 +351,39 @@ title {
         text-transform: uppercase;
         z-index:2;
             }
-            
+
+
+/* Add responsiveness for screen sizes below 400px width */
+@media screen and (max-width: 400px) {
+ #intro h2 {
+    height: 40px;
+    font-family: 'Roboto Slab';
+    font-weight: 2000;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rm;
+}
+
+#intro h3 {
+    font-size: 1rem;
+}
+
+#intro p {
+    height: 15px;
+    font-size: 8px;
+    font-weight: 200;
+    line-height: 5%;
+    letter-spacing: .01em;
+}
+
+.tile {
+    width: 40px;
+    height: 36px;
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid gray;
+}
+
+
+}

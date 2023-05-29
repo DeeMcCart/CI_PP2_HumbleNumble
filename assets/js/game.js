@@ -140,9 +140,9 @@ function clearScreen() {
     }
 
     // Code below is used to clear out the contents of tiles for each row //
-    for (i = 1; i < 7; i++) {
+    for (let i = 1; i < 7; i++) {
         let initRow = document.getElementsByClassName('row' + i);
-        for (j = 0; j < initRow.length - 1; j++) {
+        for (let j = 0; j < initRow.length - 1; j++) {
             initRow[j].innerHTML = "";
         } // end j loop/ 
     } // end i loop/
@@ -156,19 +156,17 @@ function clearResult(delaySecs) {
     sleep(delaySecs * 1000);
 
     // Clear any result text which remains onscreen from a previous attempt //
-    resultOverLay = document.getElementById('resultOverLay');
+    let resultOverLay = document.getElementById('resultOverLay');
     resultOverLay.classList.remove('yesDisplay');
     resultOverLay.classList.add('noDisplay');
-    resultText = document.getElementById('resultText');
+    let resultText = document.getElementById('resultText');
     resultText.classList.remove('yesDisplay');
     resultText.classList.add('noDisplay');
 }
 
-// DMcC 17/05/23 Add code to test the writeGuess function is is intended to populate a row of guess to screen //
-// writeGuess(1, possSolution[solIndex]); //
-
 /**  
- * This function is to delay in some situations eg error message on-screen - give the user time to read it before clearing
+ * Function sleep is to delay in some situations eg error message on-screen - give the user time to read it before clearing
+ * @param (miliSeconds: integer)
  */
 function sleep(miliSeconds) {
     var currentTime = new Date().getTime();
@@ -236,7 +234,7 @@ function calcArray(arrayParam) {
                     result = parseInt(arrayParam[0], 10) + parseInt(arrayParam[2], 10) + parseInt(arrayParam[4], 10);
                     break;
                 case "-":
-                    result = (parseInt(arrayParam[0], 10) + parseInt(arrayParam[2]), 10) - parseInt(arrayParam[4], 10);
+                    result = (parseInt(arrayParam[0], 10) + parseInt(arrayParam[2], 10)) - parseInt(arrayParam[4], 10);
                     break;
                 default:
                     alert('second operator' + arrayParam[3] + ' not recognised');
@@ -322,8 +320,6 @@ function backSpace() {
 function checkSolution() {
     let attemptNum = document.getElementById('attemptNum').innerHTML;
     const solution = document.getElementsByClassName('solutionRow');
-    // Retrieve array of keyboard keys, will be needed later for colouring with present/ correct/ absent //
-    const keys = document.querySelectorAll('.selection-row button');
     // then pick up the 5 elements from that row //
     let guess = document.getElementsByClassName('row' + attemptNum);
     let guessItems = [guess[0].innerHTML, guess[1].innerHTML, guess[2].innerHTML, guess[3].innerHTML, guess[4].innerHTML];
@@ -340,8 +336,8 @@ function checkSolution() {
     // reset the 'correct element' counter //
     let correctCount = 0;
     /* first check each element of the array to see if it is found anywhere within the solution array */
-    for (i = 0; i < (guess.length - 1); i++) {
-        for (j = 0; j < solution.length; j++) {
+    for (let i = 0; i < (guess.length - 1); i++) {
+        for (let j = 0; j < solution.length; j++) {
             // Do a first check here to find the guess array item within the solution array //
             // this would be handy becuase it can be greyed out if absent //
             // if I did a find of 2, would it also find 20? //
@@ -353,12 +349,12 @@ function checkSolution() {
                     // increment the count of correct matches //
                     correctCount++;
                     // Find the matching keyboard item and add a class to change its display colour on keyboard //
-                    key = document.getElementById(guess[i].innerHTML);
+                    let key = document.getElementById(guess[i].innerHTML);
                     key.classList.add('correct');
                     if (correctCount == 5) {
                         // Turn the last two columns of the line green as well to make it really visible //
-                        jack = (document.getElementsByClassName('row' + attemptNum))[5];
-                        jill = document.getElementsByClassName('equalSign')[attemptNum];
+                        let jack = (document.getElementsByClassName('row' + attemptNum))[5];
+                        let jill = document.getElementsByClassName('equalSign')[attemptNum];
                         jack.classList.add('correct');
                         jill.classList.add('correct');
                     }
@@ -366,7 +362,7 @@ function checkSolution() {
                     /* present but not in the correct position */
                     guess[i].classList.add('present');
                     // Find the matching keyboard item and add a class to change its display colour on keyboard //
-                    key = document.getElementById(guess[i].innerHTML);
+                    let key = document.getElementById(guess[i].innerHTML);
                     key.classList.add('present');
                 }
             } // end of (guess[i].innerHTML) === (solution[j].innerHTML)
@@ -381,7 +377,7 @@ function checkSolution() {
             // add an absent status to pickup colour coding
             guess[i].classList.add('absent');
             // Find the matching keyboard item and add a class to change its display colour on keyboard //
-            key = document.getElementById(guess[i].innerHTML);
+            let key = document.getElementById(guess[i].innerHTML);
             key.classList.add('absent');
         }
 
@@ -419,22 +415,16 @@ function writeLetter(rowNum, position, guessItem) {
  * Will need to add array parameters for guessed solutions to indicate if each entry is success(green) part-success(orange) fail(darkgrey) untested (blank))
  */
 function writeGuess(rowNum, guessArray) {
-    // DMcC 17/05/23 can strip out the 2 lines below and replace with calculation within array reference itelf // 
     let guessRow = document.getElementsByClassName('row' + rowNum);
     console.log("guessRow array before population: " + guessRow);
-    for (i = 0; i < (guessRow.length); i++) {
+    for (let i = 0; i < (guessRow.length); i++) {
         console.log(guessRow[i]);
         guessRow[i].innerHTML = guessArray[i];
     }
 
-    // assign values of guessed Array to display row
-    //for (i = 0; i < guessArray.length; i++) {
-    //    guessRow[i].innerHTML = guessArray[i];
-    //}
-
     console.log('guessRow after population' + guessRow);
     console.log("guessRow array after population: " + guessRow);
-    for (i = 0; i < guessRow.length; i++) {
+    for (let i = 0; i < guessRow.length; i++) {
         console.log(guessRow[i]);
     }
 }
@@ -472,10 +462,10 @@ function endGame(attemptNum) {
  * @param {displayText: string}
  */
 function displayResult(displayText) {
-    resultOverLay = document.getElementById('resultOverLay');
+    let resultOverLay = document.getElementById('resultOverLay');
     resultOverLay.classList.remove('noDisplay');
     resultOverLay.classList.add('yesDisplay');
-    resultText = document.getElementById('resultText');
+    let resultText = document.getElementById('resultText');
     resultText.classList.remove('noDisplay');
     resultText.classList.add('yesDisplay');
     resultText.innerHTML = displayText;

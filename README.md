@@ -122,7 +122,14 @@ https://numble (wikipedia) <br>
 
 on checking each of these sites, none offers the range of functionality available from the Wordle site.  (Comparative analysis (jpg or png) to follow here first impressions are that each of these games is a bit more complex and wider ranging than Humble Numble) 
 
-A competitive analysis of these offerings can be seen here https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/strategy_competitive_analysis.jpg
+A competitive analysis of these offerings can be seen here 
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/strategy_competitive_analysis.jpg">
+</details> 
+
+![Existing Numble-type websites](./docs/readme_images/atrategy_competitive_analysis.jpg?raw=true "Review of Numble sites which already exist")
+<br>
+
+
 <br>
 From this analysis, a set of possible requirements was identified for a new portal.
 <br><br>
@@ -257,11 +264,13 @@ Certain icons and symbols used for quicklinks e.g. ? for About page, graphy symb
  
 ### F01 
 ![Introduction page](./docs/readme_images/humble_numble_intro.jpg?raw=true "Introduction page seen on first opening the website")
+<br>
 On first using the game (or on use within incognito mode) the user will encounter an introduction window, they can take a button to 'Play' or 'How to Play' to view help text.  The intro page shows the current date, the Humble Numble day number, and some copyright and acknowledgement notices.
 
 ### F02 
 Description
 ![Humble Numble game explanation](./docs/readme_images/humble_numble_how_to_play.jpg?raw=true "Scrollable text to show user instructions on how to play Humble Numble game")
+<br>
 A modal 'How to Play' window showing the user how to play the Humble Number game is accessed from the introduction window, or from within the game (for example if a user is mid-game and wants to check the rules).   The 'How to Play' window can be scrolled to see full text, and is closed by clicking on the X in top right hand corner, at which point it disappears from screen.  
 
 ### F03 

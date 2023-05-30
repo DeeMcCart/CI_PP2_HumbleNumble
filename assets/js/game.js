@@ -147,11 +147,11 @@ function clearScreen() {
         } // end j loop/ 
     } // end i loop/
     // delay 1 seconds, then clear error message
-    clearResult(0);
+    hideResult(0);
 } // end function clearScreen
 
 
-function clearResult(delaySecs) {
+function hideResult(delaySecs) {
     // DMcC 29/05/23:  Pause for specified number of seconds... //
     sleep(delaySecs * 1000);
 
@@ -286,7 +286,7 @@ function keyClick(selectedKey) {
     } else {
         let colNum = document.getElementById('colNum').innerHTML;
         if (colNum == 0) {
-            clearResult(0.5);
+            hideResult(0.5);
         }
         writeLetter(attemptNum, colNum, selectedKey);
         document.getElementById('colNum').innerHTML = (++colNum);
@@ -330,7 +330,7 @@ function checkSolution() {
         displayResult('Wrong total!');
         fred[5].innerHTML = calcTarget;
         // DMcC 29/05/23 - need to take some action here to display incorrect result and to return to the start of the line //
-        // tried clearResult with a 2-second timer but it executed in parallel and didnt cause the required delay => workaround clear message at start of next line//
+        // tried hideResult with a 2-second timer but it executed in parallel and didnt cause the required delay => workaround clear message at start of next line//
     }
     fred[5].innerHTML = calcTarget;
     // reset the 'correct element' counter //
@@ -473,8 +473,10 @@ function displayResult(displayText) {
 
 /*
  * Function help - enables display of helptext modal screen 
+* Note that any results popup should be cleared after 1 second  
  */
-function help() {
+function displayHelp() {
+    hideResult(1);
     let helpOverLay = document.getElementById('helpOverLay');
     helpOverLay.classList.remove('noDisplay');
     helpOverLay.classList.add('yesDisplay');
@@ -500,8 +502,10 @@ function hideHelp() {
 
 /*
  * Function displayStats - enables display of player statistics modal screen 
+ * Note that any result message already displaying should clear after 1 second
  */
 function displayStats() {
+    hideResult(1);
     let statsOverLay = document.getElementById('statsOverLay');
     statsOverLay.classList.remove('noDisplay');
     statsOverLay.classList.add('yesDisplay');

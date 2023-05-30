@@ -95,7 +95,7 @@ https://deemccart.github.io/CI_PP2_HumbleNumble
 ## Project Goals
 ----------------
 1. To produce a 6-try numbers-based game. 
-2. Using a mobile-first development development approach.  
+2. Using a mobile-friendly development development approach.  
 3. Which uses the capabilities of HTML, CSS and Javascript.
 4. And is possible to play with a reasonable chance of success.
   
@@ -105,7 +105,7 @@ Wordle (https://www.nytimes.com/games/wordle/index.html) is a game which began a
 Humble Numble aims to piggyback on the Wordle philosophies of:
 * simple interface with uncluttered screen
 * clearly understood rules
-* exclusivity - user can only access one game per day
+* scarcity - user can only access one game per day
 * reponsiveness - ability to play on small screens (convenient for user)
 * no time-out - can fit into small pockets of time as game will remain on-screen until 6 guesses completed
 * feedback and interaction - user immediately gets feedback for each guess
@@ -113,6 +113,9 @@ Humble Numble aims to piggyback on the Wordle philosophies of:
 * peer-group communication - user can share their problem-solving pattern (without revealing any part of the solution) to friends who may also play
 
 ### UX Design Strategy Analysis - Existing Numble Games
+
+<details><summary>Analysis of Existing Numble Websites</summary>
+Using Google search, the following were identified as possible Numble websites -
 https://thenumble.app/ <br>
 https://numble.wtf <br>
 https://numble.game <br>
@@ -120,21 +123,29 @@ https://numble.win<br>
 https://numble.online<br>
 https://numble (wikipedia) <br>
 
-on checking each of these sites, none offers the range of functionality available from the Wordle site.  (Comparative analysis (jpg or png) to follow here first impressions are that each of these games is a bit more complex and wider ranging than Humble Numble) 
+Whilst these sites individually contain some good features, none offers the range of functionality, and simplicity of design, available from the Wordle site.   
 
-A competitive analysis of these offerings can be seen here 
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/strategy_competitive_analysis.jpg">
+
 </details> 
-
-![Existing Numble-type websites]./docs/readme_images/strategy_competitive_analysis.jpg?raw=true "Review of Numble sites which already exist")
-<br>
-
-
 <br>
 From this analysis, a set of possible requirements was identified for a new portal.
 <br><br>
+<ul>MVP Requirements:
+<li>Must be intuitive to use</li>
+<li>Must be easy to learn</li>
+<li>Good for first time or returning users</li>
+<li>Accessible - no ad display & no paywall</li>
+<li>Familiar interface for Wordle consumers</li>
+</ul>
 <br>
-<br>
+<ul>Requirements - Desirable:
+<li>Would like to share results (graphic showing the pattern of result)</li>
+<li>Would like to e able to track user statistics (cookies)</li>
+<li>Would like to be able to auto-generate new equations</li>
+<li>Would like to be able to track equations already used</li>
+<li>Would like to be able to set difficulty levels</li>
+</ul>
 <br>
 
 ### UX Design Strategy Target Audience
@@ -156,30 +167,27 @@ d. People who like to practice their mathametical skills<br>
 ### UX Design Scope User Requirements and Expectations
 (To be revisited...)
 /The basic requirement for users is to have access to a 'fair' game where they have a possibility of reaching the goal.
-
-* The target audience needs to complete a process/set of tasks
-* They have a checklist which contains many activities, there are many things that can go wrong (or right)
-* The game helps them to complete their real-life tasks by warning them of potential pitfalls and alerting them to opportunities
 * The game is a fun way of applying simple mathematical principles
 
 ### UX Design Scope - Data
 A set of equations are pre-loaded which are consistent with game rules (e.g. operator numbers not > 20, calculations return an integer value)
-Currently HumBle Numble will randomly select one of these equations for eachh game.
+Currently Humble Numble will randomly select one of these equations for each game.
 
 ## User Goals/ User Stories
 ----------------
 
 ### Site owner Goals
-* SO_01 As site owner I want to provide a fun, satisfying game which is visually engaging 
-* SO_02 As site owner I want to closely emulate the Wordle design and user interface
+* SO_01 As site owner I want to provide a fun, satisfying game which is visually engaging and highly interactive
+* SO_02 As site owner I want to closely emulate the Wordle design and user interface (to assist in user learning and ease of adoption for a large pre-existing user base)
 * SO_03 As site owner I want to include a mathematical learning experience into this game
-* SO_04 As site owner I want to provide straightforward, intuitive website navigation
-* SO_05 As site owner I want to provide a responsive and accessible website
-* SO_06
+* SO_04 As site owner I want to provide straightforward, intuitive, consistent website navigation
+* SO_05 As site owner I want to provide a website, which meets current industry standards (html, css, javascript, responsive, accessibility, performance).
+* SO_06 As site owner I want to provide an opportunity for the user to provide feedback, including reporting issues, or suggesting improvements to the Humble Numble site
+* SO-07 As site owner I want to notify the user that their feedback has been received
 
 ### First-time User Goals
-* FTU_01 As a first time user I am curious about what this does, and may just want to quickly play a game
-* FTU_02 As a first time user I would like to be able to navigate the site and quickly learn its functionality
+* FTU_01 As a first time user I am curious about what this site does, and may just want to quickly play a game
+* FTU_02 As a first time user I would like to be able to easily navigate the site and quickly learn its functionality
 * FTU_03 As a first time user I would like to easily understand game rules
 * FTU_04 As a first-time user I expect links and functions that work as expected
 * FTU_05 I might be curious about the 'applied' options (think about what to call these) and wish to explore these
@@ -226,26 +234,18 @@ The landing page WF is shown here with 4 sceen resolutions as I found when testi
 >
 </details>
 
-
+  
 ### Fonts Chosen
-The fonts are deliberately selected to reflect the Worldle screen appearance.
-In the Worldle application, a proprietary NY Times font is now used for the heading 'Wordle' (NYT Karnak Condensed), with Helventica Sans for the grid and button text. 
-A resonably close match to this font, which is widely available on a range of devices, is the the Google bebas Neue font.
+The fonts are deliberately chosen to mimic appearance of Wordle screen. 
+In real life, Wordle uses proprietary fonts (NYT Karnak Condensed), with Helventica Sans for the grid and button text.  A reasonably close match, which is widely available on a range of devices, was thought to be the Google bebas Neue font.
 
-(Remove this....)  Libre Franklin and Libre Baskerville are chosen because they are readable on large screens or smaller mobile devices.  This font is recommended for sites that may be content-heavy but which are regarded as fun friendly and approachable/inclusive.  These are identified by Google as good pairing.
+However, when testing the site this didnt present a good look, and so Robo Sans something or other was chosen as a better alternative.
 Fallback fronts are used in both cases
 
 ### Colour Scheme 
-The colour combinations will be driven by the Wordle game for consistency and to ease the user learning experience
-Note that world includes 3 colour options (choosable from settings)
-* Normal mode (dark letters on white background)
-* Dark mode (white letters/grid on dark background)
-* High-contrast mode - background colours maintained as above however the selection colours are changed as follows:
-*   Orange replaced by cyan blue
-*   Grey replaced by ??
-*   Green replaced by ??
+The colour combinations mimic Wordle's game (for consistency and to ease the user learning experience).
    
-The choice of colours for Humble Numble is very much in accordance with user story XX - consistent with World so as to speed the learning process and encourage the focus on the game content, rather than on how to use it.
+The choice of colours for Humble Numble is very much in accordance with user story XX - consistent with Wordle so as to speed the learning process and encourage the focus on the game content, rather than on how to use it.
 
 ![Colours - dark mode normal contrast](./docs/readme_images/ux-design-choices-accessing-style-in-google-maps.jpg?raw=true "Humble Numble dark mode normal contrast")
 ![Colours - dark mode high contrast](./docs/readme_images/ux-design-choices-accessing-style-in-google-maps.jpg?raw=true "Humble Numble dark mode high contrast")

@@ -385,7 +385,7 @@ title {
     letter-spacing: 0.1rm;
 }
 
-#intro h3 {
+#intro h3, h3 {
     font-size: 1rem;
 }
 

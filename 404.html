@@ -6,10 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- DMcC 28/05/23 include Roboto slab font for title -->
-    <style>
+    <meta name="description" content="Humble Numble">
+    <meta name="keywords"
+    content="wordle, Wordle, Josh Wardle, puzzle, number puzzle, numble, Numble, equation, solve, daily puzzle, codeword, solver, free">
+ <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@400;690&display=swap');
     </style>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Humble Numble</title>
 </head>
 
@@ -17,9 +20,27 @@
     <!-- DMcC 29/05/23 error page for when it all goes wrong-->
     <div id="gameHead" class="yesDisplay">
         <header>
+            <div id="headerContainer">
             <h1>Humble Numble</h1>
+            <nav id="navbar">
+                <!-- Add list items for navbar-->
+                <ul id="menu">
+                  <li> <button class="navButton" onclick="help();"  aria-label="Show Help button">
+                    <img src="../assets/images/help-icon.jpg" alt="Question mark type icon to access game help"></button>
+                  </li>
+                  <li>
+                    <button class="navButton" onclick="displayStats();" aria-label="Show Stats button">
+                        <img src="../assets/images/stats-icon.jpg" alt="Graph type symbol to access player Statistics"></button>
+                  </li>
+                  <li>
+                    <button class="navButton" onclick="displayStats();" aria-label="Show Settings button">
+                        <img src="../assets/images/settings-icon.jpg" alt="Cog symbol to access game settings"></button>
+                  </li>
+                  </ul>
+              </nav> <!-- end navbar --> 
+            </div> <!-- end div headerContainer --> 
         </header>
-        <p id="sorry" class="yesDisplay"></p>
+<p id="sorry" class="yesDisplay"></p>
         <p class="noDisplay">Target: <span class="targetValue noDisplay">0</span>          Attempt: <span id="attemptNum">1</span>
             <span id="colNum" class="noDisplay">0</span>
         </p>
@@ -168,7 +189,7 @@
     </div> <!-- end div container -->
 
     <!-- Add js script to run last thing (ie after the DOM is loaded)-->
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 
 </html>

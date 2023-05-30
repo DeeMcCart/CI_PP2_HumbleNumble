@@ -126,7 +126,7 @@ A competitive analysis of these offerings can be seen here
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/strategy_competitive_analysis.jpg">
 </details> 
 
-![Existing Numble-type websites](./docs/readme_images/atrategy_competitive_analysis.jpg?raw=true "Review of Numble sites which already exist")
+![Existing Numble-type websites]./docs/readme_images/strategy_competitive_analysis.jpg?raw=true "Review of Numble sites which already exist")
 <br>
 
 
@@ -455,7 +455,7 @@ Requirements traceability matrix showing link between user stories and implement
 ### Accessibility
 The site was tested using the WAVE WebAIM accessibility evaluation tool.
 All pages pass with 0 errors (DMcC 18/05/23:  more work needed here... )
-- [Accessability: index page](https://wave.webaim.org/report#/https://8000-deemccart-cipp2humblenumble-sigag7qpuok.ws-eu95.gitpod.io/index.html)
+- [Accessibility: index page](https://wave.webaim.org/report#/https://deemccart.github.io/CI_PP2_HumbleNumble/)
 
 
 Ensure that accessibility is evaluated against both the normal-contrast and high-contrast pages

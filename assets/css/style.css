@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html,
@@ -223,7 +224,7 @@ title {
 }
 
 #container {
-    height: 600px;
+    height: 740px;
     padding: 0;
     margin: 0;
 }

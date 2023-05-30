@@ -456,8 +456,7 @@ function endGame(attemptNum) {
         default:
             displayResult(solution.innerHTML);
     }
-    displayStats();
-}
+    }
 
 /** Function displayResult() displays text in results box for various scenarious - error message, success message etc 
  * @param {displayText: string}

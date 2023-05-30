@@ -19,6 +19,26 @@ h1 {
     font-family: 'Roboto Slab';
 }
 
+#headerContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+/*        min-height: 75px;*/
+        padding: 0;
+        }
+
+#headerContainer li {
+    display:inline;
+}
+
+
+#headerContainer img, #headerContainer button {
+    max-height: 30px;
+    background-color: black; ;
+    border:none;
+}
+
 #container .yesDisplay {
     display: block;
     /* switched from flex to block 08/05/23 DMcC to force selectionPanel below gamePanel */

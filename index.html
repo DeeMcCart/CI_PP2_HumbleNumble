@@ -106,7 +106,25 @@
     <!-- DMcC 28/05/23 add div gameHead to permit display toggle on/off-->
     <div id="gameHead" class="noDisplay">
         <header>
+            <div id="headerContainer">
             <h1>Humble Numble</h1>
+            <nav id="navbar">
+                <!-- Add list items for navbar-->
+                <ul id="menu">
+                  <li> <button class="navButton" onclick="help();">
+                    <img src="assets/images/help-icon.jpg"></button>
+                  </li>
+                  <li>
+                    <button class="navButton" onclick="displayStats();">
+                        <img src="assets/images/stats-icon.jpg"></button>
+                  </li>
+                  <li>
+                    <button class="navButton" onclick="displayStats();">
+                        <img src="assets/images/settings-icon.jpg"></button>
+                  </li>
+                  </ul>
+              </nav> <!-- end navbar --> 
+            </div> <!-- end div headerContainer --> 
         </header>
         <!-- DMcC 29/05/23 Make initialise Solution button non-display and instead auto initialise on start -->
         <!-- <button class="gameButton" onclick="initSolution();">

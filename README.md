@@ -122,7 +122,7 @@ https://numble (wikipedia) <br>
 
 on checking each of these sites, none offers the range of functionality available from the Wordle site.  (Comparative analysis (jpg or png) to follow here first impressions are that each of these games is a bit more complex and wider ranging than Humble Numble) 
 
-A competitive analysis of these offerings can be seen here https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/Strategy-competitive-analysis.pdf
+A competitive analysis of these offerings can be seen here https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/strategy_competitive_analysis.jpg
 <br>
 From this analysis, a set of possible requirements was identified for a new portal.
 <br><br>

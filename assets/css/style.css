@@ -355,7 +355,7 @@ title {
 
 
 /* Add responsiveness for screen sizes below 400px width */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
  #intro h2 {
     height: 40px;
     font-family: 'Roboto Slab';
@@ -393,5 +393,10 @@ p {
     outline: 1px solid gray;
 }
 
+#gamePanel {
+    width:90%;
+    height: 230px;
+    align-self:center;
+}
 
 }

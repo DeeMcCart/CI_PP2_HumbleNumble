@@ -327,7 +327,7 @@ function checkSolution() {
     let fred = document.getElementsByClassName('row' + attemptNum);
     if (fred[5].innerHTML != calcTarget) {
         // alert('Calculated total not equal to target value!');//
-        displayResult('Incorrect calc!');
+        displayResult('Wrong total!');
         fred[5].innerHTML = calcTarget;
         // DMcC 29/05/23 - need to take some action here to display incorrect result and to return to the start of the line //
         // tried clearResult with a 2-second timer but it executed in parallel and didnt cause the required delay => workaround clear message at start of next line//

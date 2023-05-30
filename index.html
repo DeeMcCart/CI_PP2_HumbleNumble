@@ -36,7 +36,7 @@
             <li><b>Examples</b></li>
             <img src="assets/images/help_example1.jpg" alt="Example of guess row with all columns greyed out(not present)">
             <p>15, 1, 6, +, - are not in the equation in any spot</p>
-            <img src="assets/images/help_example2.jpg" alt="Example of guess with 3rd column orange (present but in wrong position) and 2nd and 4th columns green(correct position)">
+            <img src="assets/images/help_example2.jpg" alt="Example of guess with orange (wrong position) and green(correct position)">
             <li><em>5</em> is in the equation but not at 3rd position (so must be 1st or 5th position)</li>
             <li>Multiply * is correctly guessed at the 2nd position, as is divide / at the 4th position.</li>
             <br>
@@ -68,8 +68,8 @@
         </div>
         <!-- DMcC 28/05/23 This is player statistics section -->
         <h2>STATISTICS</h2>
-        <h3>Played   Win%   Current Streak   Max Streak</h3>
-        <h3>GUESS DISTRIBUTION</h3>
+        <h3>Played   Win%   Current Streak   Max Streak<br>
+        GUESS DISTRIBUTION</h3>
         <button id="shareStats-btn" onclick="shareStats();" aria-label="Share Stats button">X</button>
         </div> <!-- end div 'statsText'-->
 </div> <!-- end div statsOverLay -->
@@ -80,8 +80,7 @@
         <br>
         <h2>Humble Numble</h2>
         <br>
-        <h3> Get 6 chances to guess <h3>
-                <h3>a 5-part equation.</h3>
+        <h3> Get 6 chances to guess <br> a 5-part equation.</h3>
                 <br>
                 <button class="gameButton" onclick="help();"  aria-label="Show Help button">
                     How to play
@@ -127,10 +126,10 @@
             Initialise Solution!
         </button> -->
         <!-- DMcC 29/05/23 the below is made non-display, it is populated but hidden as will be used for comparison  -->
-        <p id="solution" class="noDisplay">Solution here: </p>
-        <p><pre>Target: <span class="targetValue">0</span>  Attempt: <span id="attemptNum">1</pre></span>
+        <h2 id="solution" class="noDisplay">Solution here: </h2>
+        <h3><pre>Target: <span class="targetValue">0</span>  Attempt: <span id="attemptNum">1</pre></span>
             <span id="colNum" class="noDisplay">0</span>
-        </p>
+        </h3>
     </div> <!-- end div gameHead-->
 
     <div id="container" class="noDisplay">

@@ -51,7 +51,7 @@
 
 ## About
 ---------
-Humble Numble offers a fun way to practice mathematical equations, using a game that many are already familiar with.
+Humble Numble is a numbers version of the Wordle game, deliberately kept simple (Humble).   This site offers a fun way to practice mathematical equations, using an interface that many are already familiar with.
 Many people worldwide take part in the 'Wordle' game, which offers a chance to guess a 5-letter english-language word in 6 tries.  With Wordle, the user is presented with a grid and must choose from a panel showing the letters of the alphabet (26 possible characters), to form a dictionary-recognised english word (ie it is logically consistent).  On pressing ENTER, the user's guess is validated, and each letter of their grid entry is colour coded as 
 * grey - this guessed letter doesnt exist within the solution; 
 * orange - the guessed letter exists in the solution, but not at the guessed position;
@@ -83,8 +83,8 @@ If an equation contained multiply and divide, the sequence will affect the resul
 
 <ul> Rules:  
     <li> All target results will be integers, ie no decimals or fractions.   This makes it a little easier to guess. </li>
-    <li> Each equation contains 3 numbers (operands) and 2 operators and must calculate to the target number.  A guess which doesn't calculate correctly will be accepted (or wjhas been developed ill it - lets wait until the final version to discover!!)</li>
-(refer to 'how to play' for a full set of rules - https://deemccart.github.io/CI_PP2_HumbleNumble/)
+    <li> Each equation contains 3 numbers (operands) and 2 operators and must calculate to the target number.  A guess which doesn't calculate correctly will be accepted at Humble Numble V1.0 (the user may wish to strategically test out some number or oeprator combinations, while knowing that they will not solve the equation on this guess.  </li>
+(refer to 'How To Play' for a full set of rules - https://deemccart.github.io/CI_PP2_HumbleNumble/)
 
 ### Responsive Mockup
 https://ui.dev/amiresponsive?url=https://deemccart.github.io/CI_PP2_HumbleNumble/
@@ -100,7 +100,7 @@ https://deemccart.github.io/CI_PP2_HumbleNumble
 4. And is possible to play with a reasonable chance of success.
   
 ### UX Design Strategy
-Wordle is a game which began as a personal project for Josh Wardle, a software engineer based in the USA.   As of Jan 2022 it had 2M weekend players (theguardian.com 'Wordle-creator-overwhelmed-by-global-success-of-his-puzzle') and was subsequently acquired by the New York Times.  The Guardian wrote that 'Wordle’s popularity is thought to be partly because, in an era of apps aggressively competing for your attention and time, the game was deliberately built to be played once a day, and without features designed to promote its growth such as push notifications and email sign ups.'  Current estimates are of 250K daily users, many of whom are repeat users, and 57% of whom play the game on their smartphone (blog.gitnux.com).
+Wordle (https://www.nytimes.com/games/wordle/index.html) is a game which began as a personal project for software engineer Josh Wardle.   As of Jan 2022 it had 2M weekend players (theguardian.com 'Wordle-creator-overwhelmed-by-global-success-of-his-puzzle') and was subsequently acquired by the New York Times.  The Guardian wrote that 'Wordle’s popularity is thought to be partly because, in an era of apps aggressively competing for your attention and time, the game was deliberately built to be played once a day, and without features designed to promote its growth such as push notifications and email sign ups.'  Current estimates are of 250K daily users, many of whom are repeat users, and 57% of whom play the game on their smartphone (blog.gitnux.com).
 
 Humble Numble aims to piggyback on the Wordle philosophies of:
 * simple interface with uncluttered screen
@@ -110,7 +110,7 @@ Humble Numble aims to piggyback on the Wordle philosophies of:
 * no time-out - can fit into small pockets of time as game will remain on-screen until 6 guesses completed
 * feedback and interaction - user immediately gets feedback for each guess
 * statistic tracking - user can track # of attempts to solve, number of days solved, success rates
-* communication - user can share their problem-solving pattern (without revealing any part of the solution) to friends who may also play
+* peer-group communication - user can share their problem-solving pattern (without revealing any part of the solution) to friends who may also play
 
 ### UX Design Strategy Analysis - Existing Numble Games
 https://thenumble.app/ <br>
@@ -120,7 +120,7 @@ https://numble.win<br>
 https://numble.online<br>
 https://numble (wikipedia) <br>
 
-(Comparative analysis (jpg or png) to follow here first impressions are that each of these games is a bit more complex and wider ranging than Humble Numble) 
+on checking each of these sites, none offers the range of functionality available from the Wordle site.  (Comparative analysis (jpg or png) to follow here first impressions are that each of these games is a bit more complex and wider ranging than Humble Numble) 
 
 A competitive analysis of these offerings can be seen here https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/Strategy-competitive-analysis.pdf
 <br>

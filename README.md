@@ -32,13 +32,14 @@
 8. [Validation](#validation)
     1. [HTML Validation](#html-validation)
     2. [CSS Validation](#css-validation)
-    3. [Accessibility](#accessibility)
-    4. [Performance](#performance)
-    5. [Multi-device Testing](#multi-device-testing)
-    6. [Multi-browser Testing](#multi-browser-testing)
-    7. [Testing user stories](#testing-user-stories)
-    6. [Feature testing(#rtm-proof)]
-    6. [Unfixed Bugs](#unfixed-bugs)
+    3. [Javascript Validation](#javascript-validation)
+    4. [Accessibility](#accessibility)
+    5. [Performance](#performance)
+    6. [Multi-device Testing](#multi-device-testing)
+    7. [Multi-browser Testing](#multi-browser-testing)
+    8. [Testing user stories](#testing-user-stories)
+    9. [Feature testing(#rtm-proof)]
+    10. [Unfixed Bugs](#unfixed-bugs)
 9. [Accessibility](#accessibility)
 10. [Performance](#performance)
 11. [Deployment](#deployment)
@@ -262,10 +263,11 @@ Certain icons and symbols used for quicklinks e.g. ? for About page, graphy symb
 ## Features 
  
 ### F01 Intro Screen
-![Introduction page](./docs/readme_images/f01_intro.jpg?raw=true "Introduction page seen on first opening the website")
-<br>
+<details><summary>Introduction screen</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f01_intro.jpg">
 On first using the game (or on use within incognito mode) the user will encounter an introduction window, they can take a button to 'Play' or 'How to Play' to view help text.  The intro page shows the current date, the Humble Numble day number, and some copyright and acknowledgement notices.
-    
+This addresses user stories SO01, SO02, FTU01, FTU02, FTU03
+
 ### F02 Help Screen
 ![Humble Numble game explanation](./docs/readme_images/f02_help.jpg?raw=true "Scrollable text to show user instructions on how to play Humble Numble game")
 <br>
@@ -444,22 +446,29 @@ Requirements traceability matrix showing link between user stories and implement
 - HTML
   - No errors returned on the index html pages when checked in the W3C validator:
   - [W3C validator - index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Findex.html) 
-
+  - [W3C validator - 404 page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2F404.html)
   
 ### CSS Validation
-  - No errors returned when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https://deemccart.github.io/CI_PP2_HumbleNumble/&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No errors returned when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https://deemccart.github.io/CI_PP2_HumbleNumble/&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) 
+
+### Javascript Validation
+  - No errors returned, when javascript was pasted into the jshint validator - however 10 unused variables were identified, which are the function names.    
+<details><summary>jshint - no errors however the function names were identified as unused variables</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/jshint_result.jpg">
+</details>
 
 ### Accessibility
 The site was tested using the WAVE WebAIM accessibility evaluation tool.
 All pages pass with 0 errors (DMcC 18/05/23:  more work needed here... )
 - [Accessibility: index page](https://wave.webaim.org/report#/https://deemccart.github.io/CI_PP2_HumbleNumble/)
+- [Accessibility: 404 page](https://wave.webaim.org/report#/https://deemccart.github.io/CI_PP2_HumbleNumble/404.html)
 
 
 ### Performance
-Performance for all pages was tested using the Lighthouse tool within Google Chrome.  Performance was at 100% for all pages.
+Performance for all pages was tested using the Lighthouse tool within Google Chrome.  Performance was at 98% for the index page - intro modal.
 
 <details><summary>Performance: Index page</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-index-page.jpg">
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance_lighthouse_intro_page_230602.jpg">
 </details>
 
 

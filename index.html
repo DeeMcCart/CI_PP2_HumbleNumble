@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Humble Numble">
     <meta name="keywords"
-    content="wordle, Wordle, Josh Wardle, puzzle, number puzzle, numble, Numble, equation, solve, daily puzzle, codeword, solver, free">
- 
+        content="wordle, Wordle, Josh Wardle, puzzle, number puzzle, numble, Numble, equation, solve, daily puzzle, codeword, solver, free">
+
     <!-- DMcC 28/05/23 include Roboto slab font for title -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@400;690&display=swap');
@@ -17,83 +17,90 @@
     <title>Humble Numble</title>
 </head>
 
-<div id="helpOverLay" class="noDisplay">
-    <div id="helpText" class="noDisplay">
-        <!-- This is a pop up window/ modal of help text -->
-        <!-- DMcC 28/05/23 add button to close the pop-up help window-->
-        <div> <!-- DMcC 28/05/23 created a separate div as want this element to right-align -->
-            <button id="closeHelpText-btn" onclick="hideHelp();"  aria-label="Hide Help button">X</button>
-        </div>
-        <!-- DMcC 28/05/23 This is help text section -->
-        <h2>How to Play</h2>
-        <h3>Guess the equation, to reach a target result, in 6 tries.</h3>
-        <ul>
-            <li>* All guesses are in the form <em>num1 op num2 op num3</em> where</li>
-            <li> - num is a number between 1 and 20 </li>
-            <li> - op is a mathematical operator + - * / (add subtract multiply divide) </li>
-            <li>* The colour of the tiles will change to show how close your guess was to the solution.</li>
-            <br>
-            <li><b>Examples</b></li>
-            <img src="assets/images/help_example1.jpg" alt="Example of guess row with all columns greyed out(not present)">
-            <p>15, 1, 6, +, - are not in the equation in any spot</p>
-            <img src="assets/images/help_example2.jpg" alt="Example of guess with orange (wrong position) and green(correct position)">
-            <li><em>5</em> is in the equation but not at 3rd position (so must be 1st or 5th position)</li>
-            <li>Multiply * is correctly guessed at the 2nd position, as is divide / at the 4th position.</li>
-            <br>
-            <li>Equations are evaluated as follows:</li>
-            <li> * any multiply operation(s) are calculated first</li>
-            <li> / any divide operation(s) are calculated next</li>
-            <li> + any add operation(s) are calculated next</li>
-            <li> – any minus operation(s) are calculated last</li>
-
-            <li>e.g. 3+2*5 is calculated as 3+(2*5) = 3+10 = 13 (grrrr)</li>
-            <br>
-            <li><b>Notes:</b></li>
-            <li>the current version of Humble Numble WILL permit you to enter an equation that does not
-                calculate to the required total...this may help when you are REALLY stuck!</li>
-            <li>The <em>exact</em> equation is required, ie 1+2+3=6 will not accept 3+1+2 as a solution (grrrr again)
-            </li>
-            <li>(and yes, the same number can appear twice grrrrr)</li>
-            <li>Happy calculating!</li>
-
-        </ul>
-    </div> <!-- end div 'helpText'-->
-</div> <!-- end div helpOverLay -->
-
-<div id="statsOverLay" class="noDisplay">
-    <div id="statsText" class="noDisplay">
-        <!-- This is a pop up window/ modal of Statistics -->
-        <div> <!-- DMcC 28/05/23 created a separate div as want this element to right-align -->
-            <button id="closeStatsText-btn" onclick="hideStats();"  aria-label="Hide Stats button">X</button>
-        </div>
-        <!-- DMcC 28/05/23 This is player statistics section -->
-        <h2>STATISTICS</h2>
-        <h3>Played   Win%   Current Streak   Max Streak<br>
-        GUESS DISTRIBUTION</h3>
-        <button id="shareStats-btn" onclick="shareStats();" aria-label="Share Stats button">X</button>
-        </div> <!-- end div 'statsText'-->
-</div> <!-- end div statsOverLay -->
-
 <body>
+    <div id="helpOverLay" class="noDisplay">
+        <div id="helpText" class="noDisplay">
+            <!-- This is a pop up window/ modal of help text -->
+            <!-- DMcC 28/05/23 add button to close the pop-up help window-->
+            <div> <!-- DMcC 28/05/23 created a separate div as want this element to right-align -->
+                <button id="closeHelpText-btn" onclick="hideHelp();" aria-label="Hide Help button">X</button>
+            </div>
+            <!-- DMcC 28/05/23 This is help text section -->
+            <h2>How to Play</h2>
+            <h3>Guess the equation, to reach a target result, in 6 tries.</h3>
+            <ul>
+                <li>* All guesses are in the form <em>num1 op num2 op num3</em> where</li>
+                <li> - num is a number between 1 and 20 </li>
+                <li> - op is a mathematical operator + - * / (add subtract multiply divide) </li>
+                <li>* The colour of the tiles will change to show how close your guess was to the solution.</li>
+                <li></li>
+                <li><b>Examples</b></li>
+            </ul>
+            <img src="assets/images/help_example1.jpg"
+                alt="Example of guess row with all columns greyed out(not present)">
+            <p>15, 1, 6, +, - are not in the equation in any spot</p>
+            <img src="assets/images/help_example2.jpg"
+                alt="Example of guess with orange (wrong position) and green(correct position)">
+            <ul>
+
+                <li><em>5</em> is in the equation but not at 3rd position (so must be 1st or 5th position)</li>
+                <li>Multiply * is correctly guessed at the 2nd position, as is divide / at the 4th position.</li>
+                <li></li>
+                <li>Equations are evaluated as follows:</li>
+                <li> * any multiply operation(s) are calculated first</li>
+                <li> / any divide operation(s) are calculated next</li>
+                <li> + any add operation(s) are calculated next</li>
+                <li> – any minus operation(s) are calculated last</li>
+
+                <li>e.g. 3+2*5 is calculated as 3+(2*5) = 3+10 = 13 (grrrr)</li>
+                <li></li>
+                <li><b>Notes:</b></li>
+                <li>the current version of Humble Numble WILL permit you to enter an equation that does not
+                    calculate to the required total...this may help when you are REALLY stuck!</li>
+                <li>The <em>exact</em> equation is required, ie 1+2+3=6 will not accept 3+1+2 as a solution (grrrr
+                    again)
+                </li>
+                <li>(and yes, the same number can appear twice grrrrr)</li>
+                <li>Happy calculating!</li>
+
+            </ul>
+        </div> <!-- end div 'helpText'-->
+    </div> <!-- end div helpOverLay -->
+
+    <div id="statsOverLay" class="noDisplay">
+        <div id="statsText" class="noDisplay">
+            <!-- This is a pop up window/ modal of Statistics -->
+            <div> <!-- DMcC 28/05/23 created a separate div as want this element to right-align -->
+                <button id="closeStatsText-btn" onclick="hideStats();" aria-label="Hide Stats button">X</button>
+            </div>
+            <!-- DMcC 28/05/23 This is player statistics section -->
+            <h2>STATISTICS</h2>
+            <h3>Played Win% Current Streak Max Streak<br>
+                GUESS DISTRIBUTION</h3>
+            <button id="shareStats-btn" onclick="shareStats();" aria-label="Share Stats button">X</button>
+        </div> <!-- end div 'statsText'-->
+    </div> <!-- end div statsOverLay -->
+
+
     <div id="intro" class="yesDisplay">
         <img src="assets/images/wordle_Icon.jpg" alt="A rubix-cube type image symbolising the Wordle/ Numble grid">
         <br>
         <h2>Humble Numble</h2>
         <br>
         <h3> Get 6 chances to guess <br> a 5-part equation.</h3>
-                <br>
-                <button class="gameButton" onclick="displayHelp();"  aria-label="Show Help button">
-                    How to play
-                </button>
-                <button class="gameButton" onclick="playGame();"  aria-label="play Game button">
-                    Play
-                </button>
-                <br>
-                <!-- DMcc 28/05/23 Added a javascript function to replace the inner HTML below to current formatted date -->
-                <div id="todayDate">todayDate</div>
-                <div id="gameNum">No. 1</div>
-                <p>Based on Wordle, created by Josh Wardle, now owned by New York Times</p>
-                <p><span>&copy</span>2023 Deirdre McCarthy t/a AllSkills Tech</p>
+        <br>
+        <button class="gameButton" onclick="displayHelp();" aria-label="Show Help button">
+            How to play
+        </button>
+        <button class="gameButton" onclick="playGame();" aria-label="play Game button">
+            Play
+        </button>
+        <br>
+        <!-- DMcc 28/05/23 Added a javascript function to replace the inner HTML below to current formatted date -->
+        <div id="todayDate">todayDate</div>
+        <div id="gameNum">No. 1</div>
+        <p>Based on Wordle, created by Josh Wardle, now owned by New York Times</p>
+        <p><span>&copy;</span>2023 Deirdre McCarthy t/a AllSkills Tech</p>
     </div> <!-- End div intro -->
 
 
@@ -102,24 +109,27 @@
     <div id="gameHead" class="noDisplay">
         <header>
             <div id="headerContainer">
-            <h1>Humble Numble</h1>
-            <nav id="navbar">
-                <!-- Add list items for navbar-->
-                <ul id="menu">
-                  <li> <button class="navButton" onclick="displayHelp();"  aria-label="Show Help button">
-                    <img src="assets/images/help-icon.jpg" alt="Question mark type icon to access game help"></button>
-                  </li>
-                  <li>
-                    <button class="navButton" onclick="displayStats();" aria-label="Show Stats button">
-                        <img src="assets/images/stats-icon.jpg" alt="Graph type symbol to access player Statistics"></button>
-                  </li>
-                  <li>
-                    <button class="navButton" onclick="displayStats();" aria-label="Show Settings button">
-                        <img src="assets/images/settings-icon.jpg" alt="Cog symbol to access game settings"></button>
-                  </li>
-                  </ul>
-              </nav> <!-- end navbar --> 
-            </div> <!-- end div headerContainer --> 
+                <h1>Humble Numble</h1>
+                <nav id="navbar">
+                    <!-- Add list items for navbar-->
+                    <ul id="menu">
+                        <li> <button class="navButton" onclick="displayHelp();" aria-label="Show Help button">
+                                <img src="assets/images/help-icon.jpg"
+                                    alt="Question mark type icon to access game help"></button>
+                        </li>
+                        <li>
+                            <button class="navButton" onclick="displayStats();" aria-label="Show Stats button">
+                                <img src="assets/images/stats-icon.jpg"
+                                    alt="Graph type symbol to access player Statistics"></button>
+                        </li>
+                        <li>
+                            <button class="navButton" onclick="displayStats();" aria-label="Show Settings button">
+                                <img src="assets/images/settings-icon.jpg"
+                                    alt="Cog symbol to access game settings"></button>
+                        </li>
+                    </ul>
+                </nav> <!-- end navbar -->
+            </div> <!-- end div headerContainer -->
         </header>
         <!-- DMcC 29/05/23 Make initialise Solution button non-display and instead auto initialise on start -->
         <!-- <button class="gameButton" onclick="initSolution();">
@@ -127,7 +137,8 @@
         </button> -->
         <!-- DMcC 29/05/23 the below is made non-display, it is populated but hidden as will be used for comparison  -->
         <h2 id="solution" class="noDisplay">Solution here: </h2>
-        <h3><pre>Target: <span class="targetValue">0</span>  Attempt: <span id="attemptNum">1</pre></span>
+        <h3>
+            Target: <span class="targetValue">0</span>     Attempt: <span id="attemptNum">1</span>
             <span id="colNum" class="noDisplay">0</span>
         </h3>
     </div> <!-- end div gameHead-->

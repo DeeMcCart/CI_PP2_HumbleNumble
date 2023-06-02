@@ -79,7 +79,7 @@ h1 {
     font-family: 'Roboto Slab';
     font-weight: 400;
     font-size: 1rem;
-    letter-spacing: 0.1rm;
+    letter-spacing: 0.1rem;
     overflow:scroll;
     }
 
@@ -97,7 +97,7 @@ text-align:right;}
 #closeHelpText-btn, #closeStatsText-btn {
     font-weight:bold;
     border:none;
-    text-size-adjust: 2rem;
+    font-size-adjust: 2rem;
 }
     #helpText h3, #statsText h3 {
         font-size: 1rem;
@@ -127,9 +127,9 @@ text-align:right;}
 #intro h2 {
     height: 40px;
     font-family: 'Roboto Slab';
-    font-weight: 2000;
+    font-weight: 1000;
     font-size: 2.5rem;
-    letter-spacing: 0.1rm;
+    letter-spacing: 0.1rem;
 }
 
 #intro h3 {
@@ -380,9 +380,9 @@ title {
  #intro h2 {
     height: 40px;
     font-family: 'Roboto Slab';
-    font-weight: 2000;
+    font-weight: 1000;
     font-size: 1.5rem;
-    letter-spacing: 0.1rm;
+    letter-spacing: 0.1rem;
 }
 
 #intro h3, h3 {

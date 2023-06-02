@@ -121,32 +121,11 @@ https://numble.wtf <br>
 https://numble.game <br>
 https://numble.win<br>
 https://numble.online<br>
-https://numble (wikipedia) <br>
+https://en.wikipedia.org/wiki/Numble (wikipedia)<br>
 
 Whilst these sites individually contain some good features, none offers the range of functionality, and simplicity of design, available from the Wordle site.   
 
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/strategy_competitive_analysis.jpg">
-
-</details> 
-<br>
-From this analysis, a set of possible requirements was identified for a new portal.
-<br><br>
-<ul>MVP Requirements:
-<li>Must be intuitive to use</li>
-<li>Must be easy to learn</li>
-<li>Good for first time or returning users</li>
-<li>Accessible - no ad display & no paywall</li>
-<li>Familiar interface for Wordle consumers</li>
-</ul>
-<br>
-<ul>Requirements - Desirable:
-<li>Would like to share results (graphic showing the pattern of result)</li>
-<li>Would like to e able to track user statistics (cookies)</li>
-<li>Would like to be able to auto-generate new equations</li>
-<li>Would like to be able to track equations already used</li>
-<li>Would like to be able to set difficulty levels</li>
-</ul>
-<br>
 
 ### UX Design Strategy Target Audience
 The aim of this specific website is develop a Numble game which can be played in simple form
@@ -165,9 +144,29 @@ d. People who like to practice their mathametical skills<br>
 ----------------
 
 ### UX Design Scope User Requirements and Expectations
-(To be revisited...)
-/The basic requirement for users is to have access to a 'fair' game where they have a possibility of reaching the goal.
+/</details> 
+<br>
+From the analysis of existing games, a set of possible requirements was identified for a new portal.
+<br><br>
+The basic requirement for users is to have access to a 'fair' game where they have a possibility of reaching the goal.
 * The game is a fun way of applying simple mathematical principles
+    
+<ul>MVP Requirements:
+<li>Must be intuitive to use</li>
+<li>Must be easy to learn</li>
+<li>Good for first time or returning users</li>
+<li>Accessible - no ad display & no paywall</li>
+<li>Familiar interface for Wordle consumers</li>
+</ul>
+<br>
+<ul>Requirements - Desirable:
+<li>Would like to share results (graphic showing the pattern of result)</li>
+<li>Would like to e able to track user statistics (cookies)</li>
+<li>Would like to be able to auto-generate new equations</li>
+<li>Would like to be able to track equations already used</li>
+<li>Would like to be able to set difficulty levels</li>
+</ul>
+<br>
 
 ### UX Design Scope - Data
 A set of equations are pre-loaded which are consistent with game rules (e.g. operator numbers not > 20, calculations return an integer value)
@@ -262,45 +261,44 @@ Certain icons and symbols used for quicklinks e.g. ? for About page, graphy symb
 
 ## Features 
  
-### F01 
-![Introduction page](./docs/readme_images/humble_numble_intro.jpg?raw=true "Introduction page seen on first opening the website")
+### F01 Intro Screen
+![Introduction page](./docs/readme_images/f01_intro.jpg?raw=true "Introduction page seen on first opening the website")
 <br>
 On first using the game (or on use within incognito mode) the user will encounter an introduction window, they can take a button to 'Play' or 'How to Play' to view help text.  The intro page shows the current date, the Humble Numble day number, and some copyright and acknowledgement notices.
-
-### F02 
-Description
-![Humble Numble game explanation](./docs/readme_images/humble_numble_how_to_play.jpg?raw=true "Scrollable text to show user instructions on how to play Humble Numble game")
+    
+### F02 Help Screen
+![Humble Numble game explanation](./docs/readme_images/f02_help.jpg?raw=true "Scrollable text to show user instructions on how to play Humble Numble game")
 <br>
-A modal 'How to Play' window showing the user how to play the Humble Number game is accessed from the introduction window, or from within the game (for example if a user is mid-game and wants to check the rules).   The 'How to Play' window can be scrolled to see full text, and is closed by clicking on the X in top right hand corner, at which point it disappears from screen.  
+A modal 'How to Play' explains how to play and some of the subtleties of the calculations.  Available from the 'how to play' button ![How to Play button](./docs/readme_images/f02_help.jpg?raw=true "Image of how-to-play button") on the Intro screen, or from the navbar help icon on all screens.   The 'How to Play' window can be scrolled to see full text, and is closed by clicking on the X in top right hand corner, at which point it disappears from screen.<br>
+    ![help icon](./docs/readme_images/f02_help_icon.jpg?raw=true "Scrollable text to show user instructions on how to play Humble Numble game")
+      
+### F03 Play button
+The Play button ![Play button](./docs/readme_images/f03_play_button.jpg?raw=true "Image of Play button")allows the user to go directly to a game screen, and immediately play a game ('call to action').
 
-### F03 
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+### F04 Randomly selected solution
+An array of solutions is maintained, and an entry is randomly chosen from this array.  At the time of development this array contained approx 20 entries, which is sufficient for demo purposes, it is envisioned that this will be extended in the future.
+![Array of possible solutions](./docs/readme_images/f04_solution_array.jpg?raw=true "Examples of possible solutions from which a random game choice is made")
 
-### F04 
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+### F05 Uncluttered game screen
+The game screen is presented to the user fully initialised (ie a target value has been set and populated to each grid row).  The screen is free of ads and supplemental displays, which allows the user to focus on the game.
+![Image of starting game screen](./docs/readme_images/f05_uncluttered_game_screen.jpg?raw=true "Starting game screen, clear and uncluttered, with target value and attempt number displaying")
 
-### F05 
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+### F06 Consistent Navbar
+The Navbar is consistent throughout the website, 404 and feedback pages.  (modals/pop-ups are used to show intro and help pages, which don't show the navbar but when they are closed, the navbr can be seen on the underlying page)  Contains icons for Help, Stats and Settings.
+![Navbar](./docs/readme_images/f06_navbar.jpg?raw=true "Navbar image")
 
-### F06 
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+### F07 Game grid
+Interactive and responsive game grid which allows the user to record one set of guess tiles per attempt (the current attempt # is shown at top of screen).  The game grid is initially blank, and will be populated with successive user guesses.
+Interactivity/feedback:  when the user presses ENTER to submit a guess, the guessed tiles update as green(correct); orange(present) or grey(absent).
+![Game grid in progress](./docs/readme_images/f07_game_grid_in_progress.jpg?raw=true "game grid - in-progress game")
 
-### F07
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+### F08 Keyboard display
+A pseudo-keyboard shows the permitted entries.  The user must click on the keys using a mouse pointer to select an entry.  When a keyboard key is pressed, its colour flickers to light blue, and the key value is loaded to the current guess row on the game grid.  So the keyboard is the main user control for the game, and each press of a keyboard key triggers an action.   (keys 1-20, */-+ populate the game grid, DEL is used to remove a grid entry, and ENTER submits a guess).
+![Keyboard display](./docs/readme_images/f08_keyboard_grid.jpg?raw=true "Image of keyboard display")
+When the user presses ENTER to submit a guess, the keyboard elements used within the guess also update as green(correct); orange(present) or grey(absent).
+![Keyboard changing colour as game progresses](./docs/readme_images/f08_keyboard_grid_game_in_progress.jpg?raw=true "Image of keyboard display when game in progress")
 
-### F08 
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
-
-### F09 Choose difficulty level
-The user can choose difficulty level EASY (all numbers <= 10) or DIFFICULT (numbers <=20 included)
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+### F09
 
 ### F10 Responsive Navbar
 The navigation bar appears on all pages, and is attractively laid out.  Four links are available - Home - Walks - Gallery - Feedback
@@ -311,7 +309,6 @@ This section will allow the user to easily navigate from page to page across all
 ![Responsive navbar](./assets/readme_images/F10-Feature-Navbar.jpg?raw=true "Responsive navbar")
 Description
 ![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
-
 
 ### F11 Partner social media links (footer)
 As this website is structured to operate more like to a peer-to-peer than a hierarchical structre, the footer bar is not currently used for broadcasting from a single site owner's social links, instead it is a set of 'partner' links to groups or websites which are relevant.    
@@ -384,12 +381,10 @@ Clicking on ENTER will submit the current grid row as an entry.
 Ability to choose settings - to be decided
 
 ![Walks Page](./docs/readme_images/P02-Walk_Details.jpg?raw=true "Page with details for each walk")
-
-
-- __'How to Play' Modal Window__
-- A chance to explain the rules of the game.
-
-![Gallery Page](./docs/readme_images/P03-Walk_Details.jpg?raw=true "Gallery")
+ Choose difficulty level
+The user can choose difficulty level EASY (all numbers <= 10) or DIFFICULT (numbers <=20 included)
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
 - __Contact/Feedback page__ 
 Signup for daily game playing reminder.
@@ -421,7 +416,13 @@ Break out of loop when success, or when 6 tries reached.
 
 ### Features Left to Implement
 Cookies to store user data from last attempts
-
+                                                                                        
+Choose difficulty level
+The user can choose difficulty level EASY (all numbers <= 10) or DIFFICULT (numbers <=20 included)
+Description
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+                                                                                        
+                                                                                        
 ### RTM
 Requirements traceability matrix showing link between user stories and implemented/ future-release features
 

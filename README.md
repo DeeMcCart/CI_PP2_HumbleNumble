@@ -59,22 +59,22 @@ Many people worldwide take part in the 'Wordle' game, which offers a chance to g
 * green - the guessed letter exists in the solution, and was guessed at the correct position.
 <br>
 The panel of letters is also updated with the appropriate colour (grey, orange, green) for the chosen letter.
-(Note that sometimes a word will have a double letter in which case a second guess including this letter will result in a further orange/green for the letter - I think in this case, on the panel it shows green).
+(Note that sometimes a word will have a double letter in which case a second guess including this letter will result in a further orange/green for the letter - in this case, on the panel it shows green).
 
-So.... Humble Numble is a version of Wordle applied to numbers.  In this case there is an equation on the left hand side, the user is presented with a six-row grid to take guesses, and the user must choose from numbers 1..20 and simple operators +-*/ to arrive at a given target number.  The 'solution' is a predefined equation, e.g. <br>
+So.... Humble Numble is a version of Wordle applied to numbers.  The panel represents an equation, there is a six-row grid to make guesses, and the user must choose from numbers 1..20 and simple operators +-*/ to arrive at a given target number.  The 'solution' is a predefined equation, e.g. <br>
 13+5+6=24 <br>
 5+3-6=2 <br>
 <br>_
 i.e. the format is <num1> <op1> <num2> <op2> <num3> = target <br>
     
 
-Any guessed expression must be 'logically consistent' ie it must evaluate to the target number.  (an error message 'incorrect calc' will pop up if an inconsistent equation is entered)
+Any guessed expression must be 'logically consistent' ie should evaluate to the target number.  (an error message 'wrong calc' will pop up if an inconsistent equation is entered)
 Evaluation uses PEMDAS priorities - well actually MDAS -: Multiply Divide Add Subtract, therefore <br>
 13+6/3 is evaluated as 13+(6/3), equating to 13+2 evaluating to 15. <br>
 20+12*6 is evaluated as 20+(12*6)=20+ 72=92 <br>
 12*6+20 is evaluated as (12*6)+20 = 72+20 = 92 <br>
 5-2*2 = 5-4 = 1
-2*2-2 - 4-2 = 2
+2*2-2 = 4-2 = 2
 2*2/2 = 4/2 = 2
 
 If an equation contained multiply and divide, the sequence will affect the result, ie :
@@ -168,6 +168,16 @@ The basic requirement for users is to have access to a 'fair' game where they ha
 <li>Would like to be able to set difficulty levels</li>
 </ul>
 <br>
+<ul>To incorporate as many of the Wordle characteristics below as possible:
+<li>Simple interface with uncluttered screen</li>
+<li>clearly understood rules</li>
+<li>scarcity - user can only access one game per day</li>
+<li>reponsiveness - ability to play on small screens (convenient for user)</li>
+<li>no time-out - can fit into small pockets of time as game will remain on-screen until 6 guesses completed</li>
+<li>feedback and interaction - user immediately gets feedback for each guess</li>
+<li>statistic tracking - user can track # of attempts to solve, number of days solved, success rates</li>
+<li>peer-group communication - user can share their problem-solving pattern (without revealing any part of the solution) to friends who may also play</li>
+</ul>
 
 ### UX Design Scope - Data
 A set of equations are pre-loaded which are consistent with game rules (e.g. operator numbers not > 20, calculations return an integer value)
@@ -208,7 +218,7 @@ Currently Humble Numble will randomly select one of these equations for each gam
 ### Other stakeholder Goals
 * OT_01 As a parent I might wish my child would STOP PLAYING THOSE BLOODY COMPUTER GAMES AND DO YOUR HOMEWORK
 * OT_02 As an educator I might recognise the opportunity to build in some learning
-* OT_03 As an educator I might wish to design questions and suporting information for the user 
+* OT_03 As an educator I might wish to suggest new equations to be solved by Humble Numble players 
 
 
 ## UX Design Decisions
@@ -216,21 +226,19 @@ Currently Humble Numble will randomly select one of these equations for each gam
 
 ### Wireframes
 <details><summary>Landing Page</summary>
-The landing page WF is shown here with 4 sceen resolutions as I found when testing that the Motorola G(7) was truncating to the right hand side for 2-column pictures display, therefore I added an additional responsiveness section to cater for 320-400 pixel screen size.   This was really just an issue for the landing page, the remaining screens sized OK for the content.
-  
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/WF01-landing-page.jpg">
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/wf1_hn_landing.png">
 </details>
 
-<details><summary>Walk Details</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/WF02-Walk-Details.jpg">
+<details><summary>How To Play</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/wf2_hn_howtoplay.png">
 </details>
 
-<details><summary>Gallery</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/WF03-gallery.jpg">
+<details><summary>Game screen</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/wf3_hn_howtoplay.png">
 </details>
 
-<details><summary>Feedback</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/WF04-feedback.jpg">
+<details><summary>Game screen in progress</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/wf4_hn_game_inprogress.png">
 >
 </details>
 
@@ -549,7 +557,7 @@ The following sites were ued for research and better understanding while creatin
 * https://stackoverflow.com/questions/69565192/how-to-bring-the-popup-fully-displayed-in-front-of-everything used to get the results popup to display in a predictable on-screen position
 * https://stackoverflow.com/questions/42610369/javascript-classlist-remove-not-working-properly used to resolve issue #001 where not all classLists removing as expected
 * https://www.youtube.com/watch?v=uUCpopjPZdI HTML, CSS & JavaScript - How to Create a Pop-Up Modal ( Manual Version ) - Web Dev Tutorials @codefoxx used to help create a pop up help window
-* https://github.com/aleksandracodes/CI_PP2_SunshineGuessing (Aleksandra Haniok) was used for readme checklist and content
+* https://github.com/aleksandracodes/CI_PP2_SunshineGuessing (Aleksandra Haniok) was used for readme checklist and content, also for good code commenting structure
 
  
 ### Acknowledgements

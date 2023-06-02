@@ -161,7 +161,7 @@ The basic requirement for users is to have access to a 'fair' game where they ha
 <br>
 <ul>Requirements - Desirable:
 <li>Would like to share results (graphic showing the pattern of result)</li>
-<li>Would like to e able to track user statistics (cookies)</li>
+<li>Would like to be able to track user statistics (cookies)</li>
 <li>Would like to be able to auto-generate new equations</li>
 <li>Would like to be able to track equations already used</li>
 <li>Would like to be able to set difficulty levels</li>
@@ -293,40 +293,29 @@ Interactivity/feedback:  when the user presses ENTER to submit a guess, the gues
 ![Game grid in progress](./docs/readme_images/f07_game_grid_in_progress.jpg?raw=true "game grid - in-progress game")
 
 ### F08 Keyboard display
-A pseudo-keyboard shows the permitted entries.  The user must click on the keys using a mouse pointer to select an entry.  When a keyboard key is pressed, its colour flickers to light blue, and the key value is loaded to the current guess row on the game grid.  So the keyboard is the main user control for the game, and each press of a keyboard key triggers an action.   (keys 1-20, */-+ populate the game grid, DEL is used to remove a grid entry, and ENTER submits a guess).
+A pseudo-keyboard shows the permitted entries.  The user must click on the keys using a mouse pointer to select an entry.  When a keyboard key is pressed, its colour flickers to light blue, and the key value is loaded to the current guess row on the game grid.  So the keyboard is the main user control for the game, and each press of a keyboard key triggers an action.   (keys 1-20, */-+ populate the game grid)).
 ![Keyboard display](./docs/readme_images/f08_keyboard_grid.jpg?raw=true "Image of keyboard display")
 When the user presses ENTER to submit a guess, the keyboard elements used within the guess also update as green(correct); orange(present) or grey(absent).
-![Keyboard changing colour as game progresses](./docs/readme_images/f08_keyboard_grid_game_in_progress.jpg?raw=true "Image of keyboard display when game in progress")
 
-### F09
+### F09 DEL key
+A backspace key is provided which allows the user to remove the last keyed entry on the current grid row.
 
-### F10 Responsive Navbar
-The navigation bar appears on all pages, and is attractively laid out.  Four links are available - Home - Walks - Gallery - Feedback
-The navbar is visible at the top of each screen, and is identical in each page/ screen size combination to allow for easy navigation.
-It is fully responsive so will change positioning at 320, 400, 800 pixel screen widths. 
-This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button.
+### F10 ENTER key
+The ENTER key submits the current guess row for validation. 
 
-![Responsive navbar](./assets/readme_images/F10-Feature-Navbar.jpg?raw=true "Responsive navbar")
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+### F11 Equestion validation
+When a guess is submitted, the equation which the user has submitted is parsed and validated as follows - the entries at the second and fourth columns are assessed to ensure these contain an operator (plus minus multiply divide); the guessed equation is then validated to check if it equates to the target value.  If not, an error message is shown, however the game (at this version) will still progress to individual element valuation.
+![If equation has wrong total](./assets/readme_images/F11_wrong_total.jpg?raw=true "Equation calculates to incorrect total")
 
-### F11 Partner social media links (footer)
-As this website is structured to operate more like to a peer-to-peer than a hierarchical structre, the footer bar is not currently used for broadcasting from a single site owner's social links, instead it is a set of 'partner' links to groups or websites which are relevant.    
+### F12  Individual guess element validation
+Each element of the guess is compared to the solution, and its tile colour amended according to whether the guessed tile is:
+* correct (green)- tile value is at this position in the solution;
+* present (orange)- tile value is at a different position in the solution;
+* absent (grey) - tile value is not in the solution.
+![Feedback on game panel re guessed solution](./docs/readme_images/f12_game_interaction_feeback.jpg?raw=true "Image of guessed tiles changing colour")
 
-  The links will open to a new tab to allow easy navigation for the user. 
-  The footer is valuable to the user as it encourages them to keep connected via social media and to engage in a deeper way with the community sponsors of this project
-
-![Footer partner links](./assets/readme_images/F11-Feature-Footer-bar.jpg?raw=true "Partner links")
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
-
-
-### F12  User Error Messages
-Incomplete entry!
-Inconsistent calculation!
-
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+The corresponding keyboard grid value is coloured on the lower part of the screen, e.g. '5' guessed correct; will colour both the row tile and the keyboard key green.  A (hidden) count of the number of correct elements is maintained.
+![Feedback on keyboard re guessed solution](./docs/readme_images/f12_keyboard_interaction_feeback.jpg?raw=true "Image of keyboard keys changing colour")
 
 ### F13 User Stats (needs cookies, and possibly google charts to display)
 Winning streak! (user is notified on startup of how many games they have won)
@@ -339,9 +328,7 @@ Ability to signup for daily reminder of the following format
 ![How to sign up for reminder](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 ![Reminder email content](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
 
-### F16 ability to choose 'Test' or 'Daily' mode
-One of the beautiful features of wordle is its limited-release mode whereby only one puzzle is released daily ... this creates a sense of anticipation and the user wants more, they don't get the chance to become bored or tired with the game.  Similarly the proposed Humble Numble game is best delivered in Daily mode.  For the purpose of site demonstration, the user is currently permitted to enter Test mode (chosen from the settings page) 
-
+### F16 
 ### F17 Settings Page
 Allow the user to choose:
 * Test or Daily modes
@@ -421,7 +408,16 @@ Choose difficulty level
 The user can choose difficulty level EASY (all numbers <= 10) or DIFFICULT (numbers <=20 included)
 Description
 ![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+
+
+User Stats (needs cookies, and possibly google charts to display)
+Winning streak! (user is notified on startup of how many games they have won)
+STATISTICS:  X Played; y Win %; z Current Streak; w: Max Streak
+GUESS DISTRIBUTION: 1 x; 2 y; 3 z; 4 w; 5 v; 6 u
+![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
                                                                                         
+Ability to choose 'Test' or 'Daily' mode
+One of the beautiful features of wordle is its limited-release mode whereby only one puzzle is released daily ... this creates a sense of anticipation and the user wants more, they don't get the chance to become bored or tired with the game.  Similarly the proposed Humble Numble game is best delivered in Daily mode.  For the purpose of site demonstration, the user is currently permitted to enter Test mode (chosen from the settings page) 
                                                                                         
 ### RTM
 Requirements traceability matrix showing link between user stories and implemented/ future-release features
@@ -459,10 +455,8 @@ All pages pass with 0 errors (DMcC 18/05/23:  more work needed here... )
 - [Accessibility: index page](https://wave.webaim.org/report#/https://deemccart.github.io/CI_PP2_HumbleNumble/)
 
 
-Ensure that accessibility is evaluated against both the normal-contrast and high-contrast pages
-
 ### Performance
-Performance for all pages was tested using the Lighthouse tool within Google Chrome.  After adjusting image sizes, performance was at or above 90% for all pages.
+Performance for all pages was tested using the Lighthouse tool within Google Chrome.  Performance was at 100% for all pages.
 
 <details><summary>Performance: Index page</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance-results-index-page.jpg">

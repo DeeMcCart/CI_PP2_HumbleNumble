@@ -350,7 +350,7 @@ The ENTER key submits the current guess row for validation.
 
 ### F11 Equation validation
 When a guess is submitted, the equation which the user has submitted is parsed and validated as follows - the entries at the second and fourth columns are assessed to ensure these contain an operator (plus minus multiply divide); the guessed equation is then validated to check if it equates to the target value.  If not, an error message is shown, however the game (at this version) will still progress to individual element valuation.
-![If equation has wrong total](./assets/readme_images/F11_wrong_total.jpg?raw=true "Equation calculates to incorrect total")
+![If equation has wrong total](./assets/readme_images/f11_wrong_total.jpg?raw=true "Equation calculates to incorrect total")
 <br>
 <br>
 
@@ -383,16 +383,14 @@ A pop-up message with the appropriate text appears if the user has matched the e
 
 ### F15 User Statistics 
 <details><summary>User statistics</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f12_keyboard_interaction_feeback.jpg"></details>
-Winning streak! (user is notified on startup of how many games they have won)
-vSTATISTICS:  X Played; y Win %; z Current Streak; w: Max Streak
-GUESS DISTRIBUTION: 1 x; 2 y; 3 z; 4 w; 5 v; 6 u
-<br>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f15_user_statistics.jpg"></details>
+
+This screen is really a placeholder for future functionality as would like to display some of the statistics for a plyer over a number of games<br>
 <br>
 
 ### F16 Settings and Feedback
 <details><summary>User settings</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f16_settings_and_feeback.jpg"></details>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f16_settings_feeback.jpg"></details>
 
 This allows the user to provide feedback and to choose to join a daily reminder mailing list.  There are placeholder questions here for future Limit to one game daily (preset to 'no limit');
 Difficulty levels: easy or difficult (preset to 'difficult').

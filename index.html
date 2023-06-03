@@ -72,9 +72,10 @@
             </div>
             <!-- DMcC 28/05/23 This is player statistics section -->
             <h2>STATISTICS</h2>
-            <h3>Played Win% Current Streak Max Streak<br>
-                GUESS DISTRIBUTION</h3>
-            <button id="shareStats-btn" onclick="shareStats();" aria-label="Share Stats button">X</button>
+            <h3>Played </h3> <br>
+            <h3>Win% Current Streak Max Streak</h3><br>
+            <h3>GUESS DISTRIBUTION</h3>
+            <button id="shareStats-btn" class="gameButton" onclick="shareStats();" aria-label="Share Stats button">Share Stats</button>
         </div> <!-- end div 'statsText'-->
     </div> <!-- end div statsOverLay -->
 
@@ -117,7 +118,9 @@
                                     alt="Graph type symbol to access player Statistics"></button>
                         </li>
                         <li>
-                            <button class="navButton" onclick="document.location='https://deemccart.github.io/CI_PP2_HumbleNumble/settings';" aria-label="Show Settings button">
+                            <button class="navButton"
+                                onclick="document.location='https://deemccart.github.io/CI_PP2_HumbleNumble/settings';"
+                                aria-label="Show Settings button">
                                 <img src="assets/images/settings-icon.jpg"
                                     alt="Cog symbol to access game settings"></button>
                         </li>
@@ -128,7 +131,7 @@
         <!-- DMcC 29/05/23 the solution below is populated but hidden as will be used for comparison  -->
         <h2 id="solution" class="noDisplay">Solution here: </h2>
         <h3>
-            Target: <span class="targetValue">0</span>     Attempt: <span id="attemptNum">1</span>
+            Target: <span class="targetValue">0</span> Attempt: <span id="attemptNum">1</span>
             <span id="colNum" class="noDisplay">0</span>
         </h3>
     </div> <!-- end div gameHead-->

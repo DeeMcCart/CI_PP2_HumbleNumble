@@ -263,7 +263,9 @@ The colour combinations mimic Wordle's game (for consistency and to ease the use
    
 The choice of colours for Humble Numble is very much in accordance with user stories S_02 (closely emulate the Wordle look & feel); FTU_02 (first-time user to easily navigate and learn the site) - consistent with Wordle so as to speed the learning process and encourage the focus on the game content, rather than on how to use it.
 
-![Colours - similar to Wordle](./docs/readme_images/f07_game_grid_in_progress.jpg?raw=true "Humble Numble dark mode normal contrast")
+<details><summary>Colours- similar to Wordle</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f07_game_grid_in_progress.jpg">
+</details>
 
 ### Design Images
 This site has very few images as the focus is on the game content.
@@ -281,51 +283,68 @@ Certain icons and symbols (again based on Wordle look & feel) are used for quick
  
 ### F01 Intro Screen
 <details><summary>Introduction screen</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f01_intro.jpg">
-On first using the game (or on use within incognito mode) the user will encounter an introduction window, they can take a button to 'Play' or 'How to Play' to view help text.  The intro page shows the current date, the Humble Numble day number, and some copyright and acknowledgement notices.
-This addresses user stories SO_01, SO_02, FTU_01, FTU_02, FTU_03
-
-### F02 Help Screen
-![Humble Numble game explanation](./docs/readme_images/f02_help.jpg?raw=true "Scrollable text to show user instructions on how to play Humble Numble game")
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f01_intro.jpg"></details>
 <br>
-A modal 'How to Play' explains how to play and some of the subtleties of the calculations.  Available from the 'how to play' button ![How to Play button](./docs/readme_images/f02_help.jpg?raw=true "Image of how-to-play button") on the Intro screen, or from the navbar help icon on all screens.   The 'How to Play' window can be scrolled to see full text, and is closed by clicking on the X in top right hand corner, at which point it disappears from screen.<br>
-    ![help icon](./docs/readme_images/f02_help_icon.jpg?raw=true "Scrollable text to show user instructions on how to play Humble Numble game")
-      
+On first using the game an introduction window is shown, the user can choose 'Play' or 'How to Play' buttons.  The intro page shows the current date, the Humble Numble day number, and some copyright and acknowledgement notices.
+This addresses user stories SO_01, SO_02, FTU_01, FTU_02, FTU_03
+<br>
+<br>
+### F02 'How To Play' Screen
+<details><summary>How To Play screen</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f02_help.jpg"></details>
+<br>
+A modal 'How to Play' explains how to play and some of the subtleties of the calculations.  Available from the 'how to play' button on the Intro screen, or from the navbar help icon on all screens.   The 'How to Play' window can be scrolled to see full text, and is closed by clicking on the X in top right hand corner, at which point it disappears from screen.
+<br>
+<br>      
 ### F03 Play button
-The Play button ![Play button](./docs/readme_images/f03_play_button.jpg?raw=true "Image of Play button")allows the user to go directly to a game screen, and immediately play a game ('call to action').
-
+The Play button ![Play button](./docs/readme_images/f03_play_button.jpg?raw=true "Image of Play button") allows the user to go directly to a game screen, and immediately play a game ('call to action').
+<br>
+<br>
 ### F04 Randomly selected solution
-An array of solutions is maintained, and an entry is randomly chosen from this array.  At the time of development this array contained approx 20 entries, which is sufficient for demo purposes, it is envisioned that this will be extended in the future.
-![Array of possible solutions](./docs/readme_images/f04_solution_array.jpg?raw=true "Examples of possible solutions from which a random game choice is made")
-
+<details><summary>Array of potential solutions</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f04_solution_array.jpg"></details>
+(Dont look too closely or you will ruin the surprise of playing the game!)<br>
+An array of solutions is maintained, and, when the game starts, an entry is randomly chosen from this array.  At the time of development this array contained approx 20 entries, which is sufficient for demo purposes, it is envisioned that this will be extended in the future.
+<br>
+<br>
 ### F05 Uncluttered game screen
+<details><summary>Initialised game screen</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f05_uncluttered_game_screen.jpg"></details>
 The game screen is presented to the user fully initialised (ie a target value has been set and populated to each grid row).  The screen is free of ads and supplemental displays, which allows the user to focus on the game.
-![Image of starting game screen](./docs/readme_images/f05_uncluttered_game_screen.jpg?raw=true "Starting game screen, clear and uncluttered, with target value and attempt number displaying")
-
-### F06 Consistent Navbar
-The Navbar is consistent throughout the website, 404 and feedback pages.  (modals/pop-ups are used to show intro and help pages, which don't show the navbar but when they are closed, the navbr can be seen on the underlying page)  Contains icons for Help, Stats and Settings.
+<br>
+<br>
+### F06 Consistent Navbar<br>
+The Navbar is consistent throughout the website, 404 and feedback pages.  (modals/pop-ups are used to show intro and help pages, which don't show the navbar but when they are closed, the navbar can be seen on the underlying page)  Contains icons for Help, Stats and Settings.
 ![Navbar](./docs/readme_images/f06_navbar.jpg?raw=true "Navbar image")
-
+<br>
+<br>
 ### F07 Game grid
-Interactive and responsive game grid which allows the user to record one set of guess tiles per attempt (the current attempt # is shown at top of screen).  The game grid is initially blank, and will be populated with successive user guesses.
+<details><summary>Game panel</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f07_game_grid_in_progress.jpg"></details>
+Interactive and responsive game panel which allows the user to record one set of guess tiles per attempt (the current attempt # is shown at top of screen).  The game grid is initially blank, and will be populated with successive user guesses.
 Interactivity/feedback:  when the user presses ENTER to submit a guess, the guessed tiles update as green(correct); orange(present) or grey(absent).
-![Game grid in progress](./docs/readme_images/f07_game_grid_in_progress.jpg?raw=true "game grid - in-progress game")
-
+<br>
+<br>
 ### F08 Keyboard display
-A pseudo-keyboard shows the permitted entries.  The user must click on the keys using a mouse pointer to select an entry.  When a keyboard key is pressed, its colour flickers to light blue, and the key value is loaded to the current guess row on the game grid.  So the keyboard is the main user control for the game, and each press of a keyboard key triggers an action.   (keys 1-20, */-+ populate the game grid)).
-![Keyboard display](./docs/readme_images/f08_keyboard_grid.jpg?raw=true "Image of keyboard display")
+<details><summary>Keyboard</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f08_keyboard_grid.jpg"></details>
+A pseudo-keyboard shows the permitted entries.  The user must click on the keys using a mouse pointer to select an entry.  When a keyboard key is pressed, its colour flickers to light blue, and the key value is loaded to the current guess row on the game grid.  So the keyboard is the main user control for the game, and each press of a keyboard key triggers an action.   (keys 1-20, */-+ populate the game grid).<br>
 When the user presses ENTER to submit a guess, the keyboard elements used within the guess also update as green(correct); orange(present) or grey(absent).
-
+<br>
+<br>
 ### F09 DEL key
 A backspace key is provided which allows the user to remove the last keyed entry on the current grid row.
-
+<br>
+<br>
 ### F10 ENTER key
 The ENTER key submits the current guess row for validation. 
-
-### F11 Equestion validation
+<br>
+<br>
+### F11 Equation validation
 When a guess is submitted, the equation which the user has submitted is parsed and validated as follows - the entries at the second and fourth columns are assessed to ensure these contain an operator (plus minus multiply divide); the guessed equation is then validated to check if it equates to the target value.  If not, an error message is shown, however the game (at this version) will still progress to individual element valuation.
 ![If equation has wrong total](./assets/readme_images/F11_wrong_total.jpg?raw=true "Equation calculates to incorrect total")
-
+<br>
+<br>
 ### F12  Individual guess element validation
 Each element of the guess is compared to the solution, and its tile colour amended according to whether the guessed tile is:
 * correct (green)- tile value is at this position in the solution;

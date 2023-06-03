@@ -16,7 +16,6 @@
     2. [First-time User Goals](#first-time-user-goals)
     3. [Returning User Goals](#returning-user-goals)
     4. [Other stakeholder Goals](#other-stakeholder-goals)
-    5. [Future Site owner and Administrator Goals](#future-site-owner-and-administrator-goals)
 5. [Further UX Design: ](#ux-design-decisions)
     1. [Skeleton - Wireframes; ](#wireframes)
     2. [Surface - Fonts; ](#fonts-chosen)
@@ -58,33 +57,33 @@ Many people worldwide take part in the 'Wordle' game, which offers a chance to g
 * orange - the guessed letter exists in the solution, but not at the guessed position;
 * green - the guessed letter exists in the solution, and was guessed at the correct position.
 <br>
-The panel of letters is also updated with the appropriate colour (grey, orange, green) for the chosen letter.
-(Note that sometimes a word will have a double letter in which case a second guess including this letter will result in a further orange/green for the letter - in this case, on the panel it shows green).
-
-So.... Humble Numble is a version of Wordle applied to numbers.  The panel represents an equation, there is a six-row grid to make guesses, and the user must choose from numbers 1..20 and simple operators +-*/ to arrive at a given target number.  The 'solution' is a predefined equation, e.g. <br>
+In Wordle, the panel of letters is also updated with the appropriate colour (grey, orange, green) for the chosen letter.
+<br>
+So.... Humble Numble is a version of Wordle applied to numbers.  The panel represents an equation, there is a six-row grid to make guesses, and the user must choose from numbers 1..20 and simple operators +-*/ to arrive at a given target number.  The 'solution' is a predefined equation, e.g. 
+<br>
 13+5+6=24 <br>
 5+3-6=2 <br>
 <br>_
-i.e. the format is <num1> <op1> <num2> <op2> <num3> = target <br>
-    
-
-Any guessed expression must be 'logically consistent' ie should evaluate to the target number.  (an error message 'wrong calc' will pop up if an inconsistent equation is entered)
-Evaluation uses PEMDAS priorities - well actually MDAS -: Multiply Divide Add Subtract, therefore <br>
-13+6/3 is evaluated as 13+(6/3), equating to 13+2 evaluating to 15. <br>
-20+12*6 is evaluated as 20+(12*6)=20+ 72=92 <br>
-12*6+20 is evaluated as (12*6)+20 = 72+20 = 92 <br>
-5-2*2 = 5-4 = 1
-2*2-2 = 4-2 = 2
-2*2/2 = 4/2 = 2
+i.e. the format is <em>num1 op1 num2 op2 num3 = target</em>
+<br>
+Any guessed expression must be 'logically consistent' ie should evaluate to the target number.  (an error message 'wrong calc' will pop up if an inconsistent equation is entered).  
+Evaluation uses PEMDAS priorities - well actually MDAS -: Multiply first, then Divide, then Add, then Subtract, therefore:
+<br>
+13 + 6 / 3 is evaluated as 13 + (6 / 3), equating to 13 + 2 evaluating to 15. <br>
+20 + 12 * 6 is evaluated as 20 + (12 * 6) = 20 + 72 = 92 <br>
+12 * 6 + 20 is evaluated as (12 * 6) + 20 = 72 + 20 = 92 <br>
+5 - 2 * 2 = 5 - 4 = 1
+2 * 2 - 2 = 4 - 2 = 2
+2 * 2 / 2 = 4 / 2 = 2
 
 If an equation contained multiply and divide, the sequence will affect the result, ie :
-6* 10 / 5 = (6 *10) / 5 = 60 / 5 = 12 
-10 / 5 * 6 is calculated as 10/(5*6) so 10/30 or 0.3333
+6 * 10 / 5 = (6 * 10) / 5 = 60 / 5 = 12 
+10 / 5 * 6 is calculated as 10 / ( 5 * 6) so 10 / 30 or 0.3333
 
 
-<ul> Rules:  
+<ul> <em>Rules:</em>  
     <li> All target results will be integers, ie no decimals or fractions.   This makes it a little easier to guess. </li>
-    <li> Each equation contains 3 numbers (operands) and 2 operators and must calculate to the target number.  A guess which doesn't calculate correctly will be accepted at Humble Numble V1.0 (the user may wish to strategically test out some number or oeprator combinations, while knowing that they will not solve the equation on this guess.  </li>
+    <li> Each equation contains 3 numbers (operands) and 2 operators and must calculate to the target number.  A guess which doesn't calculate correctly will be accepted at Humble Numble V1.0 (the user may wish to strategically test out some number or operator combinations, while knowing that they will not solve the equation on this guess).  </li>
 (refer to 'How To Play' for a full set of rules - https://deemccart.github.io/CI_PP2_HumbleNumble/)
 
 ### Responsive Mockup
@@ -108,25 +107,26 @@ Humble Numble aims to piggyback on the Wordle philosophies of:
 * clearly understood rules
 * scarcity - user can only access one game per day
 * reponsiveness - ability to play on small screens (convenient for user)
-* no time-out - can fit into small pockets of time as game will remain on-screen until 6 guesses completed
-* feedback and interaction - user immediately gets feedback for each guess
+* no time-out - can fit into small pockets of time as game remains on-screen until 6 guesses completed
+* feedback and interaction - user immediately gets feedback when they press ENTER on a guess
 * statistic tracking - user can track # of attempts to solve, number of days solved, success rates
 * peer-group communication - user can share their problem-solving pattern (without revealing any part of the solution) to friends who may also play
-
+<br>
+<br>
 ### UX Design Strategy Analysis - Existing Numble Games
 
-<details><summary>Analysis of Existing Numble Websites</summary>
 Using Google search, the following were identified as possible Numble websites -
+<br>
 https://thenumble.app/ <br>
 https://numble.wtf <br>
 https://numble.game <br>
 https://numble.win<br>
 https://numble.online<br>
 https://en.wikipedia.org/wiki/Numble (wikipedia)<br>
+Whilst these sites individually contain some good features, none is comparable to the range of functionality, and simplicity of design, available from the Wordle site.   
 
-Whilst these sites individually contain some good features, none offers the range of functionality, and simplicity of design, available from the Wordle site.   
-
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/strategy_competitive_analysis.jpg">
+<details><summary>Analysis of Existing Numble Websites</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/strategy_competitive_analysis.jpg"></details>
 
 ### UX Design Strategy Target Audience
 The aim of this specific website is develop a Numble game which can be played in simple form
@@ -135,7 +135,7 @@ The target audience is:<br>
 a. People who enjoy puzzle-solving<br>
 b. People who already play Wordle and are familiar with the user interface (e.g. grey, orange, green guess-letter evaluation; 6 tries,  grid layout)<br>
 c. People who want to have a reliable consistent experience through out the game (in other words, they want an opportunity to finish the game by reaching the end, and they want to be able to trust the process (ie they can understand how they move forward or backwards, and they dont feel it is unfair or impossible to complete).<br>
-d. People who like to practice their mathametical skills<br>
+d. People who like to practice their mathematical skills<br>
 
 * Game players
 * who enjoy mathematical puzzles
@@ -145,7 +145,7 @@ d. People who like to practice their mathametical skills<br>
 ----------------
 
 ### UX Design Scope User Requirements and Expectations
-/</details> 
+ 
 <br>
 From the analysis of existing games, a set of possible requirements was identified for a new portal.
 <br><br>
@@ -185,40 +185,49 @@ Currently Humble Numble will randomly select one of these equations for each gam
 
 ## User Goals/ User Stories
 ----------------
-
+The basic requirement for users is to have access to a 'fair' game where they have a possibility of reaching the goal.
+* The game is a fun way of applying simple mathematical principles
+    
 ### Site owner Goals
 * SO_01 As site owner I want to provide a fun, satisfying game which is visually engaging and highly interactive
-* SO_02 As site owner I want to closely emulate the Wordle design and user interface (to assist in user learning and ease of adoption for a large pre-existing user base)
-* SO_03 As site owner I want to include a mathematical learning experience into this game
-* SO_04 As site owner I want to provide straightforward, intuitive, consistent website navigation
-* SO_05 As site owner I want to provide a website, which meets current industry standards (html, css, javascript, responsive, accessibility, performance).
-* SO_06 As site owner I want to provide an opportunity for the user to provide feedback, including reporting issues, or suggesting improvements to the Humble Numble site
-* SO-07 As site owner I want to notify the user that their feedback has been received
+* SO_02 As site owner I want to provide a familiar interface for Wordle consumers (to assist in user learning and ease of adoption for a large pre-existing user base)
+* SO_03 As site owner I want to provide an interface which is uncluttered, free from ads, and not behind a paywall
+* SO_04 As site owner I want to include a mathematical learning experience in this game
+* SO_05 As site owner I want to provide straightforward, intuitive, consistent website navigation
+* SO_06 As site owner I want to provide a website, which meets current programming, performance and accessibility standards (html, css, javascript, responsive, accessibility, performance)
+* SO_07 As site owner I want to provide an opportunity for the user to provide feedback, including reporting issues, or suggesting improvements to the Humble Numble site
+* SO-08 As site owner I want to acknowledge to the user that their feedback has been received
+* SO-09 (FUTURE) As site owner I would like to implement scarcity - so that user can only access one game per day
+* SO-10 (FUTURE) As site owner, I Would like to be able to auto-generate new equations
+* SO_11 (FUTURE) As site owner, I would like to be able to track equations already used
+* SO_12 (FUTURE) As site owner, I would like to be able to set difficulty levels
+* SO_13 (FUTURE) As site owner, I would like to provide player stats - user can track # of attempts to solve, number of days solved, success rates
+* SO_14 (FUTURE) As site owner, I would like to facilitate users to share their problem-solving pattern (without revealing any part of the solution) 
 
 ### First-time User Goals
 * FTU_01 As a first time user I am curious about what this site does, and may just want to quickly play a game
-* FTU_02 As a first time user I would like to be able to easily navigate the site and quickly learn its functionality
+* FTU_02 As a first time user I would like to be able to easily navigate the site and quickly learn its functionality (particularly if I am already a Wordle user)
 * FTU_03 As a first time user I would like to easily understand game rules
-* FTU_04 As a first-time user I expect links and functions that work as expected
-* FTU_05 I might be curious about the 'applied' options (think about what to call these) and wish to explore these
-* FTU_06 As a first time user I would like to see my score and receive feedback on my performance
-* FTU_07 As a first-time user I want to try out different mathemtical calculations and become stronger at these
+* FTU_04 As a first-time user I want clear, timely and unambiguous feedback and interaction 
+* FTU_05 As a first-time user I expect links and functions that work as expected
+* FTU_06 As a first-time user who is curious about mathematical equations, I want to practice mental maths using a puzzle solving game
+* FTU_07 As a first time user I would like to see my score and receive feedback on my performance
+* FTU_08 As a first time user I would like to play on my device of choice (quite likely my mobile - reponsiveness)  
 
 ### Returning User Goals
 * RU_01 As a returning user I wish to play the game, just because I enjoy it
-* RU_02 As a returning user I want to 'beat the computer'
-* RU_03 As a returning user I want to track/ maintain/ improve my winning streak
+* RU_02 As a returning user I want to 'beat the computer' by guessing the solution within 6 tries
+* RU_03 no time-out - can fit into small pockets of time as game will remain on-screen until 6 guesses completed
 * RU_04 As a returning user I definitely want to be able to see any equation which I didn't guess within 6 tries
 * RU_05 As a returning user I would like to receive a 'fresh' challenge each time I play (ie not an equation thats been used before)
-* RU_06 As a returning user I would like to receive only one challenge per day (to avoid being sucked into a timewarp of endless gaming)
-* RU_07 As a returning user I want to feel that the game is 'fair' and that I can apply my skills to playing it
-* RU_08 As a returning user I would like to be able to contact the developer and to provide suggestions for game enhancement
-* RU_09 As a returning user I would like to be able to share my results with my friends (bragging rights)
+* RU_06 As a returning user I want to feel that the game is 'fair' and that I can apply my skills to playing it
+* RU_07 As a returning user I would like to be able to contact the developer and to provide suggestions for game enhancement
+* RU_08 (FUTURE) As a returning user I would like to be able to share my results with my friends (graphic showing the pattern of result)
+* RU_09 (FUTURE) As a returning user I would like to receive only one challenge per day (to avoid being sucked into a timewarp of endless gaming)
+* RU_10 (FUTURE) As a returning user I would like to be able to track my statistics and to track/ maintain/ improve my winning streak
 
 ### Other stakeholder Goals
-* OT_01 As a parent I might wish my child would STOP PLAYING THOSE BLOODY COMPUTER GAMES AND DO YOUR HOMEWORK
-* OT_02 As an educator I might recognise the opportunity to build in some learning
-* OT_03 As an educator I might wish to suggest new equations to be solved by Humble Numble players 
+* OT_01 As an educator I might wish to suggest new equations to be solved by Humble Numble players 
 
 
 ## UX Design Decisions
@@ -234,12 +243,11 @@ Currently Humble Numble will randomly select one of these equations for each gam
 </details>
 
 <details><summary>Game screen</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/wf3_hn_howtoplay.png">
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/wf3_hn_game.png">
 </details>
 
 <details><summary>Game screen in progress</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/wf4_hn_game_inprogress.png">
->
 </details>
 
   
@@ -247,25 +255,26 @@ Currently Humble Numble will randomly select one of these equations for each gam
 The fonts are deliberately chosen to mimic appearance of Wordle screen. 
 In real life, Wordle uses proprietary fonts (NYT Karnak Condensed), with Helventica Sans for the grid and button text.  A reasonably close match, which is widely available on a range of devices, was thought to be the Google bebas Neue font.
 
-However, when testing the site this didnt present a good look, and so Robo Sans something or other was chosen as a better alternative.
+However, when testing the site this did not present a good look, and so Roboto Slab was chosen as a better alternative.
 Fallback fronts are used in both cases
 
 ### Colour Scheme 
 The colour combinations mimic Wordle's game (for consistency and to ease the user learning experience).
    
-The choice of colours for Humble Numble is very much in accordance with user story XX - consistent with Wordle so as to speed the learning process and encourage the focus on the game content, rather than on how to use it.
+The choice of colours for Humble Numble is very much in accordance with user stories S_02 (closely emulate the Wordle look & feel); FTU_02 (first-time user to easily navigate and learn the site) - consistent with Wordle so as to speed the learning process and encourage the focus on the game content, rather than on how to use it.
 
-![Colours - dark mode normal contrast](./docs/readme_images/ux-design-choices-accessing-style-in-google-maps.jpg?raw=true "Humble Numble dark mode normal contrast")
-![Colours - dark mode high contrast](./docs/readme_images/ux-design-choices-accessing-style-in-google-maps.jpg?raw=true "Humble Numble dark mode high contrast")
-
+![Colours - similar to Wordle](./docs/readme_images/f07_game_grid_in_progress.jpg?raw=true "Humble Numble dark mode normal contrast")
 
 ### Design Images
 This site has very few images as the focus is on the game content.
 A 'Wordle-type' logo is used on the Intro page.
+<details><summary>'Wordle-type' logo</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/numble_icon.jpg">
+</details>
 
 ### Design Images - Icons and Symbols
 
-Certain icons and symbols used for quicklinks e.g. ? for About page, graphy symbol for Stats page, cog symbol for settings page. 
+Certain icons and symbols (again based on Wordle look & feel) are used for quicklinks e.g. ? for About page, graphy symbol for Stats page, cog symbol for settings page. 
 
 
 ## Features 
@@ -274,7 +283,7 @@ Certain icons and symbols used for quicklinks e.g. ? for About page, graphy symb
 <details><summary>Introduction screen</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f01_intro.jpg">
 On first using the game (or on use within incognito mode) the user will encounter an introduction window, they can take a button to 'Play' or 'How to Play' to view help text.  The intro page shows the current date, the Humble Numble day number, and some copyright and acknowledgement notices.
-This addresses user stories SO01, SO02, FTU01, FTU02, FTU03
+This addresses user stories SO_01, SO_02, FTU_01, FTU_02, FTU_03
 
 ### F02 Help Screen
 ![Humble Numble game explanation](./docs/readme_images/f02_help.jpg?raw=true "Scrollable text to show user instructions on how to play Humble Numble game")

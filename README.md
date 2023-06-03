@@ -399,10 +399,16 @@ Difficulty levels: easy or difficult (preset to 'difficult').
 <br>
 <br>
 
-### Features in Scope - refer to excel sheet for details of user stories (requirements) features and RTM.
+### F17 Responsiveness
+The site is designed to be fully responsive so it can be played on a range of convenient devices.
+
+### Features in Scope 
+
+<details><summary>Mapping of user stories to features</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/user_stories_vs_features.jpg"></details>
+
 This website includes 3 pages and 16 features 
-Features are as listed in previous section.
-The pages - which effectively bring these features together - are:
+The pages - which effectively bring the features lited in the previous section together - are:
 * Landing Page (see feature F01 Intro Screen)
 * Settings page (see feature F16 Feedback and settings )
 * 404 error page 
@@ -461,12 +467,12 @@ Requirements traceability matrix showing link between user stories and implement
 - Javascript
 
 ### Frameworks & Tools
-* Github
+* Github:  used to maintain the code repository, and for some readme edits and commits
 * Git
-* Gitpod
-* Balsamiq
-* Google Fonts
-* Font Awesome
+* Gitpod:  used for editing and for tracking code commits back to Github
+* Balsamiq:  used for wireframing
+* Google Fonts: used to locate suitable fonts for website
+
 
 ## Validation 
 
@@ -477,6 +483,7 @@ Requirements traceability matrix showing link between user stories and implement
   - [W3C validator - 404 page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2F404.html)
   
   - [W3C validator - settings page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Fsettings.html)
+
 ### CSS Validation
   - No errors returned when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https://deemccart.github.io/CI_PP2_HumbleNumble/&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) 
 
@@ -494,7 +501,7 @@ All pages pass with 0 errors
 
 
 ### Performance
-Performance for all pages was tested using the Lighthouse tool within Google Chrome.  Performance was at 98% for the index page - intro modal.
+Performance for all pages was tested using the Lighthouse tool within Google Chrome.  Performance was at 98% for the index page (intro modal).
 
 <details><summary>Performance: Index page</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/performance_lighthouse_intro_page_230602.jpg">
@@ -516,34 +523,33 @@ The website was tested on the following browsers:
 ### Testing User Stories
 ![User story testing](./assets/readme_images/user-stories-checked-against-features.jpg?raw=true "testing user stories")
 
-
-
-### Feature Testing
-User Story Testing
-The user feature testing is documented in a pdf file:
- https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/user-feature-test.pdf
-
-In addition, you should mention in this sectioning how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
-
-Requirements traceability matrix showing link between requirements and features
-Provide proofs of successful testing of each user story### Unfixed Bugs
-To be completed... mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
-
+### Bugs and issues
+<details><summary>issue tracker</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/issue_tracker.jpg">
+</details>
+Quite a few calculation and display issues were encountered during development, the above lists the issues encountered and resolved.
 
 ## Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
-
+<br>
 * The site was deployed to GitHub pages. The steps to deploy are as follows: 
   - In the GitHub repository, navigate to the Settings tab - pages 
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
 The live link can be found here - https://deemccart.github.io/CI_PP2_Humble_Numble/index.html
+
+* To fork the repository:
+- Go to the GitHub repository
+- Click on Fork button in the upper right hand corner
+
+* To clone the repository:
+- Go to the GitHub repository
+- Locate the Coe button above the list of files and click it
+- Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to you clipboard
+- Open Git Bash
+- Change the current working directory to the one where you want the cloned directory
+- Type git clone and paste the URL from the clipboard($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+- Press Enter to create your local clone
 
 
 ## Credits 
@@ -552,15 +558,10 @@ Multiple sources were used in assembling this site.
 
 ### Content - Humble Numble
 * Inspiration taken from wordle.com
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-
-### Media - Humble Numble
-N/A
  
 ### Code - Humble Numble
 * https://laracasts.com/series/wordle-workshop/episodes/2 for tips on building a wordle-like grid (using HTML or JS)
-* https://www.youtube.com/watch?v=j7OhcuZQ-q8 Build a Wordle clone using HTML, CSS & Javascript!
+* https://www.youtube.com/watch?v=j7OhcuZQ-q8 Build a Wordle clone using HTML, CSS & Javascript! : used for tips on keyboard panel building (but thereafter preferred to code independently as found that coding shortcuts proposed were not always comprehensible to a new JS developer!)
 
 ### References
 The following sites were ued for research and better understanding while creating this website: 
@@ -579,8 +580,9 @@ The following sites were ued for research and better understanding while creatin
 * https://stackoverflow.com/questions/42610369/javascript-classlist-remove-not-working-properly used to resolve issue #001 where not all classLists removing as expected
 * https://www.youtube.com/watch?v=uUCpopjPZdI HTML, CSS & JavaScript - How to Create a Pop-Up Modal ( Manual Version ) - Web Dev Tutorials @codefoxx used to help create a pop up help window
 * https://github.com/aleksandracodes/CI_PP2_SunshineGuessing (Aleksandra Haniok) was used for readme checklist and content, also for good code commenting structure
+* https://github.com/4n4ru/CI-P2-GuessingBee#deployment (Ana Runje) for instructions on forking and cloning a website
 
  
 ### Acknowledgements
-* I would like to sincerely thank my mentor, Mo Shami for his patience and support throughout.
-* I would also like to thank Derek for his support and keeping everything running at home.
+* I would like to sincerely thank my mentor, Mo Shami for his enthusiasm and support throughout.
+* I would also like to thank Derek and my family for their personal support.

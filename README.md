@@ -495,7 +495,7 @@ Requirements traceability matrix showing link between user stories and implement
 
 ### Accessibility
 The site was tested using the WAVE WebAIM accessibility evaluation tool.
-All pages pass with 0 errors (DMcC 18/05/23:  more work needed here... )
+All pages pass with 0 errors 
 - [Accessibility: index page](https://wave.webaim.org/report#/https://deemccart.github.io/CI_PP2_HumbleNumble/)
 - [Accessibility: 404 page](https://wave.webaim.org/report#/https://deemccart.github.io/CI_PP2_HumbleNumble/404.html)
 

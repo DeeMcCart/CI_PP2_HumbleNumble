@@ -42,7 +42,6 @@
             <img src="assets/images/help_example2.jpg"
                 alt="Example of guess with orange (wrong position) and green(correct position)">
             <ul>
-
                 <li><em>5</em> is in the equation but not at 3rd position (so must be 1st or 5th position)</li>
                 <li>Multiply * is correctly guessed at the 2nd position, as is divide / at the 4th position.</li>
                 <li></li>
@@ -51,7 +50,6 @@
                 <li> / any divide operation(s) are calculated next</li>
                 <li> + any add operation(s) are calculated next</li>
                 <li> – any minus operation(s) are calculated last</li>
-
                 <li>e.g. 3+2*5 is calculated as 3+(2*5) = 3+10 = 13 (grrrr)</li>
                 <li></li>
                 <li><b>Notes:</b></li>
@@ -62,7 +60,6 @@
                 </li>
                 <li>(and yes, the same number can appear twice grrrrr)</li>
                 <li>Happy calculating!</li>
-
             </ul>
         </div> <!-- end div 'helpText'-->
     </div> <!-- end div helpOverLay -->
@@ -80,7 +77,6 @@
             <button id="shareStats-btn" onclick="shareStats();" aria-label="Share Stats button">X</button>
         </div> <!-- end div 'statsText'-->
     </div> <!-- end div statsOverLay -->
-
 
     <div id="intro" class="yesDisplay">
         <img src="assets/images/wordle_Icon.jpg" alt="A rubix-cube type image symbolising the Wordle/ Numble grid">
@@ -102,8 +98,6 @@
         <p>Based on Wordle, creator Josh Wardle, now owned by NYT</p>
         <p><span>&copy;</span>2023 Deirdre McCarthy t/a AllSkills Tech</p>
     </div> <!-- End div intro -->
-
-
 
     <!-- DMcC 28/05/23 add div gameHead to permit display toggle on/off-->
     <div id="gameHead" class="noDisplay">
@@ -131,11 +125,7 @@
                 </nav> <!-- end navbar -->
             </div> <!-- end div headerContainer -->
         </header>
-        <!-- DMcC 29/05/23 Make initialise Solution button non-display and instead auto initialise on start -->
-        <!-- <button class="gameButton" onclick="initSolution();">
-            Initialise Solution!
-        </button> -->
-        <!-- DMcC 29/05/23 the below is made non-display, it is populated but hidden as will be used for comparison  -->
+        <!-- DMcC 29/05/23 the solution below is populated but hidden as will be used for comparison  -->
         <h2 id="solution" class="noDisplay">Solution here: </h2>
         <h3>
             Target: <span class="targetValue">0</span>     Attempt: <span id="attemptNum">1</span>
@@ -157,7 +147,6 @@
                     <div class="tile equalSign">=</div>
                     <div class="tile solutionRow targetValue">0</div>
                 </div>
-
                 <!-- DMcC 28/05/23 The resultOverlay below is a placeholder for positioning game result once the player has reached the solution -->
                 <!-- or exceeded 6 tries -->
                 <div class="noDisplay" id="resultOverLay">

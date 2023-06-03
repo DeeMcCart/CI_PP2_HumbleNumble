@@ -24,7 +24,6 @@
 6. [Features](#features)
     1. [Included](#features-in-scope)
     2. [Future Development](#features-left-to-implement)
-    3. [Requirements Tracing](#RTM)
 7. [Technology](#technologies)
     1. [Languages](#langugages)
     2. [Frameworks and Tools](#frameworks--tools)
@@ -37,8 +36,7 @@
     6. [Multi-device Testing](#multi-device-testing)
     7. [Multi-browser Testing](#multi-browser-testing)
     8. [Testing user stories](#testing-user-stories)
-    9. [Feature testing(#rtm-proof)]
-    10. [Unfixed Bugs](#unfixed-bugs)
+    9. [Unfixed Bugs](#unfixed-bugs)
 9. [Accessibility](#accessibility)
 10. [Performance](#performance)
 11. [Deployment](#deployment)
@@ -385,15 +383,16 @@ A pop-up message with the appropriate text appears if the user has matched the e
 <details><summary>User statistics</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f15_user_statistics.jpg"></details>
 
-This screen is really a placeholder for future functionality as would like to display some of the statistics for a plyer over a number of games<br>
+This screen is really a placeholder for future functionality as would like to display some of the statistics for a player over a number of games<br>
 <br>
 
 ### F16 Settings and Feedback
 <details><summary>User settings</summary>
-<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f16_settings_feeback.jpg"></details>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f16_settings_feedback.jpg"></details>
 
 This allows the user to provide feedback and to choose to join a daily reminder mailing list.  There are placeholder questions here for future Limit to one game daily (preset to 'no limit');
 Difficulty levels: easy or difficult (preset to 'difficult').
+Share image of solution to clipboard (future)
 <br>
 <br>
 
@@ -429,7 +428,7 @@ This is useful when comparing a user entry for a match.
 
 Daily user entries are stored in an array of 7 x 6 rows as follows:
 Attempt [(undef, green, orange), (undef/green/orange), (undef/green/orange), (underf/green/orange), (undef/green/orange), (success)]
-Attempt [attempt#, element#} can be compared to each of the entries in solution [day#, element#y] to search for a match - if found then if attempt.element# matches solution.element# then green, else orange.
+Attempt attempt#, element# can be compared to each of the entries in solution [day#, element#y] to search for a match - if found then if attempt.element# matches solution.element# then green, else orange.
 
 Break out of loop when success, or when 6 tries reached.
 <br>
@@ -452,11 +451,6 @@ Share results
 <br>
 <br>
                
-### RTM
-Requirements traceability matrix showing link between user stories and implemented/ future-release features
-
-![stories vs features](./assets/readme_images/user-stories-checked-against-features.jpg?raw=true "Checklist of user stories and the features that implement them")
-
 ## Technologies
 
 ### Langugages

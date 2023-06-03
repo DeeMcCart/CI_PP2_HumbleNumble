@@ -145,12 +145,11 @@ d. People who like to practice their mathematical skills<br>
 ----------------
 
 ### UX Design Scope User Requirements and Expectations
- 
 <br>
 From the analysis of existing games, a set of possible requirements was identified for a new portal.
 <br><br>
 The basic requirement for users is to have access to a 'fair' game where they have a possibility of reaching the goal.
-* The game is a fun way of applying simple mathematical principles
+Humble Numble is a fun way of applying simple mathematical principles
     
 <ul>MVP Requirements:
 <li>Must be intuitive to use</li>
@@ -198,7 +197,7 @@ The basic requirement for users is to have access to a 'fair' game where they ha
 * SO_07 As site owner I want to provide an opportunity for the user to provide feedback, including reporting issues, or suggesting improvements to the Humble Numble site
 * SO-08 As site owner I want to acknowledge to the user that their feedback has been received
 * SO-09 (FUTURE) As site owner I would like to implement scarcity - so that user can only access one game per day
-* SO-10 (FUTURE) As site owner, I Would like to be able to auto-generate new equations
+* SO-10 (FUTURE) As site owner, I would like to auto-generate new equations
 * SO_11 (FUTURE) As site owner, I would like to be able to track equations already used
 * SO_12 (FUTURE) As site owner, I would like to be able to set difficulty levels
 * SO_13 (FUTURE) As site owner, I would like to provide player stats - user can track # of attempts to solve, number of days solved, success rates
@@ -228,6 +227,7 @@ The basic requirement for users is to have access to a 'fair' game where they ha
 
 ### Other stakeholder Goals
 * OT_01 As an educator I might wish to suggest new equations to be solved by Humble Numble players 
+* OT_02 As an educator I might promote the use of this game amongst my students to increase their mathematical skills
 
 
 ## UX Design Decisions
@@ -346,6 +346,8 @@ When a guess is submitted, the equation which the user has submitted is parsed a
 <br>
 <br>
 ### F12  Individual guess element validation
+<details><summary>Feedback on keyboard re guessed solution</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f12_keyboard_interaction_feeback.jpg"></details>
 Each element of the guess is compared to the solution, and its tile colour amended according to whether the guessed tile is:
 * correct (green)- tile value is at this position in the solution;
 * present (orange)- tile value is at a different position in the solution;
@@ -353,31 +355,37 @@ Each element of the guess is compared to the solution, and its tile colour amend
 ![Feedback on game panel re guessed solution](./docs/readme_images/f12_game_interaction_feeback.jpg?raw=true "Image of guessed tiles changing colour")
 
 The corresponding keyboard grid value is coloured on the lower part of the screen, e.g. '5' guessed correct; will colour both the row tile and the keyboard key green.  A (hidden) count of the number of correct elements is maintained.
-![Feedback on keyboard re guessed solution](./docs/readme_images/f12_keyboard_interaction_feeback.jpg?raw=true "Image of keyboard keys changing colour")
-
-### F13 User Stats (needs cookies, and possibly google charts to display)
+<br>
+<br>
+### F13 Success message display when all elements correctly guessed
+<details><summary>Appropriate success message, content varies by # of attempts</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f13_attempt4_result.jpg"></details>
+A pop-up message with the appropriate text appears if the user has matched the entire solution equation.  This text mimics the Wordle site, so depending on the  number of attempts the user can get (Genius, Magnificent, Impressive, Splendid, Great, Phew)
+<br>
+<br>
+### F14 Solution display if exceeded 6 attempts
+<details><summary>Solution display if 6 unsuccessful guesses</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f14_exceeded_6attempts.jpg"></details>
+A pop-up message with the appropriate text appears if the user has matched the entire solution equation.  This text mimics the Wordle site, so depending on the  number of attempts the user can get (Genius, Magnificent, Impressive, Splendid, Great, Phew)
+<br>
+<br>
+### F15 User Statistics 
+<details><summary>User statistics</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f12_keyboard_interaction_feeback.jpg"></details>
 Winning streak! (user is notified on startup of how many games they have won)
-STATISTICS:  X Played; y Win %; z Current Streak; w: Max Streak
+vSTATISTICS:  X Played; y Win %; z Current Streak; w: Max Streak
 GUESS DISTRIBUTION: 1 x; 2 y; 3 z; 4 w; 5 v; 6 u
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+<br>
+<br>
 
-### F14 Signup for daily reminder email
-Ability to signup for daily reminder of the following format
-![How to sign up for reminder](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
-![Reminder email content](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+### F16 Settings and Feedback
+<details><summary>User settings</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f16_settings_and_feeback.jpg"></details>
 
-### F16 
-### F17 Settings Page
-Allow the user to choose:
-* Test or Daily modes
-* colour contrast
-
-
-### F18 About page (popup)
-
-### F19 pre-defined data
-Data created for the Humble Numble website with Google MyMaps included:
-* pre-defined equations to be presented (possibly in random order)
+This allows the user to provide feedback and to choose to join a daily reminder mailing list.  There are placeholder questions here for future Limit to one game daily (preset to 'no limit');
+Difficulty levels: easy or difficult (preset to 'difficult').
+<br>
+<br>
 
 ### Features in Scope - refer to excel sheet for details of user stories (requirements) features and RTM.
 This website includes X pages and Y features 

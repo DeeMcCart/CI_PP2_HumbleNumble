@@ -184,8 +184,6 @@ Currently Humble Numble will randomly select one of these equations for each gam
 
 ## User Goals/ User Stories
 ----------------
-The basic requirement for users is to have access to a 'fair' game where they have a possibility of reaching the goal.
-* The game is a fun way of applying simple mathematical principles
     
 ### Site owner Goals
 * SO_01 As site owner I want to provide a fun, satisfying game which is visually engaging and highly interactive
@@ -289,6 +287,7 @@ On first using the game an introduction window is shown, the user can choose 'Pl
 This addresses user stories SO_01, SO_02, FTU_01, FTU_02, FTU_03
 <br>
 <br>
+
 ### F02 'How To Play' Screen
 <details><summary>How To Play screen</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f02_help.jpg"></details>
@@ -296,10 +295,12 @@ This addresses user stories SO_01, SO_02, FTU_01, FTU_02, FTU_03
 A modal 'How to Play' explains how to play and some of the subtleties of the calculations.  Available from the 'how to play' button on the Intro screen, or from the navbar help icon on all screens.   The 'How to Play' window can be scrolled to see full text, and is closed by clicking on the X in top right hand corner, at which point it disappears from screen.
 <br>
 <br>      
+
 ### F03 Play button
 The Play button ![Play button](./docs/readme_images/f03_play_button.jpg?raw=true "Image of Play button") allows the user to go directly to a game screen, and immediately play a game ('call to action').
 <br>
 <br>
+
 ### F04 Randomly selected solution
 <details><summary>Array of potential solutions</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f04_solution_array.jpg"></details>
@@ -307,17 +308,20 @@ The Play button ![Play button](./docs/readme_images/f03_play_button.jpg?raw=true
 An array of solutions is maintained, and, when the game starts, an entry is randomly chosen from this array.  At the time of development this array contained approx 20 entries, which is sufficient for demo purposes, it is envisioned that this will be extended in the future.
 <br>
 <br>
+
 ### F05 Uncluttered game screen
 <details><summary>Initialised game screen</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f05_uncluttered_game_screen.jpg"></details>
 The game screen is presented to the user fully initialised (ie a target value has been set and populated to each grid row).  The screen is free of ads and supplemental displays, which allows the user to focus on the game.
 <br>
 <br>
+
 ### F06 Consistent Navbar<br>
 The Navbar is consistent throughout the website, 404 and feedback pages.  (modals/pop-ups are used to show intro and help pages, which don't show the navbar but when they are closed, the navbar can be seen on the underlying page)  Contains icons for Help, Stats and Settings.
 ![Navbar](./docs/readme_images/f06_navbar.jpg?raw=true "Navbar image")
 <br>
 <br>
+
 ### F07 Game grid
 <details><summary>Game panel</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f07_game_grid_in_progress.jpg"></details>
@@ -325,6 +329,7 @@ Interactive and responsive game panel which allows the user to record one set of
 Interactivity/feedback:  when the user presses ENTER to submit a guess, the guessed tiles update as green(correct); orange(present) or grey(absent).
 <br>
 <br>
+
 ### F08 Keyboard display
 <details><summary>Keyboard</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f08_keyboard_grid.jpg"></details>
@@ -332,19 +337,23 @@ A pseudo-keyboard shows the permitted entries.  The user must click on the keys 
 When the user presses ENTER to submit a guess, the keyboard elements used within the guess also update as green(correct); orange(present) or grey(absent).
 <br>
 <br>
+
 ### F09 DEL key
 A backspace key is provided which allows the user to remove the last keyed entry on the current grid row.
 <br>
 <br>
+
 ### F10 ENTER key
 The ENTER key submits the current guess row for validation. 
 <br>
 <br>
+
 ### F11 Equation validation
 When a guess is submitted, the equation which the user has submitted is parsed and validated as follows - the entries at the second and fourth columns are assessed to ensure these contain an operator (plus minus multiply divide); the guessed equation is then validated to check if it equates to the target value.  If not, an error message is shown, however the game (at this version) will still progress to individual element valuation.
 ![If equation has wrong total](./assets/readme_images/F11_wrong_total.jpg?raw=true "Equation calculates to incorrect total")
 <br>
 <br>
+
 ### F12  Individual guess element validation
 <details><summary>Feedback on keyboard re guessed solution</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f12_keyboard_interaction_feeback.jpg"></details>
@@ -357,18 +366,21 @@ Each element of the guess is compared to the solution, and its tile colour amend
 The corresponding keyboard grid value is coloured on the lower part of the screen, e.g. '5' guessed correct; will colour both the row tile and the keyboard key green.  A (hidden) count of the number of correct elements is maintained.
 <br>
 <br>
-### F13 Success message display when all elements correctly guessed
+
+### F13 Success message
 <details><summary>Appropriate success message, content varies by # of attempts</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f13_attempt4_result.jpg"></details>
-A pop-up message with the appropriate text appears if the user has matched the entire solution equation.  This text mimics the Wordle site, so depending on the  number of attempts the user can get (Genius, Magnificent, Impressive, Splendid, Great, Phew)
+ This displays when all elements correctly guessed.  A pop-up message with the appropriate text appears.  This text mimics the Wordle site, so depending on the  number of attempts the successful user can get (Genius, Magnificent, Impressive, Splendid, Great, Phew).
 <br>
 <br>
+
 ### F14 Solution display if exceeded 6 attempts
 <details><summary>Solution display if 6 unsuccessful guesses</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f14_exceeded_6attempts.jpg"></details>
 A pop-up message with the appropriate text appears if the user has matched the entire solution equation.  This text mimics the Wordle site, so depending on the  number of attempts the user can get (Genius, Magnificent, Impressive, Splendid, Great, Phew)
 <br>
 <br>
+
 ### F15 User Statistics 
 <details><summary>User statistics</summary>
 <img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/f12_keyboard_interaction_feeback.jpg"></details>
@@ -388,46 +400,18 @@ Difficulty levels: easy or difficult (preset to 'difficult').
 <br>
 
 ### Features in Scope - refer to excel sheet for details of user stories (requirements) features and RTM.
-This website includes X pages and Y features 
+This website includes 3 pages and 16 features 
 Features are as listed in previous section.
 The pages - which effectively bring these features together - are:
-* Landing Page (image link)
-* Settings page (image link)
-* About page (image link)
-* Signup page
-- __Home Page Intro Screen__
-
-- __Main Game Screen__
-The initial website page shows a 6 row x 7 column grid, where the user can enter their guesses, one per row, in the 5 left most columns.
-The 6th column always contains the '=' sign
-and the 7th column contains the target figure.
-
-Towards the bottom of the screen a selection panel is shown, this shows 3 rows of possible entries with up to 10 characters in each
-1  2  3  4  5  6  7  8  9 10
-11 12 13 14 15 16 17 18 19 20
-ENTER       +  -  *  /   <-BKSP
-
-Clicking on a selection panel button will place the corresponding character in the next available space within the current grid row.
-Clicking on ENTER will submit the current grid row as an entry.
-
-- __Settings Page__
-Ability to choose settings - to be decided
-
-![Walks Page](./docs/readme_images/P02-Walk_Details.jpg?raw=true "Page with details for each walk")
- Choose difficulty level
-The user can choose difficulty level EASY (all numbers <= 10) or DIFFICULT (numbers <=20 included)
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
-
-- __Contact/Feedback page__ 
-Signup for daily game playing reminder.
-
-![Contact Page](./docs/readme_images/P04-Feedback.jpg?raw=true "Feedback")
-
+* Landing Page (see feature F01 Intro Screen)
+* Settings page (see feature F16 Feedback and settings )
+* 404 error page 
 
 - __404 Error Page__ 
 This allows graceful failure, where the header and footer are preserved, allowing the user to navigate away from an error page using the site navigation (rather than the back button).
-![Contact Page](./docs/readme_images/P04-Feedback.jpg?raw=true "Feedback")
+
+<details><summary>404 error page</summary>
+<img src="https://deemccart.github.io/CI_PP2_HumbleNumble/docs/readme_images/p03_error_404_page.jpg"></details>
 
 ### Implementation Decisions
 Pre-defined calculations are stored in a multi-dimensional array as follows:
@@ -444,27 +428,26 @@ Attempt [(undef, green, orange), (undef/green/orange), (undef/green/orange), (un
 Attempt [attempt#, element#} can be compared to each of the entries in solution [day#, element#y] to search for a match - if found then if attempt.element# matches solution.element# then green, else orange.
 
 Break out of loop when success, or when 6 tries reached.
-
-
+<br>
 
 ### Features Left to Implement
-Cookies to store user data from last attempts
-                                                                                        
+While Humble Numble, at the current version, provides the 'engine' for pattern matching and calculation, there are a number of desirable features which exist in the current version of Wordle and which would greatly add to the user experience for Numble.
+
 Choose difficulty level
-The user can choose difficulty level EASY (all numbers <= 10) or DIFFICULT (numbers <=20 included)
-Description
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
+* Allow the user to choose difficulty level EASY (all numbers <= 10) or DIFFICULT (numbers <=20 included).  Note that this has been allowed for in the array of solutions, these are classified according to difficulty, so this may be an 'easy win' future feature.
 
+Allow the user to limit to one game daily
+* One of the beautiful features of wordle is its limited-release mode whereby only one puzzle is released daily ... this creates a sense of anticipation and the user wants more, they don't get the chance to become bored or tired with the game.  
+* Humble Numble at the current version, allows the user to play continuously by refreshing the browser.  This is useful when in testing and demonstration mode, but ideally the default would be one game per day.
 
-User Stats (needs cookies, and possibly google charts to display)
-Winning streak! (user is notified on startup of how many games they have won)
-STATISTICS:  X Played; y Win %; z Current Streak; w: Max Streak
-GUESS DISTRIBUTION: 1 x; 2 y; 3 z; 4 w; 5 v; 6 u
-![Feature description](./docs/readme_images/230418%20Landing%20Page.jpg?raw=true "FeatureDesc")
-                                                                                        
-Ability to choose 'Test' or 'Daily' mode
-One of the beautiful features of wordle is its limited-release mode whereby only one puzzle is released daily ... this creates a sense of anticipation and the user wants more, they don't get the chance to become bored or tired with the game.  Similarly the proposed Humble Numble game is best delivered in Daily mode.  For the purpose of site demonstration, the user is currently permitted to enter Test mode (chosen from the settings page) 
-                                                                                        
+Preserve user statistics from one game to the next
+* This has been allowed for within the user interface by providing a statistics page, however the stats currently only relate to the latest game played.   Tracking of # of days 'winning streak' is very motivating to the user.
+
+Share results
+* Wordle has a feature whereby a user can share their pattern matching results without revealing the underlying solution.
+<br>
+<br>
+               
 ### RTM
 Requirements traceability matrix showing link between user stories and implemented/ future-release features
 
@@ -475,6 +458,7 @@ Requirements traceability matrix showing link between user stories and implement
 ### Langugages
 - HTML 
 - CSS
+- Javascript
 
 ### Frameworks & Tools
 * Github
@@ -492,6 +476,7 @@ Requirements traceability matrix showing link between user stories and implement
   - [W3C validator - index page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Findex.html) 
   - [W3C validator - 404 page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2F404.html)
   
+  - [W3C validator - settings page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdeemccart.github.io%2FCI_PP2_HumbleNumble%2Fsettings.html)
 ### CSS Validation
   - No errors returned when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https://deemccart.github.io/CI_PP2_HumbleNumble/&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) 
 

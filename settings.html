@@ -114,29 +114,29 @@
 
     <div id="container" class="yesDisplay">
         <form id="settings_Feedback" action="https://formdump.codeinstitute.net" method="POST">
-            <div>
-                <br>
+                <div>
+                    <br>
                 <br>
                 <p>Play one game only per day?</p>
-                <input type="radio" id="daily" name="frequency" value="daily" />
+                <input type="radio" id="daily" name="frequency" value="daily" >
                 <label for="daily">One per day</label><br>
-                <input type="radio" id="noLimit" name="frequency" value="noLimit" checked="checked" />
+                <input type="radio" id="noLimit" name="frequency" value="noLimit" checked="checked" >
                 <label for="noLimit">No limit</label><br>
                 <br><br>
 
                 <p>Difficulty level:</p>
-                <input type="radio" id="easy" name="difficulty" value="easy" />
+                <input type="radio" id="easy" name="difficulty" value="easy" >
                 <label for="daily">Easy</label><br>
-                <input type="radio" id="difficult" name="difficulty" value="difficult" checked="checked" />
+                <input type="radio" id="difficult" name="difficulty" value="difficult" checked="checked" >
                 <label for="noLimit">Difficult</label><br>
                 <br><br>
 
                 <p>To receive daily reminder,</p>
                 <label for="email">Enter email address</label>
-                <input type="email" id="email" name="email" />
+                <input type="email" id="email" name="email" >
                 <br><br>
                 <p>Comments/ feedback:</p>
-                <textarea class="form-control" id="feedback" rows="5" cols="50" name="feedback" type="text"
+                <textarea class="form-control" id="feedback" rows="5" cols="50" name="feedback" 
                     placeholder="Leave us your feedback or thoughts on how to improve the game, or indeed any equations you would suggest adding to the solution bank."></textarea>
                 <br>
                 <br>
@@ -145,24 +145,17 @@
             <button class="gameButton" onclick="sendFeedback();" aria-label="Submit feeback">
                 Submit
             </button>
+            <button class="gameButton" onclick="document.location='https://deemccart.github.io/CI_PP2_HumbleNumble/';"
+            aria-label="return to Game">Return to game
+        </button>
         </form>
         <br>
         <br>
-        <button class="gameButton" onclick="https://deemccart.github.io/CI_PP2_HumbleNumble/"
-            aria-label="return to Game">
-            Return to game
-        </button>
-
-
-
-
-
-    </div> <!-- end div gamePanel -->
+        
+    </div>
     <br>
     <p></p>
-    </div> <!-- End div game -->
-    </div> <!-- end div container -->
-
+    
     <!-- Add js script to run last thing (ie after the DOM is loaded)-->
     <script src="assets/js/game.js"></script>
 </body>
